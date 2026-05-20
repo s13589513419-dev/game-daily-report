@@ -1,0 +1,16 @@
+# System files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Claude generated files
+agents/
+.claude/skills/
+.claude/projects/*/e5e14a11-*.jsonl
+.claude/projects/*/transcripts/
+
+# Temp fix scripts
+fix_*.js
+
+# Corrupted backup
+daily_report_corrupted.html

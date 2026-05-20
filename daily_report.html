@@ -21,6 +21,20 @@
     --purple: #7b4f9e;
     --teal: #1d7a6e;
     --tag-bg: rgba(0,0,0,0.04);
+    --fs-base: 16px;
+    --fs-card: 15px;
+    --fs-small: 13px;
+    --fs-title: 16px;
+    --fs-section: 17px;
+    --fs-h1: 24px;
+  }
+  body.font-sm {
+    --fs-base: 14px; --fs-card: 13px; --fs-small: 11px;
+    --fs-title: 14px; --fs-section: 15px; --fs-h1: 20px;
+  }
+  body.font-lg {
+    --fs-base: 18px; --fs-card: 17px; --fs-small: 14px;
+    --fs-title: 18px; --fs-section: 19px; --fs-h1: 28px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -28,14 +42,13 @@
     background: var(--bg);
     color: var(--text);
     line-height: 1.8;
-    font-size: 16px;
+    font-size: var(--fs-base);
   }
 
-  /* Header */
   .header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    padding: 24px 40px 0;
+    padding: 20px 40px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -45,148 +58,116 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     flex-wrap: wrap;
     gap: 10px;
   }
-  .header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text);
-  }
+  .header-left { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .header h1 { font-size: var(--fs-h1); font-weight: 700; color: var(--text); }
   .header h1 span { color: var(--accent); }
-  .header-subtitle {
-    font-size: 14px;
-    color: var(--text2);
-    margin-top: 2px;
-  }
-  .header-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-  .header-actions button {
+  .header-subtitle { font-size: var(--fs-small); color: var(--text2); margin-top: 2px; }
+  .header-actions { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+  .header-actions button, .fs-btn {
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--text2);
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: var(--fs-small);
     transition: all 0.2s;
     font-family: inherit;
+    line-height: 1.4;
   }
-  .header-actions button:hover {
-    background: var(--border);
-    color: var(--text);
+  .header-actions button:hover, .fs-btn:hover { background: var(--border); color: var(--text); }
+  .fs-group { display:inline-flex; border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+  .fs-group button {
+    background: var(--surface);
+    border:none; color:var(--text2); cursor:pointer;
+    padding:6px 10px; font-size:14px; font-family:inherit; line-height:1;
+    transition:all 0.15s;
+  }
+  .fs-group button:hover { background:var(--surface2); }
+  .fs-group button.active { background:var(--accent); color:#fff; }
+
+  .team-badge {
+    display: inline-flex; align-items:center; gap:4px;
+    background: var(--accent-light); color: var(--accent);
+    font-size: var(--fs-small); padding: 4px 12px;
+    border-radius: 20px; font-weight: 500;
   }
 
-  /* Tab Bar */
-  .tab-bar {
-    display: flex;
-    gap: 2px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+  .tab-bar { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
   .tab-bar::-webkit-scrollbar { display: none; }
   .tab-btn {
-    padding: 12px 22px;
-    border: none;
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 500;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    white-space: nowrap;
-    font-family: inherit;
+    padding: 10px 18px; border: none; background: transparent;
+    color: var(--text2); cursor: pointer; font-size: 14px;
+    font-weight: 500; border-bottom: 3px solid transparent;
+    transition: all 0.2s; white-space: nowrap; font-family: inherit;
   }
   .tab-btn:hover { color: var(--text); background: var(--surface2); border-radius: 8px 8px 0 0; }
   .tab-btn.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-    background: var(--bg);
-    border-radius: 8px 8px 0 0;
-    font-weight: 600;
+    color: var(--accent); border-bottom-color: var(--accent);
+    background: var(--bg); border-radius: 8px 8px 0 0; font-weight: 600;
   }
   .tab-btn .badge-new {
-    font-size: 10px;
-    background: var(--red);
-    color: #fff;
-    border-radius: 8px;
-    padding: 2px 6px;
-    margin-left: 6px;
-    vertical-align: middle;
+    font-size: 10px; background: var(--red); color: #fff;
+    border-radius: 8px; padding: 2px 6px; margin-left: 6px; vertical-align: middle;
     animation: pulse 2s infinite;
   }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
 
-  /* Main Content */
-  .main { max-width: 960px; margin: 0 auto; padding: 32px 40px 80px; }
+  .main { max-width: 960px; margin: 0 auto; padding: 28px 40px 80px; }
   .day-panel { display: none; }
   .day-panel.active { display: block; }
 
-  /* Section */
-  .section { margin-bottom: 36px; }
+  .section { margin-bottom: 32px; }
   .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--border);
-    cursor: pointer;
-    user-select: none;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--border); cursor: pointer; user-select: none;
   }
   .section-header:hover { opacity: 0.8; }
-  .section-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-    background: var(--accent-light);
-  }
-  .section-title {
-    font-size: 17px;
-    font-weight: 600;
-    flex: 1;
-    color: var(--text);
-  }
-  .section-toggle {
-    font-size: 12px;
-    color: var(--text2);
-    transition: transform 0.2s;
-  }
+  .section-icon { width: 30px; height: 30px; border-radius: 8px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:15px; flex-shrink:0; background:var(--accent-light); }
+  .section-title { font-size: var(--fs-section); font-weight: 600; flex: 1; color: var(--text); }
+  .section-toggle { font-size: 12px; color: var(--text2); transition: transform 0.2s; }
   .section.collapsed .section-body { display: none; }
   .section.collapsed .section-toggle { transform: rotate(-90deg); }
 
+  /* Competitor Filter Pills */
+  .filter-bar {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-bar .filter-label {
+    font-size: var(--fs-small); color: var(--text2); font-weight: 600;
+    padding: 4px 0; margin-right: 4px;
+  }
+  .filter-pill {
+    padding: 4px 14px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text2); cursor: pointer;
+    font-size: var(--fs-small); font-family: inherit; transition: all 0.2s;
+  }
+  .filter-pill:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
   /* Cards */
-  .news-card, .insight-card, .competitor-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 22px;
-    margin-bottom: 14px;
+  .news-card, .competitor-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; margin-bottom: 12px;
     transition: box-shadow 0.2s, border-color 0.2s;
   }
-  .news-card:hover, .insight-card:hover, .competitor-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  .news-card:hover, .competitor-card:hover {
+    border-color: var(--accent); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
+  .news-card[data-hidden="true"] { display: none; }
+
   .card-label {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    margin-bottom: 8px;
-    display: inline-block;
-    padding: 3px 10px;
-    border-radius: 4px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+    margin-bottom: 6px; display: inline-block; padding: 3px 10px; border-radius: 4px;
   }
   .label-hot { background: rgba(192,57,43,0.08); color: var(--red); }
   .label-info { background: rgba(79,111,207,0.08); color: var(--accent); }
@@ -196,157 +177,123 @@
   .label-teal { background: rgba(29,122,110,0.08); color: var(--teal); }
 
   .card-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: var(--text);
+    font-size: var(--fs-title); font-weight: 600; margin-bottom: 6px; line-height: 1.5; color: var(--text);
   }
-  .card-title a {
-    color: var(--accent2);
-    text-decoration: none;
-    font-size: 14px;
-  }
+  .card-title a { color: var(--accent2); text-decoration: none; font-size: var(--fs-small); }
   .card-title a:hover { text-decoration: underline; }
-  .card-meta {
-    font-size: 13px;
-    color: var(--text2);
-    margin-bottom: 10px;
-  }
-  .card-meta span { margin-right: 16px; }
-  .card-body {
-    font-size: 15px;
-    color: var(--text2);
-    line-height: 1.8;
-  }
+  .card-meta { font-size: var(--fs-small); color: var(--text2); margin-bottom: 8px; }
+  .card-meta span { margin-right: 14px; }
+  .card-body { font-size: var(--fs-card); color: var(--text2); line-height: 1.8; }
   .card-body strong { color: var(--text); font-weight: 600; }
-  .card-body ul {
-    list-style: none;
-    padding: 0;
-    margin: 6px 0;
-  }
-  .card-body ul li {
-    padding: 3px 0 3px 18px;
-    position: relative;
-  }
-  .card-body ul li::before {
-    content: '·';
-    position: absolute;
-    left: 4px;
-    color: var(--accent);
-    font-weight: bold;
-  }
 
-  /* Tags */
   .tag {
-    display: inline-block;
-    font-size: 12px;
-    padding: 2px 10px;
-    border-radius: 4px;
-    background: var(--tag-bg);
-    color: var(--text2);
-    margin: 2px 4px 2px 0;
+    display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 4px;
+    background: var(--tag-bg); color: var(--text2); margin: 2px 4px 2px 0;
   }
   .tag-red { background: rgba(192,57,43,0.08); color: var(--red); }
   .tag-blue { background: rgba(79,111,207,0.08); color: var(--accent); }
   .tag-green { background: rgba(46,139,87,0.08); color: var(--green); }
   .tag-orange { background: rgba(201,118,30,0.08); color: var(--orange); }
 
+  /* Highlights */
+  .highlights-card {
+    background: linear-gradient(135deg, rgba(79,111,207,0.04), rgba(43,106,158,0.04));
+    border: 1px solid rgba(79,111,207,0.2);
+    border-radius: 10px; padding: 18px 22px; margin-bottom: 14px;
+  }
+  .highlights-card ol {
+    margin: 0; padding-left: 20px;
+  }
+  .highlights-card ol li {
+    padding: 6px 0; font-size: var(--fs-card); line-height: 1.7; color: var(--text);
+  }
+  .highlights-card ol li strong { color: var(--accent); }
+
   /* Tables */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin: 8px 0;
-  }
+  .data-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); margin: 8px 0; }
   .data-table th {
-    background: var(--surface2);
-    padding: 10px 14px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: var(--text2);
-    border-bottom: 1px solid var(--border);
+    background: var(--surface2); padding: 10px 14px; text-align: left;
+    font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px;
+    color: var(--text2); border-bottom: 1px solid var(--border);
   }
-  .data-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-  }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text); }
   .data-table tr:hover td { background: var(--accent-light); }
-  .data-table .num { font-variant-numeric: tabular-nums; text-align: right; }
+  .data-table .store-link { color: var(--accent2); text-decoration: none; font-size: 12px; }
+  .data-table .store-link:hover { text-decoration: underline; }
 
   /* Alert Banner */
   .alert-banner {
     background: linear-gradient(135deg, rgba(192,57,43,0.04), rgba(201,118,30,0.04));
-    border: 1px solid rgba(201,118,30,0.25);
-    border-radius: 10px;
-    padding: 18px 22px;
-    margin-bottom: 14px;
+    border: 1px solid rgba(201,118,30,0.25); border-radius: 10px;
+    padding: 16px 20px; margin-bottom: 12px;
   }
-  .alert-banner .alert-title {
-    font-weight: 600;
-    color: var(--orange);
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
-  .alert-banner .alert-body {
-    font-size: 15px;
-    color: var(--text2);
-    line-height: 1.8;
-  }
+  .alert-banner .alert-title { font-weight: 600; color: var(--orange); margin-bottom: 6px; font-size: 15px; }
+  .alert-banner .alert-body { font-size: var(--fs-card); color: var(--text2); line-height: 1.8; }
 
-  /* Source Footer */
+  /* Calendar */
+  .cal-title { font-size: var(--fs-title); font-weight: 600; margin-bottom: 12px; color: var(--text); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 16px; }
+  .cal-header { text-align: center; font-weight: 600; font-size: 12px; color: var(--text2); padding: 6px 0; }
+  .cal-day {
+    text-align: center; padding: 6px 4px; border-radius: 6px;
+    font-size: var(--fs-small); color: var(--text2); position: relative; min-height: 56px;
+  }
+  .cal-day .day-num { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .cal-day .day-event {
+    font-size: 10px; color: var(--accent); line-height: 1.3;
+    background: var(--accent-light); border-radius: 3px; padding: 1px 4px; margin-top: 2px;
+  }
+  .cal-day .day-event.hot { color: var(--red); background: rgba(192,57,43,0.08); }
+  .cal-day .day-event.orange { color: var(--orange); background: rgba(201,118,30,0.08); }
+  .cal-day.empty { visibility: hidden; }
+  .cal-day.today { background: var(--accent-light); border-radius: 6px; }
+  .cal-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--text2); margin-top: 8px; }
+  .cal-legend span { display: flex; align-items: center; gap: 4px; }
+  .cal-legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .cal-legend .dot.dot-red { background: var(--red); }
+  .cal-legend .dot.dot-accent { background: var(--accent); }
+  .cal-legend .dot.dot-orange { background: var(--orange); }
+
+  /* Back to Top */
+  .back-top {
+    position: fixed; bottom: 32px; right: 32px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text2); font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: all 0.3s;
+    z-index: 200; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .back-top.show { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--surface2); color: var(--text); }
+
   .source-footer {
-    margin-top: 48px;
-    padding-top: 20px;
-    border-top: 2px solid var(--border);
-    font-size: 13px;
-    color: var(--text2);
-    text-align: center;
+    margin-top: 48px; padding-top: 20px; border-top: 2px solid var(--border);
+    font-size: var(--fs-small); color: var(--text2); text-align: center;
   }
 
-  /* Team badge */
-  .team-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--accent-light);
-    color: var(--accent);
-    font-size: 13px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 500;
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
-    body { font-size: 15px; }
-    .header { padding: 16px 18px 0; }
-    .main { padding: 20px 16px 60px; }
+    .header { padding: 14px 16px 0; }
+    .main { padding: 16px; }
     .header-top { flex-direction: column; align-items: flex-start; }
     .header h1 { font-size: 20px; }
-    .tab-btn { padding: 10px 14px; font-size: 14px; }
-    .news-card, .competitor-card { padding: 16px; }
-    .card-title { font-size: 15px; }
-    .card-body { font-size: 14px; }
-    .data-table { font-size: 13px; }
-    .data-table th, .data-table td { padding: 8px 10px; }
+    .tab-btn { padding: 8px 12px; font-size: 13px; }
+    .news-card, .competitor-card { padding: 14px 16px; }
+    .back-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
+    .cal-day { min-height: 44px; font-size: 12px; }
   }
-
-  /* Print */
   @media print {
     .header { position: static; }
     .tab-bar { display: flex !important; }
     .day-panel { display: block !important; }
     .section-body { display: block !important; }
+    .back-top { display: none !important; }
+    .filter-bar { display: none !important; }
     body { background: #fff; color: #333; font-size: 14px; }
-    .news-card, .competitor-card { background: #fafafa; border-color: #ddd; break-inside: avoid; box-shadow: none; }
+    .news-card, .competitor-card { background: #fafafa; border-color: #ddd; box-shadow: none; }
     .data-table th { background: #f0f0f0; }
     .alert-banner { background: #fff8f0; }
-    .header-actions button { display: none; }
+    .header-actions button, .fs-group { display: none; }
   }
 </style>
 </head>
@@ -354,15 +301,22 @@
 
 <div class="header" id="appHeader">
   <div class="header-top">
-    <div>
-      <h1>📊 <span>行业与竞品</span>调研日报</h1>
-      <div class="header-subtitle">游戏海外发行 · 每日监测 · 团队共享</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <div class="header-left">
+      <div>
+        <h1>📊 <span>行业与竞品</span>调研日报</h1>
+        <div class="header-subtitle">游戏海外发行 · 每日监测 · 团队共享</div>
+      </div>
       <span class="team-badge">👥 团队共享</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+      <div class="fs-group">
+        <button onclick="setFontSize('sm')" title="小字">A⁻</button>
+        <button onclick="setFontSize('md')" class="active" title="中字">A</button>
+        <button onclick="setFontSize('lg')" title="大字">A⁺</button>
+      </div>
       <div class="header-actions">
         <button onclick="toggleAll()">◈ 全部展开/折叠</button>
-        <button onclick="window.print()">⎙ 打印/PDF</button>
+        <button onclick="window.print()">⎙ 打印</button>
       </div>
     </div>
   </div>
@@ -371,384 +325,457 @@
 
 <div class="main" id="appMain"></div>
 
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
-// ============ DATA — 每天在这里追加新对象 ============
-const reportData = [];
+// ============ DATA ============
+let reportData = [];
+
+// 社媒日历 (全局, 跨日期)
+const socialCalendar = {
+  '2026-05-26': [{ text: 'Slime Rancher 移动版上线', cls: 'orange' }],
+  '2026-05-27': [{ text: 'Tomb Busters 全球上线', cls: 'hot' }],
+  '2026-05-28': [{ text: 'Nintendo Pictonico 上线', cls: 'accent' }],
+  '2026-06-04': [{ text: 'Mini Football Legends (AA)', cls: 'accent' }],
+  '2026-06-10': [{ text: 'Limit Zero Breakers CBT', cls: 'accent' }],
+  '2026-06-15': [{ text: 'PGC Barcelona 开幕', cls: 'orange' }],
+};
 
 // ===== 2026-05-20 =====
 reportData.push({
   date: '2026-05-20',
   weekday: '周三',
+  highlights: [
+    '🔥 <strong>Tomb Busters</strong> 将于5月27日全球上线 — 中国已验证2亿+下载 / 1000万 DAU，是 <strong>Haunted Headline</strong> 最需要关注的头号竞品',
+    '🔥 <strong>米哈游 Petit Planet</strong> 开启预注册 — 入局 cozy life sim 赛道，<strong>Lovania</strong> 的未来最强竞品，需密切关注上线节奏',
+    '<strong>Fortnite 全球重返 iOS App Store</strong>（澳洲除外），Tim Sweeney 宣告这是"Apple Tax 终结的开端"',
+    '<strong>Sega 承认 Rovio 收购失败</strong> — $7.75亿收购未创造经济价值，已减记$2亿，宣布暂停大规模并购',
+    '<strong>Sensor Tower 收购 AppMagic</strong> — 移动数据情报市场进一步整合，可能影响行业工具定价'
+  ],
   sections: [
+    // ——— 要闻速览 ———
     {
-      id: 'headlines',
-      icon: '📌',
-      title: '今日要闻速览',
-      defaultOpen: true,
+      id: 'headlines', icon: '📌', title: '要闻速览', defaultOpen: true,
       items: [
         {
-          type: 'news',
+          type: 'news', tags: ['epic'],
           label: { text: '平台变局', cls: 'label-hot' },
           title: 'Fortnite 全球重返 iOS App Store（澳洲除外）',
-          date: '2026.05.19',
-          source: 'Mobilegamer.biz',
+          date: '2026.05.19', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/fortnite-has-now-relaunched-on-the-app-store-worldwide/',
-          body: '距美国联邦法院裁决后重返美区近一年，Fortnite 现已在全球大部分地区重新上架。澳洲除外原因：Epic 在澳胜诉后认定 Apple 支付安排仍属违法，正等待法院补救措施裁决。Tim Sweeney 称此为"Apple Tax 终结的开端"，指出日本、欧盟、英国监管机构均在关注此案。'
+          body: '距美国联邦法院裁决后重返美区近一年，Fortnite 现已在全球大部分地区重新上架 Apple App Store。唯一例外是澳大利亚：Epic 在澳大利亚的诉讼中获胜，法院裁定 Apple 部分开发者条款违法，Epic 表示"不能在非法的支付安排下回归"，正等待法院对补救措施作出进一步裁决。\n\nEpic CEO Tim Sweeney 称此举为"Apple Tax 终结的开端"，指出日本、欧盟、英国监管机构都在关注此案，以裁定非美国市场的合理佣金率。Epic 同时指责 Apple 通过"恐吓屏幕、费用和繁苛要求"来规避各国法律。此次回归可能引发新一轮 App Store 政策调整，间接影响所有移动发行商的利润模型。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['sensortower'],
           label: { text: '行业并购', cls: 'label-warn' },
           title: 'Sensor Tower 收购竞品 AppMagic，市场情报格局生变',
-          date: '2026.05.13',
-          source: 'PocketGamer.biz',
+          date: '2026.05.13', source: 'PocketGamer.biz',
           url: 'https://www.pocketgamer.biz/news/85570/sensor-tower-acquires-appmagic/',
-          body: 'Sensor Tower 正式收购竞争对手 AppMagic（此前 Sensor Tower 曾就数据抓取问题起诉 AppMagic）。收购后移动应用数据分析市场将更加集中，可能影响定价策略与服务形态，对依靠这些工具做竞品分析的从业者影响较大。'
+          body: 'Sensor Tower 正式收购竞争对手 AppMagic，后者是移动应用市场情报领域的后起之秀。值得注意的是，此前 Sensor Tower 曾就数据抓取问题起诉 AppMagic，双方存在直接竞争关系。\n\n收购完成后，移动应用数据分析市场将进一步集中——目前全球主要玩家从 Sensor Tower、data.ai、AppMagic "三足鼎立"变为两大平台主导。这可能导致定价上涨或免费层级的服务缩减，对大量依赖这些工具做竞品分析的海外发行团队来说是需要关注的变化。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['sega','rovio'],
           label: { text: '厂商财报', cls: 'label-hot' },
           title: 'Sega 承认 Rovio 收购"未创造经济价值"，暂停大规模 M&A',
-          date: '2026.05.13',
-          source: 'Mobilegamer.biz',
+          date: '2026.05.13', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/rovio-set-for-restructure-after-sega-acquisition-disappoints/',
-          body: 'Sega 以 $7.75亿收购 Rovio 后营收逐年下滑。FY2026 营收 €1.81亿，预计 FY2027 降至 €1.58亿。Sega 已减记 $2亿商誉，暂停大规模并购。Rovio 将降低 F2P 优先级，重新聚焦 Angry Birds IP 授权变现，第三部电影（2026年12月）被寄予厚望。'
+          body: 'Sega 在最新财报中坦承，2023年以 $7.75亿收购 Angry Birds 开发商 Rovio 后，该交易"未能创造经济价值"。Rovio 的销售额自收购以来逐年下滑——FY2026 录得 €1.81亿（约 $2.13亿），而 Sega 预计 FY2027 将进一步降至 €1.58亿（约 $1.86亿）。Sega 此前已对 Rovio 进行了约 $2亿的商誉减记。\n\n战略调整方面：Rovio 将"降低 free-to-play 游戏的优先级"，约 100 名 F2P 项目员工已被重新分配至其他项目，公司将重新聚焦 Angry Birds IP 授权变现。第三部 Angry Birds 电影（2026年12月上映）被寄予厚望，预计将大幅拉动 IP 授权收入。\n\n受 Rovio 和 Stakelogic（博彩公司）两笔收购拖累，Sega 宣布将暂停大规模 M&A 活动。这意味着行业并购热潮中，头部玩家的出手会更加谨慎。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['engine'],
           label: { text: '引擎战争', cls: 'label-info' },
           title: '前 Guerrilla Games 联合创始人组建公司，做欧洲版 Unreal/Unity 替代品',
-          date: '2026.05.12',
-          source: 'PocketGamer.biz',
+          date: '2026.05.12', source: 'PocketGamer.biz',
           url: 'https://www.pocketgamer.biz/guerrilla-games-co-founder-arjan-brussee-is-building-european-alternative-to-unreal-and-unity/',
-          body: 'Arjan Brussee（前 Guerrilla Games 联合创始人）正在组建新公司，目标打造 Unreal Engine 和 Unity 的欧洲替代品。如果成功可能改变中小开发者的引擎选择格局。'
+          body: 'Arjan Brussee——前 Guerrilla Games 联合创始人、《杀戮地带》系列核心人物——正在组建新公司，目标是打造 Unreal Engine 和 Unity 的欧洲替代方案。Brussee 在游戏引擎领域有深厚积累，曾参与早期 Unity 的开发工作。\n\n目前 Unity 因定价策略调整和裁员引发开发者不满，Unreal 则面向高端 3D 市场缺乏轻量方案，这给了新入局者机会。如果项目成功，可能改变中小开发者的引擎选择格局，尤其是在欧洲地区。'
         }
       ]
     },
+    // ——— 头部厂商动态 ———
     {
-      id: 'vendor',
-      icon: '🎮',
-      title: '头部厂商动态',
-      defaultOpen: true,
+      id: 'vendor', icon: '🎮', title: '头部厂商动态', defaultOpen: true,
       items: [
         {
-          type: 'news',
+          type: 'news', tags: ['supercell'],
           label: { text: 'Supercell', cls: 'label-teal' },
           title: '全资收购 Metacore（Merge Mansion），同步裁减最多 160 人',
-          date: '2026.05（近期）',
-          source: 'Mobilegamer.biz',
+          date: '2026.05（近期）', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/supercell-to-fully-acquire-merge-mansion-maker-metacore-as-it-restructure-with-160-jobs-at-risk/',
-          body: 'Supercell 收购剩余股份实现对 Metacore 全资控股。Metacore CEO 承认"建立了与增长预期不匹配的组织架构"，将砍掉超半数岗位（约160人），重新聚焦 Merge Mansion。反映了头部发行商整合投资组合、削减非核心产能的趋势。'
+          body: 'Supercell 收购剩余股份，实现对 Merge Mansion 开发商 Metacore 的全资控股。与此同时，Metacore 宣布重大重组计划，预计最多裁员 160 人——超过其 280+ 员工总数的一半。\n\nCEO Mika Tammenkoski 坦承："我们建立了一个与增长预期不匹配的组织架构。"Metacore 自 Merge Mansion 之后未能推出第二款成功产品，此前收购的 Supercell 取消项目《Everdale》在 18 个月后也宣告停止运营。Merge Mansion 将并入 Supercell 的 live game 产品组合，Supercell CEO Ilkka Paananen 表示"Merge Mansion 最好的日子还在前面"。\n\n行业层面，这再次印证了头部发行商正在整合投资组合、削减非核心产能的趋势，类似"收购→整合→瘦身"的模式在移动游戏后疫情收缩期越发常见。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['supercell'],
           label: { text: 'Supercell 软测线', cls: 'label-info' },
           title: '三款产品同时 soft launch / Beta 测试中',
-          date: '2026.05',
-          source: 'Mobilegamer.biz',
+          date: '2026.05', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/the-soft-launch-games-you-need-to-know-about/',
-          body: '① <strong>Boat Game</strong> — 第三人称 looter-shooter，已在 29 个市场（含欧美）接近软启动；② <strong>Hay Day Match</strong> (Playabit) — Hay Day 衍生消除，印度/印尼/菲律宾测试中；③ <strong>Project Rise</strong> — Clash Heroes 重启版，"社交动作 RPG roguelite"，已多次限量 Beta。'
+          body: '① <strong>Boat Game</strong> — 第三人称 looter-shooter，已在 29 个市场接近软启动，覆盖欧洲多国及美加市场。这是 Supercell 在重度竞技品类之外的新尝试。\n② <strong>Hay Day Match</strong>（由 Playabit 开发）— Hay Day IP 的消除衍生品，当前在印度、印尼、菲律宾测试，验证休闲品类扩展。\n③ <strong>Project Rise</strong> — Clash Heroes 的重启版本，定位为"社交动作 RPG roguelite"，已进行多次限量 Beta 测试但尚未公布全球上线日期。'
         },
         {
-          type: 'news',
-          label: { text: 'Hoyoverse', cls: 'label-purple' },
-          title: 'Petit Planet 开启预注册 — 米哈游入局 cozy life sim',
-          date: '近期',
-          source: 'Mobilegamer.biz',
+          type: 'news', tags: ['hoyoverse','lovania'],
+          label: { text: 'Hoyoverse（米哈游）', cls: 'label-purple' },
+          title: 'Petit Planet 开启预注册 — 米哈游正式入局 cozy life sim',
+          date: '近期', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/new-game-digest-petit-planet-a-flurry-of-new-football-games-acecraft-slime-rancher-more/',
-          body: '来自 Genshin Impact / Honkai 团队的 cozy 生活模拟游戏，跨 iOS / Android / PC 平台。尚未公布正式上线日期，但米哈游的 UA 预算和品牌号召力使其成为 <strong>Lovania 未来最值得关注的竞品</strong>。'
+          body: '米哈游旗下全新生活模拟游戏《Petit Planet》已开放预注册，横跨 iOS / Android / PC 三大平台。这是米哈游在 Genshin Impact、Honkai: Star Rail、Zenless Zone Zero 之后的全新品类尝试，也是其首次进入 cozy life sim 赛道。\n\n虽然尚未公布正式上线日期，但考虑到米哈游的 UA 预算规模（Genshin Impact 年营销费用据估算在 $2-3亿级别）和全球品牌号召力，Petit Planet 极有可能成为 Lovania 未来的头号竞品。建议立即着手跟踪其预注册期间的素材投放方向、目标受众定位和社交媒体策略。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['nintendo'],
           label: { text: '任天堂', cls: 'label-green' },
-          title: '发布新 App Pictonico + Switch 2 销量近 2000 万台',
-          date: '2026.05.19 / 05.12',
-          source: 'PocketGamer.biz',
+          title: '发布新 App "Pictonico" + Switch 2 销量近 2000 万台',
+          date: '2026.05.19 / 05.12', source: 'PocketGamer.biz',
           url: 'https://www.pocketgamer.biz/nintendo-reveals-kind-of-silly-photo-game-pictonico-with-80-minigames-promised/',
-          body: 'Pictonico — "把照片变成游戏"的创意工具型应用，承诺 80+ 迷你游戏，5月28日上线。另：Switch 2 年销量逼近 2000万台，但任天堂股价下跌 40%。'
+          body: '任天堂公布了一款全新的移动端 App《Pictonico》，被描述为"把照片变成游戏"的创意工具型应用，承诺内置 80 款以上的迷你游戏，将于 5 月 28 日上线。这是任天堂在移动端的又一次创新尝试，延续了 Nintendo Labo 式的"创意+游戏"融合思路。\n\n硬件方面，Switch 2 上市不到一年全球销量已逼近 2000 万台，表现强劲。然而资本市场并不买单——任天堂股价在过去一年下跌了 40%，反映投资者对其长期增长前景的担忧。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['scopely'],
           label: { text: 'Scopely', cls: 'label-teal' },
           title: '巴塞罗那办公室从 5 人到 750 人的增长之路',
-          date: '2026.05.12',
-          source: 'PocketGamer.biz',
+          date: '2026.05.12', source: 'PocketGamer.biz',
           url: 'https://www.pocketgamer.biz/scopelys-growing-presence-in-barcelona-from-five-employees-to-750/',
-          body: 'Monopoly Go 开发商 Scopely 的巴塞罗那办公室从 5 人扩张到 750 人。其视觉识别成功案例将在 PGC Barcelona（6月15-16日）分享。'
+          body: 'Scopely 分享了其在巴塞罗那的扩张历程：从最初的 5 人团队发展到今天的 750 人规模，Monopoly Go 的成功是关键驱动力。该工作室的视觉识别设计负责人将在 PGC Barcelona（6月15-16日）分享 Monopoly Go 的视觉识别打造经验，对休闲游戏开发者有参考价值。'
         },
         {
-          type: 'news',
+          type: 'news', tags: ['playtika'],
           label: { text: 'Playtika', cls: 'label-warn' },
           title: '放弃社交赌场，聚焦休闲游戏 / Wooga 再次裁员',
-          date: '2026.05',
-          source: 'Mobilegamer.biz',
+          date: '2026.05', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/playtika-leaves-social-casino-behind-as-it-focuses-on-casual-titles-like-disney-solitaire/',
-          body: 'Playtika 正在战略转型：退出 social casino 业务，集中资源在 Disney Solitaire 等休闲产品。同时旗下 Wooga 工作室再次裁员，反映休闲赛道内部的竞争加剧。'
+          body: 'Playtika 正在进行战略性业务转型：全面退出社交赌场（social casino）业务，集中资源投入 Disney Solitaire 等休闲游戏产品线。与此同时，旗下柏林工作室 Wooga 再次裁员。\n\nPlaytika 曾是以社交赌场为核心资产的移动游戏巨头，此次转型意味着该公司判断休闲赛道的长期增长潜力大于社交赌场，也反映了全球社交赌场市场面临的监管压力和增长瓶颈。'
         },
         {
-          type: 'news',
-          label: { text: 'Blizzard', cls: 'label-purple' },
+          type: 'news', tags: ['blizzard'],
+          label: { text: 'Blizzard / Microsoft', cls: 'label-purple' },
           title: 'Overwatch Rush 菲律宾测试中，iOS 已超 1万下载',
-          date: '2026.05',
-          source: 'Mobilegamer.biz',
+          date: '2026.05', source: 'Mobilegamer.biz',
           url: 'https://mobilegamer.biz/the-soft-launch-games-you-need-to-know-about/',
-          body: '暴雪的俯视角英雄射击手游，正在菲律宾进行 soft launch，iOS 版本已超 1万下载。这是暴雪在移动端的重要布局。'
+          body: '暴雪娱乐的俯视角英雄射击手游《Overwatch Rush》正在菲律宾进行 soft launch，根据 Appmagic 数据，iOS 版本下载量已超过 1 万次。这是暴雪在移动端的重要布局，将 Overwatch IP 以俯视角形式呈现，降低操作门槛，面向更广泛的移动用户群体。'
         }
       ]
     },
+    // ——— 竞品追踪 ———
     {
-      id: 'competitor',
-      icon: '🆚',
-      title: '竞品追踪',
-      defaultOpen: true,
+      id: 'competitor', icon: '🆚', title: '竞品追踪', defaultOpen: true,
       items: [
         {
-          type: 'competitor',
-          category: '🎴 MLA 方向（卡牌放置 / RPG）',
+          type: 'competitor', category: '🎴 MLA 方向（卡牌放置 / RPG）',
           entries: [
-            { name: 'AFK Journey', status: '监测中', detail: '莉莉丝最新力作，融合开放世界探索的放置 RPG。代表了品类进化方向，建议持续监测版本更新节奏、活动运营和素材投放策略。', movement: '暂无重大新动态' },
-            { name: 'AFK Arena', status: '监测中', detail: '经典放置 RPG，莉莉丝的基石产品。长线运营标杆。', movement: '暂无重大新动态' },
-            { name: 'Sword x Staff', status: '重点关注', detail: '全球上线，首发 iPhone 赠品活动驱动 UA 话题。建议评估其活动 ROI 和首周榜单表现。', movement: '全球上线 + 赠品活动' }
+            { name: 'AFK Journey', tags: ['afkjourney'], status: '监测中', detail: '莉莉丝最新力作，融合开放世界探索的放置 RPG。代表了放置品类的进化方向——从传统的"关卡放置"向"开放世界+放置"转型。建议持续监测版本更新节奏、活动运营模式和 UA 素材策略。', movement: '暂无重大新动态' },
+            { name: 'AFK Arena', tags: ['afkarena'], status: '监测中', detail: '莉莉丝的经典放置 RPG，长线运营标杆产品。已有 5 年以上生命周期，其活动运营节奏和商业化设计仍是品类参考。', movement: '暂无重大新动态' },
+            { name: 'Sword x Staff', tags: ['swordstaff'], status: '重点关注', detail: '近期全球上线，首发期间推出 iPhone 赠品活动作为 UA 话题营销。建议评估其活动 ROI、首周榜单表现以及用户留存数据。', movement: '全球上线 + 首发赠品活动' }
           ]
         },
         {
-          type: 'competitor',
-          category: '🏡 Lovania 方向（生活模拟）',
+          type: 'competitor', category: '🏡 Lovania 方向（生活模拟）',
           entries: [
-            { name: 'Petit Planet (Hoyoverse)', status: '⚠️ 最高优先', detail: '米哈游打造，跨 iOS/Android/PC。预注册已开启，尚未公布正式上线日期。借鉴 Genshin 开放世界框架的可能性大，UA 预算雄厚。', movement: '开放预注册' },
-            { name: 'Heartopia (XD Inc.)', status: '已上线', detail: '2026年初上线，有 My Little Pony 联动、Hollywood 主题更新等。获 Pocket Gamer Awards 提名。可作为"已上线对标产品"研究运营节奏。', movement: '持续运营中' },
-            { name: 'Disney Dreamlight Valley', status: '监测中', detail: '迪士尼 IP 生活模拟，稳定运营中。', movement: '稳定' },
-            { name: 'Stardew Valley Mobile', status: '监测中', detail: '独立游戏经典，长尾表现稳定。', movement: '稳定' },
-            { name: 'Cozy Grove', status: '监测中', detail: '生活模拟品类参考。', movement: '稳定' },
-            { name: '星布谷地 / 星绘友晴天 / 粒粒的小人国 / 集合浆果镇', status: '未上线', detail: '国产生活模拟新品，均未上线。重点监测首发时间、测试动态和目标市场选择。', movement: '等待上线' }
+            { name: 'Petit Planet (Hoyoverse)', tags: ['petitplanet','lovania'], status: '⚠️ 最高优先', detail: '米哈游打造，跨 iOS/Android/PC。预注册已开启，尚未公布上线日期。借鉴 Genshin 开放世界框架的可能性大，米哈游的 UA 预算规模意味着上线后将进行大规模买量。', movement: '开放预注册' },
+            { name: 'Heartopia (XD Inc.)', tags: ['heartopia','lovania'], status: '已上线', detail: '2026年初正式上线，已有多轮版本更新和主题活动（My Little Pony 联动、Hollywood 主题等）。获 Pocket Gamer Awards 提名。可作为"已上线对标产品"研究其运营节奏。', movement: '持续运营中' },
+            { name: 'Disney Dreamlight Valley', tags: ['lovania'], status: '监测中', detail: '迪士尼 IP 加持的生活模拟游戏，稳定运营中。其 IP 联动频率和付费设计值得参考。', movement: '稳定' },
+            { name: 'Stardew Valley Mobile', tags: ['lovania'], status: '监测中', detail: '独立游戏经典移动版，长尾收入稳定。验证了"高品质单机体验+一次性付费"在生活模拟品类的可行性。', movement: '稳定' },
+            { name: 'Cozy Grove', tags: ['lovania'], status: '监测中', detail: '生活模拟品类参考产品，主打慢节奏、每日任务式的游戏循环。', movement: '稳定' },
+            { name: '星布谷地 / 星绘友晴天 / 粒粒的小人国 / 集合浆果镇', tags: ['lovania'], status: '未上线', detail: '国产生活模拟新品，均未上线。持续跟踪首发时间、测试动态和目标市场选择。', movement: '等待上线' }
           ]
         },
         {
-          type: 'competitor',
-          category: '✈️ Acecraft 方向（飞行射击）',
+          type: 'competitor', category: '✈️ Acecraft 方向（飞行射击）',
           entries: [
-            { name: 'Sky Force Reloaded', status: '监测中', detail: '经典飞行射击标杆产品。', movement: '稳定' },
-            { name: 'Galaxy Attack', status: '监测中', detail: '同品类参考。', movement: '稳定' },
-            { name: 'Phoenix 2', status: '监测中', detail: '优质竖版射击游戏。', movement: '稳定' },
-            { name: 'Space Marshal', status: '监测中', detail: '同类产品。', movement: '稳定' }
+            { name: 'Sky Force Reloaded', tags: ['acecraft'], status: '监测中', detail: '系列经典飞行射击标杆，以高品质画面和渐进式难度曲线见长。', movement: '稳定' },
+            { name: 'Galaxy Attack', tags: ['acecraft'], status: '监测中', detail: '经典竖屏飞行射击，以大量关卡和养成系统维持长线运营。', movement: '稳定' },
+            { name: 'Phoenix 2', tags: ['acecraft'], status: '监测中', detail: '高品质竖版射击游戏，偏核心向玩家。', movement: '稳定' },
+            { name: 'Space Marshal', tags: ['acecraft'], status: '监测中', detail: '同类产品。', movement: '稳定' }
           ]
         },
         {
-          type: 'competitor',
-          category: '👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+          type: 'competitor', category: '👻 Haunted Headline 方向（微恐竖屏搜打撤）',
           entries: [
-            { name: '🔥 Tomb Busters (Giant Games)', status: '⚠️ 最高预警', detail: '5月27日全球上线。中国区已验证 2亿+ 下载和 1000万 DAU 的量级。恐怖提取玩法+移动端方向有巨大市场空间。', movement: '5月27日全球上线' },
-            { name: '无尽轮回（手游版）', status: '监测中', detail: '同类恐怖/轮回题材产品。', movement: '暂无最新动态' },
-            { name: '英雄来搞鬼', status: '监测中', detail: '同类产品，持续关注。', movement: '暂无最新动态' },
-            { name: 'Dark and Darker Mobile', status: '监测中', detail: '硬核提取类游戏，研发/测试阶段。', movement: '测试中' },
-            { name: 'Arena Breakout', status: '监测中', detail: '腾讯的硬核战术提取射击手游，稳定运营中。', movement: '稳定运营' },
-            { name: 'Limbus Company', status: '监测中', detail: '项目管理+恐怖题材。', movement: '持续更新' }
+            { name: '🔥 Tomb Busters (Giant Games)', tags: ['tombbusters','hauntedheadline'], status: '⚠️ 最高预警', detail: '将于5月27日全球上线。在中国市场已验证 2亿+ 下载和 1000万 DAU 的量级。恐怖提取玩法+移动端的组合拥有巨大市场空间，验证了"搜打撤"品类在移动端的可行性。', movement: '5月27日全球上线' },
+            { name: '无尽轮回（手游版）', tags: ['hauntedheadline'], status: '监测中', detail: '轮回题材的恐怖游戏，持续关注其移动版本进展。', movement: '暂无最新动态' },
+            { name: '英雄来搞鬼', tags: ['hauntedheadline'], status: '监测中', detail: '同类产品，持续关注。', movement: '暂无最新动态' },
+            { name: 'Dark and Darker Mobile', tags: ['hauntedheadline'], status: '监测中', detail: '硬核地牢提取类游戏，正在研发/测试阶段。与 PC 版共享世界观和核心玩法。', movement: '测试中' },
+            { name: 'Arena Breakout', tags: ['hauntedheadline'], status: '监测中', detail: '腾讯旗下硬核战术提取射击手游，已稳定运营。虽非恐怖题材，但其"搜打撤"核心循环是品类参考。', movement: '稳定运营' },
+            { name: 'Limbus Company', tags: ['hauntedheadline'], status: '监测中', detail: '项目管理+恐怖题材，持续更新中。', movement: '持续更新' }
           ]
         }
       ]
     },
+    // ——— 热门话题 ———
     {
-      id: 'softlaunch',
-      icon: '📱',
-      title: '软测新品监测（补充视野）',
-      defaultOpen: false,
+      id: 'trending', icon: '🔥', title: '热门话题 & 社媒热点', defaultOpen: true,
       items: [
         {
-          type: 'table',
-          headers: ['产品', '开发商', '品类', '测试状态', '关注理由'],
-          rows: [
-            ['Overwatch Rush', 'Blizzard', '俯视角英雄射击', '菲律宾测试中', '暴雪移动端布局'],
-            ['Monster Hunter Outlanders', 'Capcom/Tencent', '开放世界狩猎', 'Beta 测试中', '顶级 IP 移动化'],
-            ['Hill Climb Racing 3', 'Fingersoft', '赛车/实时多人', '英国/北欧软测', '经典 IP 续作'],
-            ['PVZ 3: Evolved', 'EA', '塔防+合并', '爱尔兰/菲律宾 EA', 'EA 经典系列新作'],
-            ['Borderlands Mobile', 'NaturalMotion', '动作 RPG', '短暂出现后撤下', 'Take-Two 手游探索'],
-            ['Bit Odd — Field Day', '前 Supercell 团队', 'MOBA+提取射击', '加拿大/东南亚测试', '品类融合创新'],
-            ['Garena Free City', 'Garena', 'GTA-like 开放世界', '菲律宾/埃及等测试', 'Garena 新品类尝试']
-          ]
+          type: 'news', tags: [],
+          label: { text: 'X (Twitter) 美国趋势', cls: 'label-hot' },
+          title: '今日美国区 Twitter 热搜解读（2026.05.20 07:40 UTC）',
+          date: '2026.05.20', source: 'trends24.in',
+          url: 'https://trends24.in/united-states',
+          body: '当前 Twitter US 热搜由 <strong>NBA 季后赛</strong>和<strong>美国政治</strong>主导。游戏/流行文化相关热度有限，重点摘录如下：\n\n<strong>🏀 NBA 季后赛（今日最高热度）</strong>\n• Harden / Knicks / Brunson / Cavs — 尼克斯 vs 骑士系列赛占据榜首，Jalen Brunson 和 James Harden 是焦点。NBA 季后赛与游戏受众高度重叠，值得关注联动营销机会。\n\n<strong>🎮 流行文化</strong>\n• TADC（#4）— The Amazing Digital Circus，热门网络动画系列，粉丝群体与游戏玩家重叠度高。\n• NO MORE DREAM / I NEED U（#14 / #30）— BTS 歌曲持续在社交媒体活跃。\n• #WWENXT / Mr. NXT — WWE 摔角娱乐话题。\n\n<strong>🇺🇸 政治</strong>\n• Kentucky / Rand Paul / Kentuckians / Massie — 肯塔基州初选，共和党内部博弈。\n• AIPAC / MIGA — 以色列相关政治讨论。\n• 刑法175条 — 日本也同时在热搜的内容审查相关讨论。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: 'X (Twitter) 日本趋势', cls: 'label-info' },
+          title: '今日日本区 Twitter 热搜解读',
+          date: '2026.05.20', source: 'trends24.in',
+          url: 'https://trends24.in/japan',
+          body: '<strong>🎮 游戏相关</strong>\n• 魔神任務 — Genshin Impact 魔神任务更新，持续有话题度。\n• #アニポケ — 宝可梦动画相关。\n• ドゥリン — 可能指《Nikke: Goddess of Victory》中的角色。\n• 謎の刀剣男士 — 《刀剑乱舞》相关讨论。\n\n<strong>🎤 娱乐/偶像</strong>\n• #乃木坂の心にお花を — 乃木坂46 活动。\n• PRODUCE 101 — 全球偶像选秀节目持续有热度。\n• 宝塚歌劇 — 宝冢歌剧团相关讨论。\n\n<strong>📰 社会/时事</strong>\n• 震度5強 — 日本发生较强地震。\n• 党首討論 — 政党领导人辩论。\n• 刑法175条 — 日本刑法第175条（猥亵物颁布罪）相关讨论，涉及创作表达边界。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: '🔍 监测局限', cls: 'label-warn' },
+          title: '当前社媒监测覆盖说明',
+          date: '持续', source: '—',
+          url: '',
+          body: '目前可自动抓取的来源：<strong>Twitter 热搜（trends24.in）</strong>— 支持美区/日本等多地区。\n\n<strong>暂无法直接抓取的内容：</strong>\n• Google Trends — 页面动态加载，暂无法获取实时趋势列表\n• TikTok 热点 — 无稳定的公开 API 或页面源\n• YouTube 热门 — 同上\n• Reddit 热点 — 被 CDN 限制访问\n• Instagram / Threads 趋势 — 无公开接口\n\n<strong>建议方案：</strong>如果你或团队成员日常浏览这些平台，可以将发现的有价值热点/话题链接分享给我，我可以在次日日报中做详细解读和分析。'
         }
       ]
     },
+    // ——— 数据榜单 ———
     {
-      id: 'marketing',
-      icon: '🔥',
-      title: '创意营销 & 热门话题',
-      defaultOpen: true,
-      items: [
-        {
-          type: 'news',
-          label: { text: 'UA 策略', cls: 'label-warn' },
-          title: 'Sword x Staff 全球上线送 iPhone — 实物奖励驱动首发 UA',
-          date: '近期',
-          source: 'PocketGamer.com',
-          url: 'https://www.pocketgamer.com/news/',
-          body: '以高价值实物奖励驱动首发期话题传播和自然获量。值得关注：① ROI 表现；② 是否带动榜单跳跃；③ 后续能否持续。'
-        },
-        {
-          type: 'news',
-          label: { text: 'IP 联动', cls: 'label-purple' },
-          title: 'Heartopia × My Little Pony 联动 / Supercell × Spin Master 全球玩具线',
-          date: '2026.05',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/spin-master-and-supercell-partner-on-global-toy-line-for-clash-and-brawl-stars-franchises/',
-          body: '生活模拟游戏 Heartopia 与经典 IP MLP 联动，提升用户获取和付费意愿。Supercell 则与 Spin Master 合作推出 Clash 和 Brawl Stars 全球玩具线，头部 IP 的泛娱乐衍生变现策略。两者对 Lovania 的 IP 联动策略均有参考价值。'
-        },
-        {
-          type: 'news',
-          label: { text: '平台政策', cls: 'label-hot' },
-          title: 'Google Play 将退单成本转嫁给开发者（2026年新规）',
-          date: '2026.05.13',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/google-play-to-shift-chargeback-costs-to-android-developers-in-2026/',
-          body: 'Google Play 宣布政策调整，将退单（chargeback）成本转嫁给开发者。此变化直接影响欧美市场的发行利润模型和 UA 策略定价。'
-        },
-        {
-          type: 'news',
-          label: { text: '社区平台', cls: 'label-info' },
-          title: 'Discord 推出 Nitro Rewards，与 Xbox Game Pass 和硬件联动',
-          date: '2026.05.11',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/discord-launches-nitro-rewards-with-xbox-game-pass-and-gaming-hardware-perks/',
-          body: 'Discord 新增 Nitro 会员奖励计划，包含 Xbox Game Pass 和游戏硬件福利。游戏社区平台的会员体系升级趋势。'
-        }
-      ]
-    },
-    {
-      id: 'rankings',
-      icon: '📈',
-      title: '数据 & 榜单',
-      defaultOpen: true,
+      id: 'rankings', icon: '📈', title: '数据 & 榜单', defaultOpen: true,
       items: [
         {
           type: 'table',
-          headers: ['排名', '产品', '4月 IAP 估算', '趋势'],
+          tableTitle: '📊 2026年4月 · 全球移动游戏 IAP 收入 Top 20',
+          tableSubtitle: '数据源：Appmagic IAP 收入估算（不含广告收入、网页商店、平台抽成、中国安卓市场）',
+          headers: ['排名', '产品', '4月 IAP 收入', '趋势'],
           rows: [
-            ['1', 'Honor of Kings', '~$1.38亿', '↑ +$500万'],
-            ['2', 'LastWar Survival', '~$1.14亿', '↓ 连续两月下滑'],
-            ['3', 'Whiteout Survival', '~$1.10亿', '→ 稳定'],
-            ['4', 'Royal Match', '—', '→ 微降'],
-            ['5', 'Roblox', '—', '→ 微降'],
-            ['6', 'Gossip Harbor', '—', '→ 微降'],
-            ['7', 'PUBG Mobile', '~$9200万', '↓ 从$1.29亿回落'],
-            ['8', 'Candy Crush Saga', '—', '→ 持平'],
-            ['9', 'Monopoly Go!', '—', '→ 持平'],
-            ['10', 'Kingshot', '—', '→ 唯一增长'],
+            ['1', 'Honor of Kings', '~$1.38亿', '📈 +$500万'],
+            ['2', 'LastWar Survival', '~$1.14亿', '📉 连续两月下滑'],
+            ['3', 'Whiteout Survival', '~$1.10亿', '➡️ 稳定'],
+            ['4', 'Royal Match', '—', '➡️ 微降'],
+            ['5', 'Roblox', '—', '➡️ 微降'],
+            ['6', 'Gossip Harbor', '—', '➡️ 微降'],
+            ['7', 'PUBG Mobile', '~$9200万', '📉 较2月$1.29亿回落'],
+            ['8', 'Candy Crush Saga', '—', '➡️ 持平'],
+            ['9', 'Monopoly Go!', '—', '➡️ 持平'],
+            ['10', 'Kingshot', '—', '📈 唯一增长'],
             ['11', 'Coin Master', '$5270万', '—'],
-            ['12', 'Delta Force', '$5130万', '↑ 上升4位'],
+            ['12', 'Delta Force', '$5130万', '📈 上升4位'],
             ['13', 'Township', '$3980万', '—'],
-            ['14', 'Honkai: Star Rail', '$3680万', '↑ 从$600万回升'],
-            ['15', 'eFootball', '$3610万', '↑ 创新高'],
+            ['14', 'Honkai: Star Rail', '$3680万', '📈 从1月$600万回升'],
+            ['15', 'eFootball', '$3610万', '📈 创历史新高'],
             ['16', 'Gardenscapes', '$3608万', '—'],
             ['17', 'Royal Kingdom', '$3520万', '—'],
             ['18', 'Brawl Stars', '$3400万', '—'],
-            ['19', 'Toon Blast', '$3140万', '↑ 回到$3000万+'],
+            ['19', 'Toon Blast', '$3140万', '📈 回到$3000万+'],
             ['20', 'Free Fire', '$3030万', '—']
           ],
-          source: 'Appmagic IAP（不含广告/网页/平台抽成/中国安卓）— Mobilegamer.biz',
+          source: 'Appmagic（via Mobilegamer.biz）',
           sourceUrl: 'https://mobilegamer.biz/aprils-top-grossing-mobile-games-honor-of-kings-lastwar-whiteout-survival-royal-match-more/'
         }
       ]
     },
+    // ——— 本月社媒重点日期 ———
     {
-      id: 'reports',
-      icon: '📑',
-      title: '研报 & 行业分析',
-      defaultOpen: false,
+      id: 'socialcal', icon: '📅', title: '本月社媒重点日期', defaultOpen: true,
       items: [
         {
-          type: 'news',
-          label: { text: '混合休闲', cls: 'label-green' },
-          title: 'Hybridcasual 增长从创意策略开始 — Karen Levy 专栏',
-          date: '2026.05',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/hybridcasual-growth-starts-with-smarter-creative-strategy/',
-          body: '探讨混合休闲游戏中创意策略如何平衡表现营销与玩家信任的关系。对理解当前混合休闲赛道的发展方向有参考价值。'
+          type: 'calendar',
+          title: '2026年5月 欧美市场社媒日历',
+          month: '2026-05'
         },
         {
-          type: 'news',
-          label: { text: '政策扶持', cls: 'label-info' },
-          title: 'UK Global Screen Fund 开放游戏发行资助项目',
-          date: '2026.05.15',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/uk-global-screen-fund-opens-video-game-release-funding-programme/',
-          body: '英国政府通过 UK Global Screen Fund 开放视频游戏发行资助项目。反映全球范围内政府在游戏产业扶持方面的政策趋势。'
-        },
-        {
-          type: 'news',
-          label: { text: 'IP 复活', cls: 'label-purple' },
-          title: 'Atari 收购 Wizardry IP + Moshi Monsters 重返电视',
-          date: '2026.05.13',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/atari-acquires-rights-to-first-five-wizardry-rpgs-as-it-plans-franchise-revival/',
-          body: 'Atari 收购 Wizardry 系列前5部 IP 权利，计划游戏/影视/衍生品全方位重启。Moshi Monsters 也以新动画剧集形式回归。老 IP 复活趋势延续。'
-        },
-        {
-          type: 'news',
-          label: { text: 'UA 技术', cls: 'label-teal' },
-          title: 'Kohort 融资 $700万 打造 UA AI Agent / InMobi 收购 MobileAction',
-          date: '2026.05.07 / 05.08',
-          source: 'PocketGamer.biz',
-          url: 'https://www.pocketgamer.biz/exclusive-kohort-raises-7m-to-build-ua-ai-agents-for-mobile/',
-          body: 'Kohort 获 $700万融资用于构建 UA AI 代理，InMobi 收购移动增长平台 MobileAction。UA 技术领域的 AI 化整合加速，可能改变买量市场的工具格局。'
+          type: 'calendar',
+          title: '2026年6月 欧美市场社媒日历（预告）',
+          month: '2026-06'
         }
       ]
     },
+    // ——— 研报 & 行业分析 ———
     {
-      id: 'newproducts',
-      icon: '🆕',
-      title: '新品监测',
-      defaultOpen: false,
+      id: 'reports', icon: '📑', title: '研报 & 行业分析', defaultOpen: false,
+      items: [
+        {
+          type: 'news', tags: [],
+          label: { text: '混合休闲', cls: 'label-green' },
+          title: 'Hybridcasual 增长从创意策略开始 — Karen Levy 专栏',
+          date: '2026.05', source: 'PocketGamer.biz',
+          url: 'https://www.pocketgamer.biz/hybridcasual-growth-starts-with-smarter-creative-strategy/',
+          body: 'Karen Levy 在 PocketGamer.biz 发表专栏，探讨混合休闲游戏中创意策略如何平衡表现营销与玩家信任。核心观点：在混合休闲品类中，UA 素材的真实性直接影响玩家留存，过度夸张的素材虽然在 CPI 上表现优异但会导致 Day 7 留存显著下降。推荐所有涉及混合休闲赛道发行业务的团队阅读。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: '政策趋势', cls: 'label-info' },
+          title: 'UK Global Screen Fund 开放游戏发行资助项目',
+          date: '2026.05.15', source: 'PocketGamer.biz',
+          url: 'https://www.pocketgamer.biz/uk-global-screen-fund-opens-video-game-release-funding-programme/',
+          body: '英国政府通过 UK Global Screen Fund 开放新一轮视频游戏发行资助申请。该项目旨在支持英国游戏开发者的海外发行和推广活动。这反映了全球范围内越来越多国家政府将游戏产业视为文化输出和经济发展的重点领域，出台专项扶持政策。类似政策在法国（CNC）、加拿大（Canada Media Fund）、韩国（KOCCA）均有先例，对考虑在这些市场布局的发行团队是利好信号。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: 'IP 经济', cls: 'label-purple' },
+          title: 'Atari 收购 Wizardry IP + Moshi Monsters 重返电视：老 IP 复活潮延续',
+          date: '2026.05.13', source: 'PocketGamer.biz',
+          url: 'https://www.pocketgamer.biz/atari-acquires-rights-to-first-five-wizardry-rpgs-as-it-plans-franchise-revival/',
+          body: 'Atari 收购了经典 RPG 系列 Wizardry 前5部作品的 IP 权利，计划进行跨媒体全方位重启——涵盖游戏、影视、电视和衍生品。与此同时，Moshi Monsters 也以新动画剧集形式回归。\n\n这两件事共同反映了当前行业的一个趋势：老 IP 焕新成为低成本高回报的内容策略。对于 Lovania 等产品来说，可以考虑与经典 IP 联动的可能性——像素风、Y2K 怀旧风的 IP 在 Z 世代中有很强的情感号召力。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: 'UA 技术', cls: 'label-teal' },
+          title: 'AI 正在改变 UA 买量：Kohort 融资 $700万 + InMobi 收购 MobileAction',
+          date: '2026.05.07 / 05.08', source: 'PocketGamer.biz',
+          url: 'https://www.pocketgamer.biz/exclusive-kohort-raises-7m-to-build-ua-ai-agents-for-mobile/',
+          body: '本周 UA 技术领域有两笔重要资本运作：Kohort 获 $700 万种子轮融资，用于构建 AI 代理驱动的用户获取自动化工具；InMobi 收购移动增长平台 MobileAction，整合其市场情报和 UA 优化能力。\n\n两件事共同释放的信号：UA 正在从"人工投放+经验驱动"转向"AI 自动化+数据驱动"。对于海外发行团队来说，这意味着需要关注 AI UA 工具的效率提升，同时警惕数据平台的进一步整合对行业定价的影响。'
+        },
+        {
+          type: 'news', tags: [],
+          label: { text: '行业趋势', cls: 'label-warn' },
+          title: 'Mistplay 推出 Audience Network / Flexion 推出 Exprexion：第三方分发渠道多元化',
+          date: '2026.05.15 / 05.08', source: 'PocketGamer.biz',
+          url: 'https://www.pocketgamer.biz/mistplay-launches-audience-network-for-rewarded-advertising-following-acquisitions/',
+          body: 'Mistplay（游戏奖励平台）收购整合后推出自己的 Audience Network，切入激励广告分发市场。Flexion 则推出 Exprexion 服务，帮助移动游戏拓展 Apple 和 Google 以外的变现渠道。\n\n两者都指向同一趋势：开发者正在寻求更多元化的分发和变现途径，减少对 Apple / Google 双寡头的依赖。在 Fortnite 重返 iOS 和 Google Play 政策频繁调整的背景下，这种"去中心化"趋势可能会加速。'
+        }
+      ]
+    },
+    // ——— 新品监测 ———
+    {
+      id: 'newproducts', icon: '🆕', title: '新品监测（未来7天即将上线/测试）', defaultOpen: false,
       items: [
         {
           type: 'table',
-          headers: ['产品', '开发商', '品类', '上线/测试时间', '关注理由'],
+          tableTitle: '本周至下周重点上线/测试产品',
+          headers: ['产品', '开发商', '品类', '平台', '时间', '商店链接', '关注理由'],
           rows: [
-            ['Tomb Busters', 'Giant Games', '恐怖提取', '5月27日', '⚠️ Haunted Headline 最强竞品'],
-            ['Slime Rancher 移动版', 'Playdigious', '生活模拟/农场', '5月26日', 'PC 独立游戏 IP 移植'],
-            ['Petit Planet', 'Hoyoverse', '生活模拟', '预注册开启', '⚠️ Lovania 未来最强竞品'],
-            ['Pictonico', 'Nintendo', '创意轻游戏', '5月28日', '任天堂移动端新方向'],
-            ['UFL 移动版', 'Strikerz Inc.', '足球', '5月22日软测', '体育品类新品'],
-            ['Mini Football Legends', 'Miniclip/Tencent', '足球', '6月4日 Apple Arcade', '休闲体育方向'],
-            ['Limit Zero Breakers', 'NCsoft', '二次元动作 RPG', '6月10-15日 Beta', '二次元+动作融合'],
-            ['Bit Odd — Field Day', '前 Supercell 团队', 'MOBA+提取射击', '加拿大/东南亚测试', '品类融合创新']
+            ['Tomb Busters', 'Giant Games', '恐怖提取', 'iOS/Android', '5月27日', '<a class="store-link" href="https://play.google.com/store/search?q=Tomb%20Busters&c=apps" target="_blank">Google Play</a>', 'Haunted Headline 直接竞品'],
+            ['Slime Rancher 移动版', 'Playdigious', '生活模拟/农场', 'iOS/Android/Steam', '5月26日', '<a class="store-link" href="https://play.google.com/store/apps/details?id=com.playdigious.slimerancher" target="_blank">Google Play</a> / <a class="store-link" href="https://store.steampowered.com/app/2139460/Slime_Rancher/" target="_blank">Steam</a>', 'PC 独立游戏 IP 移植'],
+            ['Pictonico', 'Nintendo', '创意轻游戏', 'iOS', '5月28日', '<a class="store-link" href="https://apps.apple.com/search?term=pictonico" target="_blank">App Store</a>', '任天堂移动端新方向'],
+            ['UFL 移动版', 'Strikerz Inc.', '足球体育', 'iOS/Android', '5月22日软测', '<a class="store-link" href="https://play.google.com/store/search?q=UFL&c=apps" target="_blank">Google Play</a>', '体育品类新品，全球软测'],
+            ['Mini Football Legends', 'Miniclip/Tencent', '休闲足球', 'iOS (AA)', '6月4日', '<a class="store-link" href="https://apps.apple.com/search?term=Mini+Football+Legends" target="_blank">App Store</a>', 'Apple Arcade 独占'],
+            ['Limit Zero Breakers', 'NCsoft', '二次元动作 RPG', 'iOS/Android/Steam', '6月10-15日 CBT', '<a class="store-link" href="https://store.steampowered.com/search/?term=Limit+Zero+Breakers" target="_blank">Steam</a>', '二次元+动作融合']
           ]
         }
       ]
     },
+    // ——— 软测新品 ———
     {
-      id: 'alerts',
-      icon: '⚠️',
-      title: '特别预警与建议',
-      defaultOpen: true,
+      id: 'softlaunch', icon: '📱', title: '软测新品监测（补充视野）', defaultOpen: false,
+      items: [
+        {
+          type: 'table',
+          headers: ['产品', '开发商', '品类', '测试状态'],
+          rows: [
+            ['Overwatch Rush', 'Blizzard', '俯视角英雄射击', '菲律宾测试中（iOS 1万+下载）'],
+            ['Monster Hunter Outlanders', 'Capcom/Tencent', '开放世界狩猎', 'Beta 测试中'],
+            ['Hill Climb Racing 3', 'Fingersoft', '赛车/实时多人', '英国/北欧 Google Play 软测'],
+            ['PVZ 3: Evolved', 'EA', '塔防+合并玩法', '爱尔兰/菲律宾 Early Access'],
+            ['Borderlands Mobile', 'NaturalMotion', '动作 RPG', '短暂上架后撤下，开发中'],
+            ['Bit Odd — Field Day', '前 Supercell 团队', 'MOBA+提取射击', '加拿大/东南亚测试'],
+            ['Garena Free City', 'Garena', 'GTA 风格开放世界', '菲律宾/埃及等测试'],
+            ['Angry Birds Rush', 'Sega/Rovio', '"运气对战"休闲', '美国测试中（OhBiBi 开发）'],
+            ['Bloom City Match', 'Sega/Rovio', '消除+装饰', '加拿大/北欧多国测试']
+          ]
+        }
+      ]
+    },
+    // ——— 特别预警 ———
+    {
+      id: 'alerts', icon: '⚠️', title: '特别预警与建议', defaultOpen: true,
       items: [
         {
           type: 'alert',
-          title: '🔥 Tomb Busters 5月27日全球上线 — 立即行动建议',
-          body: '这款产品在中国已验证 2亿+ 下载和 1000万 DAU，建议：① 上线首周追踪全球排名和获量策略；② 下载体验分析其竖屏适配程度、恐怖元素运用、变现设计；③ 关注用户评价和媒体评测，找出差异化空间。'
+          title: '🔥 红色预警：Tomb Busters 5月27日全球上线 — 立即行动建议',
+          body: '这款产品在中国已验证 2亿+ 下载和 1000万 DAU 的量级。建议：① 上线首周追踪全球排名和获量策略；② 亲自体验，重点分析竖屏适配程度、恐怖元素运用手法、变现设计；③ 关注用户评价和媒体评测，找出现有产品与 Tomb Busters 的差异化空间。'
         },
         {
           type: 'alert',
-          title: '🔥 Petit Planet 开启预注册 — 建议跟踪方向',
-          body: '米哈游入局 cozy life sim 是对 Lovania 的最大竞争信号。建议：① 关注预注册期间 UA 策略和素材方向；② 监测正式上线日期和首周排名表现；③ 分析核心玩法差异点（是否借鉴 Genshin 开放世界框架）。'
+          title: '⚠️ 橙色预警：Petit Planet 开启预注册 — 建议跟踪方向',
+          body: '米哈游入局 cozy life sim 是对 Lovania 最直接的竞争信号。建议：① 关注预注册期间的 UA 素材方向和目标受众定位；② 监测正式上线日期和首周排名表现；③ 分析其与 Lovania 的核心玩法差异和受众重叠度。'
         },
         {
           type: 'alert',
-          title: 'Fortnite 重返 iOS — 间接影响所有移动发行商',
-          body: '可能引发新一轮 App Store 政策变化和佣金率调整，间接影响所有移动发行商的利润模型。'
+          title: '📌 持续关注：Fortnite 重返 iOS 的连锁效应',
+          body: 'Fortnite 在全球范围重返 iOS（澳洲除外）可能引发新一轮 App Store 政策变化和 30% 佣金率的重新审视。如果 Epic 在更多市场胜诉，将对所有移动发行商的利润模型产生深远影响。建议密切关注后续监管动向。'
         }
       ]
     }
   ]
 });
 
+// ——— 全球社媒日历数据 ———
+const calendarEvents = {
+  '2026-05': {
+    title: '2026年5月 欧美市场社媒日历',
+    events: {
+      1:  [{ text: '国际劳动节', cls: 'orange' }],
+      4:  [{ text: '🎉 Star Wars Day', cls: 'hot' }],
+      5:  [{ text: 'Cinco de Mayo (墨西哥/美国)', cls: 'orange' }],
+      10: [{ text: '👩 Mother\'s Day (美国)', cls: 'hot' }],
+      25: [{ text: '🇺🇸 Memorial Day (美国)', cls: 'orange' }],
+      26: [{ text: 'Slime Rancher 移动版上线', cls: 'accent' }],
+      27: [{ text: 'Tomb Busters 全球上线', cls: 'hot' }],
+      28: [{ text: 'Nintendo Pictonico 上线', cls: 'accent' }],
+    }
+  },
+  '2026-06': {
+    title: '2026年6月 欧美市场社媒日历（预告）',
+    events: {
+      1:  [{ text: '🏳️ Pride Month 开始', cls: 'hot' }],
+      4:  [{ text: 'Mini Football Legends (AA)', cls: 'accent' }],
+      10: [{ text: 'Limit Zero Breakers CBT', cls: 'accent' }],
+      14: [{ text: '🇺🇸 Flag Day (美国)', cls: 'orange' }],
+      15: [{ text: 'PGC Barcelona 开幕', cls: 'orange' }],
+      16: [{ text: 'PGC Barcelona 第2天', cls: 'orange' }],
+      19: [{ text: 'Juneteenth (美国)', cls: 'orange' }],
+      21: [{ text: '👨 Father\'s Day (美国)', cls: 'hot' }],
+    }
+  }
+};
+
 // ============ RENDER ============
 function renderTabs() {
   const bar = document.getElementById('tabBar');
-  bar.innerHTML = reportData.map((r, i) => {
-    const isFirst = i === reportData.length - 1;
-    const badge = isFirst ? '<span class="badge-new">NEW</span>' : '';
-    return `<button class="tab-btn${i === reportData.length - 1 ? ' active' : ''}" onclick="switchTab(${i})">
-      ${r.date} ${r.weekday}${badge}
-    </button>`;
-  }).join('');
+  // data tab + weekly review tab
+  let html = '';
+  reportData.forEach((r, i) => {
+    const isLatest = i === reportData.length - 1;
+    const active = i === reportData.length - 1;
+    const badge = isLatest ? '<span class="badge-new">NEW</span>' : '';
+    html += `<button class="tab-btn${active?' active':''}" onclick="switchTab(${i})">${r.date} ${r.weekday}${badge}</button>`;
+  });
+  // weekly review tab
+  html += `<button class="tab-btn" onclick="switchTab('weekly')" id="tab-weekly">📋 本周回顾</button>`;
+  bar.innerHTML = html;
+}
+
+function renderCalendars() {
+  let html = '';
+  Object.keys(calendarEvents).forEach(monthKey => {
+    const cal = calendarEvents[monthKey];
+    const [year, month] = monthKey.split('-').map(Number);
+    const firstDay = new Date(year, month - 1, 1).getDay(); // 0=Sun
+    const daysInMonth = new Date(year, month, 0).getDate();
+    const today = new Date();
+    const isThisMonth = today.getFullYear() === year && (today.getMonth() + 1) === month;
+
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let grid = '<div class="cal-grid">';
+    dayNames.forEach(d => { grid += `<div class="cal-header">${d}</div>`; });
+    for (let i = 0; i < firstDay; i++) { grid += '<div class="cal-day empty"></div>'; }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const events = cal.events[d] || [];
+      const isToday = isThisMonth && today.getDate() === d;
+      let dayHTML = `<div class="cal-day${isToday?' today':''}">`;
+      dayHTML += `<div class="day-num">${d}</div>`;
+      events.forEach(e => {
+        dayHTML += `<div class="day-event ${e.cls}">${e.text}</div>`;
+      });
+      dayHTML += '</div>';
+      grid += dayHTML;
+    }
+    grid += '</div>';
+
+    html += `
+      <div class="news-card" style="margin-bottom:14px;">
+        <div class="cal-title" style="margin-bottom:8px;">${cal.title}</div>
+        ${grid}
+        <div class="cal-legend">
+          <span><span class="dot dot-red"></span> 重要节日 / 热点</span>
+          <span><span class="dot dot-accent"></span> 游戏上线 / 测试</span>
+          <span><span class="dot dot-orange"></span> 行业活动 / 纪念日</span>
+          <span style="opacity:0.6;">· 今日: 高亮背景</span>
+        </div>
+      </div>`;
+  });
+  return html;
 }
 
 function sectionHTML(s, dayIdx) {
@@ -757,35 +784,43 @@ function sectionHTML(s, dayIdx) {
 
   s.items.forEach(item => {
     if (item.type === 'news') {
-      const urlPart = item.url ? ` <a href="${item.url}" target="_blank" style="font-size:13px;color:var(--accent2);text-decoration:none;">🔗 来源</a>` : '';
+      const urlPart = item.url ? ` <a href="${item.url}" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a>` : '';
+      const tagsAttr = item.tags ? item.tags.join(' ') : '';
       bodyHTML += `
-        <div class="news-card">
+        <div class="news-card" data-tags="${tagsAttr}">
           <span class="card-label ${item.label.cls}">${item.label.text}</span>
           <div class="card-title">${item.title}${urlPart}</div>
           <div class="card-meta"><span>📅 ${item.date}</span><span>📰 ${item.source}</span></div>
-          <div class="card-body">${item.body}</div>
+          <div class="card-body">${item.body.replace(/\n\n/g, '</div><div class="card-body" style="margin-top:8px;">')}</div>
         </div>`;
     } else if (item.type === 'competitor') {
-      const entriesHTML = item.entries.map(e => `
-        <div style="margin-bottom:10px; padding-bottom:10px; border-bottom: 1px solid var(--border);">
-          <div style="font-weight:600;font-size:15px;color:var(--text);margin-bottom:4px;">
-            ${e.name} <span class="tag ${e.status.includes('预警')?'tag-red':e.status.includes('优先')?'tag-orange':e.status.includes('上线')?'tag-green':e.status.includes('未')?'tag-blue':'tag-blue'}">${e.status}</span>
+      const entriesHTML = item.entries.map(e => {
+        const tagsAttr = e.tags ? e.tags.join(' ') : '';
+        return `
+        <div data-tags="${tagsAttr}">
+          <div style="margin-bottom:10px; padding-bottom:10px; border-bottom: 1px solid var(--border);">
+            <div style="font-weight:600;font-size:var(--fs-title);color:var(--text);margin-bottom:4px;">
+              ${e.name} <span class="tag ${e.status.includes('预警')?'tag-red':e.status.includes('优先')?'tag-orange':e.status.includes('上线')?'tag-green':e.status.includes('未')?'tag-blue':'tag-blue'}">${e.status}</span>
+            </div>
+            <div class="card-body" style="margin-bottom:2px;">${e.detail}</div>
+            <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：${e.movement}</div>
           </div>
-          <div class="card-body" style="margin-bottom:2px;">${e.detail}</div>
-          <div style="font-size:13px;color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 动态：${e.movement}</div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
       bodyHTML += `
         <div class="competitor-card">
-          <div style="font-size:15px;font-weight:600;color:var(--accent);margin-bottom:12px;">${item.category}</div>
+          <div style="font-size:var(--fs-title);font-weight:600;color:var(--accent);margin-bottom:12px;">${item.category}</div>
           ${entriesHTML}
         </div>`;
     } else if (item.type === 'table') {
       const ths = item.headers.map(h => `<th>${h}</th>`).join('');
       const trs = item.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
-      const sourceLine = item.source ? `<div style="font-size:13px;color:var(--text2);margin-top:8px;">📊 ${item.sourceUrl ? `<a href="${item.sourceUrl}" target="_blank" style="color:var(--accent2);text-decoration:none;">${item.source}</a>` : item.source}</div>` : '';
+      const titleLine = item.tableTitle ? `<div style="font-size:var(--fs-title);font-weight:600;margin-bottom:4px;">${item.tableTitle}</div>` : '';
+      const subtitleLine = item.tableSubtitle ? `<div style="font-size:var(--fs-small);color:var(--text2);margin-bottom:8px;">${item.tableSubtitle}</div>` : '';
+      const sourceLine = item.source ? `<div style="font-size:var(--fs-small);color:var(--text2);margin-top:8px;">📊 ${item.sourceUrl ? `<a href="${item.sourceUrl}" target="_blank" style="color:var(--accent2);text-decoration:none;">${item.source}</a>` : item.source}</div>` : '';
       bodyHTML += `
         <div class="news-card">
+          ${titleLine}${subtitleLine}
           <table class="data-table"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table>
           ${sourceLine}
         </div>`;
@@ -795,8 +830,17 @@ function sectionHTML(s, dayIdx) {
           <div class="alert-title">${item.title}</div>
           <div class="alert-body">${item.body}</div>
         </div>`;
+    } else if (item.type === 'calendar') {
+      // Calendar handled separately - will be injected in renderPanels
+      return; // skip here
     }
   });
+
+  // Handle calendar items separately
+  const hasCalendar = s.items.some(it => it.type === 'calendar');
+  if (hasCalendar) {
+    bodyHTML = renderCalendars() + bodyHTML;
+  }
 
   return `
     <div class="section" id="sec-${dayIdx}-${s.id}">
@@ -810,19 +854,122 @@ function sectionHTML(s, dayIdx) {
   `;
 }
 
+function renderHighlights(h) {
+  if (!h || h.length === 0) return '';
+  const items = h.map(item => `<li>${item}</li>`).join('');
+  return `
+    <div class="highlights-card">
+      <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:10px;color:var(--accent);">📌 今日速览</div>
+      <ol>${items}</ol>
+    </div>`;
+}
+
+function renderFilterBar(tags) {
+  if (!tags || tags.length === 0) return '';
+  let pills = tags.map(t => {
+    const label = {tombbusters:'Tomb Busters',petitplanet:'Petit Planet',afkjourney:'AFK Journey',afkarena:'AFK Arena',swordstaff:'Sword x Staff',heartopia:'Heartopia',lovania:'Lovania',hauntedheadline:'Haunted Headline',acecraft:'Acecraft',supercell:'Supercell',hoyoverse:'米哈游',nintendo:'任天堂',scopely:'Scopely',playtika:'Playtika',blizzard:'Blizzard',epic:'Epic Games',sega:'Sega/ Rovio',rovio:'Sega/ Rovio',sensortower:'Sensor Tower',engine:'引擎'}[t] || t;
+    return `<button class="filter-pill" data-filter="${t}" onclick="toggleFilter('${t}')">${label}</button>`;
+  }).join('');
+  return `<div class="filter-bar"><span class="filter-label">🏷️ 竞品筛选</span><button class="filter-pill active" data-filter="all" onclick="toggleFilter('all')">全部</button>${pills}</div>`;
+}
+
+function getDayTags(dayData) {
+  const tags = new Set();
+  dayData.sections.forEach(s => {
+    s.items.forEach(item => {
+      if (item.tags) item.tags.forEach(t => tags.add(t));
+      if (item.entries) {
+        item.entries.forEach(e => { if (e.tags) e.tags.forEach(t => tags.add(t)); });
+      }
+    });
+  });
+  // Remove generic tags
+  return Array.from(tags).filter(t => !['lovania','hauntedheadline','acecraft'].includes(t)).sort();
+}
+
+function renderWeeklyReview() {
+  const allAlerts = [];
+  reportData.forEach((r, di) => {
+    r.sections.forEach(s => {
+      if (s.id === 'alerts') {
+        s.items.forEach(item => {
+          if (item.type === 'alert') {
+            allAlerts.push({ date: r.date, weekday: r.weekday, title: item.title, body: item.body });
+          }
+        });
+      }
+    });
+  });
+
+  if (allAlerts.length === 0) return '<div class="news-card"><div class="card-body">本周暂无预警记录。</div></div>';
+
+  let html = '';
+  // Group by date
+  const grouped = {};
+  allAlerts.forEach(a => {
+    if (!grouped[a.date]) grouped[a.date] = [];
+    grouped[a.date].push(a);
+  });
+
+  Object.keys(grouped).sort().reverse().forEach(date => {
+    html += `<div style="margin-bottom:16px;"><div style="font-weight:600;font-size:var(--fs-title);color:var(--text);margin-bottom:8px;">📅 ${date}</div>`;
+    grouped[date].forEach(a => {
+      html += `<div class="alert-banner" style="margin-bottom:8px;">
+          <div class="alert-title">${a.title}</div>
+          <div class="alert-body">${a.body}</div>
+        </div>`;
+    });
+    html += '</div>';
+  });
+
+  return html;
+}
+
 function renderPanels() {
   const main = document.getElementById('appMain');
-  main.innerHTML = reportData.map((r, i) => {
+  let html = '';
+  reportData.forEach((r, i) => {
     const active = i === reportData.length - 1 ? ' active' : '';
-    const sectionsHTML = r.sections.map(s => sectionHTML(s, i)).join('');
-    const sourceNote = `<div class="source-footer">📡 信息源：PocketGamer.biz · PocketGamer.com · Mobilegamer.biz · 数据为公开报道汇总，仅供参考</div>`;
-    return `<div class="day-panel${active}" data-day="${i}">${sectionsHTML}${sourceNote}</div>`;
-  }).join('');
+    const dayTags = getDayTags(r);
+
+    let sectionsHTML = '';
+    r.sections.forEach(s => {
+      sectionsHTML += sectionHTML(s, i);
+    });
+
+    const h = renderHighlights(r.highlights);
+    const filterBar = renderFilterBar(dayTags);
+    const sourceNote = `<div class="source-footer">📡 信息源：PocketGamer.biz · PocketGamer.com · Mobilegamer.biz · trends24.in · 数据为公开报道汇总，仅供参考</div>`;
+
+    html += `<div class="day-panel${active}" data-day="${i}">${h}${filterBar}${sectionsHTML}${sourceNote}</div>`;
+  });
+
+  // Weekly review panel (hidden by default)
+  html += `<div class="day-panel" id="panel-weekly">
+    <div class="highlights-card" style="margin-bottom:20px;">
+      <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;color:var(--accent);">📋 本周回顾</div>
+      <div style="font-size:var(--fs-small);color:var(--text2);">所有日报的"特别预警"自动聚合</div>
+    </div>
+    ${renderWeeklyReview()}
+    <div class="source-footer">📡 自动聚合自所有日报的预警板块</div>
+  </div>`;
+
+  main.innerHTML = html;
 }
 
 function switchTab(idx) {
-  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
-  document.querySelectorAll('.day-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+
+  if (idx === 'weekly') {
+    document.getElementById('tab-weekly').classList.add('active');
+    document.getElementById('panel-weekly').classList.add('active');
+  } else {
+    document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    document.querySelectorAll('.day-panel')[idx].classList.add('active');
+  }
+  // Reset filters when switching tabs
+  resetFilter();
 }
 
 function toggleSection(id) {
@@ -832,9 +979,58 @@ function toggleSection(id) {
 
 function toggleAll() {
   const all = document.querySelectorAll('.section');
-  const someOpen = Array.from(all).some(s => !s.classList.contains('collapsed'));
-  all.forEach(s => s.classList.toggle('collapsed', someOpen));
+  const anyOpen = Array.from(all).some(s => !s.classList.contains('collapsed'));
+  all.forEach(s => s.classList.toggle('collapsed', anyOpen));
 }
+
+// Filter
+let activeFilter = 'all';
+function toggleFilter(tag) {
+  activeFilter = (activeFilter === tag) ? 'all' : tag;
+  document.querySelectorAll('.filter-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.filter === activeFilter || (activeFilter === 'all' && p.dataset.filter === 'all'));
+  });
+  applyFilter();
+}
+function resetFilter() {
+  activeFilter = 'all';
+  document.querySelectorAll('.filter-pill').forEach(p => p.classList.toggle('active', p.dataset.filter === 'all' || p.dataset.filter === 'all'));
+  applyFilter();
+}
+function applyFilter() {
+  if (activeFilter === 'all') {
+    document.querySelectorAll('[data-tags]').forEach(el => el.style.display = '');
+    document.querySelectorAll('.competitor-card > div > div').forEach(el => el.style.display = '');
+    return;
+  }
+  document.querySelectorAll('[data-tags]').forEach(el => {
+    const tags = (el.dataset.tags || '').split(' ');
+    el.style.display = tags.includes(activeFilter) ? '' : 'none';
+  });
+  // Hide competitor sections that are now empty
+  document.querySelectorAll('.competitor-card').forEach(card => {
+    const visible = Array.from(card.querySelectorAll('[data-tags]')).some(el => el.style.display !== 'none');
+    card.style.display = visible ? '' : 'none';
+  });
+}
+
+// Font size
+function setFontSize(size) {
+  document.body.className = size === 'md' ? '' : `font-${size}`;
+  document.querySelectorAll('.fs-group button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.fs-group button').forEach(b => {
+    if ((size === 'sm' && b.textContent.includes('⁻')) ||
+        (size === 'md' && b.textContent === 'A') ||
+        (size === 'lg' && b.textContent.includes('⁺'))) {
+      b.classList.add('active');
+    }
+  });
+}
+
+// Back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+});
 
 // ============ INIT ============
 renderTabs();

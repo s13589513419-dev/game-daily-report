@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)file:///C:/Users/Admin/daily_report.html -->
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>行业与竞品调研日报</title>
 <style>
@@ -59,7 +59,6 @@
   .day-panel { display:none; }
   .day-panel.active { display:block; }
 
-  /* Top row: calendar + highlights side by side */
   .top-row { display:flex; gap:16px; margin-bottom:16px; }
   .top-row .cal-col { flex:0 0 340px; min-width:280px; }
   .top-row .hl-col { flex:1; min-width:0; }
@@ -68,7 +67,6 @@
     .top-row .cal-col { flex:1; min-width:0; }
   }
 
-  /* Calendar compact */
   .cal-card { overflow:hidden;
     background:var(--surface); border:1px solid var(--border); border-radius:10px;
     padding:14px 16px; height:100%;
@@ -99,7 +97,6 @@
   }
   .cal-expand-btn:hover { background:var(--border); color:var(--text); }
 
-  /* Calendar Modal */
   .modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.45); z-index:500; justify-content:center; align-items:center; }
   .modal-overlay.show { display:flex; }
   .modal-content { background:var(--surface); border-radius:14px; padding:28px 32px; max-width:780px; width:92%; max-height:90vh; overflow-y:auto; box-shadow:0 8px 40px rgba(0,0,0,.15); }
@@ -117,7 +114,6 @@
   .modal-cal-day.empty { visibility:hidden; }
   .modal-cal-day.today { background:var(--accent-light); }
 
-  /* Section */
   .section { margin-bottom:28px; }
   .section-header {
     display:flex; align-items:center; gap:10px; margin-bottom:14px; padding-bottom:8px;
@@ -177,7 +173,6 @@
   }
   .hl-link:hover { background:var(--accent); color:#fff; }
 
-  /* Country tabs for social trends */
   .country-bar, .comp-bar { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
   .country-btn, .comp-btn {
     padding:4px 14px; border-radius:16px; border:1px solid var(--border);
@@ -208,7 +203,6 @@
   .alert-banner .alert-title { font-weight:600; color:var(--orange); margin-bottom:6px; font-size:15px; }
   .alert-banner .alert-body { font-size:var(--fs-card); color:var(--text2); line-height:1.8; }
 
-  /* Vendor page controls */
   .page-controls { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:6px; padding:6px 0; }
   .page-btn {
     background:var(--surface2); border:1px solid var(--border); color:var(--text2);
@@ -219,14 +213,12 @@
   .page-btn:disabled { opacity:0.3; cursor:default; background:var(--surface2); color:var(--text2); }
   .page-indicator { font-size:13px; color:var(--text2); font-weight:500; }
 
-  /* News card image — right side fixed width */
   .news-img-wrap-image {
     flex: 0 0 200px; max-height:130px; border-radius:8px; overflow:hidden; background:var(--surface2);
   }
   .news-img-wrap-image img { width:100%; height:100%; object-fit:cover; display:block; }
   .news-card { display:flex; gap:16px; align-items:flex-start; }
 
-  /* Trend cards — X/Twitter 趋势 */
   .trend-card {
     background:var(--surface); border:1px solid var(--border); border-radius:10px;
     padding:18px 22px; margin-bottom:12px;
@@ -237,7 +229,6 @@
   .trend-body { font-size:var(--fs-card); color:var(--text2); line-height:1.8; }
   .trend-body strong { color:var(--text); font-weight:600; }
 
-  /* Reddit 热点 — 竖排 */
   .reddit-card {
     background:var(--surface); border:1px solid var(--border); border-radius:10px;
     padding:18px 22px; margin-bottom:12px; transition:box-shadow .2s,border-color .2s;
@@ -288,16 +279,16 @@
     </div>
     <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
       <div class="fs-group">
-        <button onclick="setFontSize(&#39;sm&#39;)">A⁻</button>
-        <button onclick="setFontSize(&#39;md&#39;)" class="active">A</button>
-        <button onclick="setFontSize(&#39;lg&#39;)">A⁺</button>
+        <button onclick="setFontSize('sm')">A⁻</button>
+        <button onclick="setFontSize('md')" class="active">A</button>
+        <button onclick="setFontSize('lg')">A⁺</button>
       </div>
       <div class="header-actions">
         <button onclick="toggleAll()">◈ 全部展开/折叠</button>
       </div>
     </div>
   </div>
-  <div class="tab-bar" id="tabBar"><button class="tab-btn active" onclick="switchTab(0)">2026-05-20 周三<span class="badge-new">NEW</span></button></div>
+  <div class="tab-bar" id="tabBar"><button class="tab-btn active" onclick="switchTab(0)">2026-05-21 周四<span class="badge-new">NEW</span></button></div>
 </div>
 
 <div class="main" id="appMain"><div class="day-panel active" data-day="0">
@@ -312,133 +303,109 @@
           <button class="cal-expand-btn" onclick="openCalModal()" title="展开大日历">⛶</button>
         </div>
       </div>
-      <div class="cal-grid"><div class="cal-header">Sun</div><div class="cal-header">Mon</div><div class="cal-header">Tue</div><div class="cal-header">Wed</div><div class="cal-header">Thu</div><div class="cal-header">Fri</div><div class="cal-header">Sat</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><div class="day-num">1</div></div><div class="cal-day"><div class="day-num">2</div></div><div class="cal-day"><div class="day-num">3</div></div><div class="cal-day"><div class="day-num">4</div><div class="day-event hot">Star Wars Day🌟</div></div><div class="cal-day"><div class="day-num">5</div><div class="day-event orange">Cinco de Mayo</div></div><div class="cal-day"><div class="day-num">6</div></div><div class="cal-day"><div class="day-num">7</div></div><div class="cal-day"><div class="day-num">8</div></div><div class="cal-day"><div class="day-num">9</div></div><div class="cal-day"><div class="day-num">10</div><div class="day-event hot">母亲节 (US)</div></div><div class="cal-day"><div class="day-num">11</div></div><div class="cal-day"><div class="day-num">12</div></div><div class="cal-day"><div class="day-num">13</div></div><div class="cal-day"><div class="day-num">14</div></div><div class="cal-day"><div class="day-num">15</div></div><div class="cal-day"><div class="day-num">16</div></div><div class="cal-day"><div class="day-num">17</div></div><div class="cal-day"><div class="day-num">18</div></div><div class="cal-day"><div class="day-num">19</div></div><div class="cal-day today"><div class="day-num">20</div></div><div class="cal-day"><div class="day-num">21</div></div><div class="cal-day"><div class="day-num">22</div></div><div class="cal-day"><div class="day-num">23</div></div><div class="cal-day"><div class="day-num">24</div></div><div class="cal-day"><div class="day-num">25</div><div class="day-event orange">Memorial Day (US)</div></div><div class="cal-day"><div class="day-num">26</div><div class="day-event accent">Slime Rancher上线</div></div><div class="cal-day"><div class="day-num">27</div><div class="day-event hot">Tomb Busters上线</div></div><div class="cal-day"><div class="day-num">28</div><div class="day-event accent">Pictonico上线</div></div><div class="cal-day"><div class="day-num">29</div></div><div class="cal-day"><div class="day-num">30</div></div><div class="cal-day"><div class="day-num">31</div></div></div>
+      <div class="cal-grid"><div class="cal-header">Sun</div><div class="cal-header">Mon</div><div class="cal-header">Tue</div><div class="cal-header">Wed</div><div class="cal-header">Thu</div><div class="cal-header">Fri</div><div class="cal-header">Sat</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day"><div class="day-num">1</div></div><div class="cal-day"><div class="day-num">2</div></div><div class="cal-day"><div class="day-num">3</div></div><div class="cal-day"><div class="day-num">4</div><div class="day-event hot">Star Wars Day🌟</div></div><div class="cal-day"><div class="day-num">5</div><div class="day-event orange">Cinco de Mayo</div></div><div class="cal-day"><div class="day-num">6</div></div><div class="cal-day"><div class="day-num">7</div></div><div class="cal-day"><div class="day-num">8</div></div><div class="cal-day"><div class="day-num">9</div></div><div class="cal-day"><div class="day-num">10</div><div class="day-event hot">母亲节 (US)</div></div><div class="cal-day"><div class="day-num">11</div></div><div class="cal-day"><div class="day-num">12</div></div><div class="cal-day"><div class="day-num">13</div></div><div class="cal-day"><div class="day-num">14</div></div><div class="cal-day"><div class="day-num">15</div></div><div class="cal-day"><div class="day-num">16</div></div><div class="cal-day"><div class="day-num">17</div></div><div class="cal-day"><div class="day-num">18</div></div><div class="cal-day"><div class="day-num">19</div></div><div class="cal-day"><div class="day-num">20</div></div><div class="cal-day today"><div class="day-num">21</div></div><div class="cal-day"><div class="day-num">22</div></div><div class="cal-day"><div class="day-num">23</div></div><div class="cal-day"><div class="day-num">24</div></div><div class="cal-day"><div class="day-num">25</div><div class="day-event orange">Memorial Day (US)</div></div><div class="cal-day"><div class="day-num">26</div><div class="day-event accent">Slime Rancher上线</div></div><div class="cal-day"><div class="day-num">27</div><div class="day-event hot">Tomb Busters上线</div></div><div class="cal-day"><div class="day-num">28</div><div class="day-event accent">Pictonico上线</div></div><div class="cal-day"><div class="day-num">29</div></div><div class="cal-day"><div class="day-num">30</div></div><div class="cal-day"><div class="day-num">31</div></div></div>
       <div class="cal-legend">
         <span>🔴 热点</span> <span>🔵 上线</span> <span>🟠 活动</span>
       </div>
     </div></div>
-      <div class="hl-col"><div class="highlights-card"><div style="font-weight:600;font-size:var(--fs-title);margin-bottom:8px;color:var(--accent);">📌 今日速览</div><ol><li><a class="hl-link" href="file:///C:/Users/Admin/daily_report.html#" onclick="jumpToSection(&#39;sec-0-headlines&#39;);return false;">↓</a><strong>Sword x Staff 全球上线</strong> — 首发iPhone赠品活动驱动UA话题，关注后续获量策略</li><li><a class="hl-link" href="file:///C:/Users/Admin/daily_report.html#" onclick="jumpToSection(&#39;sec-0-headlines&#39;);return false;">↓</a><strong>Fortnite 全球重返 iOS App Store</strong>（澳洲除外），Tim Sweeney 宣告"Apple Tax 终结的开端"</li><li><a class="hl-link" href="file:///C:/Users/Admin/daily_report.html#" onclick="jumpToSection(&#39;sec-0-newproducts&#39;);return false;">↓</a><strong>Tomb Busters 5月27日全球上线</strong> — Haunted Headline 头号竞品，倒计时6天</li><li><a class="hl-link" href="file:///C:/Users/Admin/daily_report.html#" onclick="jumpToSection(&#39;sec-0-vendor&#39;);return false;">↓</a><strong>Supercell 全资收购 Metacore</strong>（Merge Mansion），裁 160 人，行业整合趋势延续</li><li><a class="hl-link" href="file:///C:/Users/Admin/daily_report.html#" onclick="jumpToSection(&#39;sec-0-vendor&#39;);return false;">↓</a><strong>Terraria 移动版销量逼近2000万</strong>，跨平台联机开发中，沙盒品类长尾价值验证</li></ol></div></div>
+      <div class="hl-col"><div class="highlights-card"><div style="font-weight:600;font-size:var(--fs-title);margin-bottom:8px;color:var(--accent);">📌 今日速览</div><ol><li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-headlines');return false;">↓</a><strong>Sensor Tower 收购 AppMagic</strong> — 移动数据情报市场加速整合，AppMagic保持独立品牌服务中小开发者</li><li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-headlines');return false;">↓</a><strong>Embracer 集团拆分为四大独立实体</strong> — Fellowship Entertainment 持有古墓丽影/指环王等IP，移动业务保留</li><li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-vendor');return false;">↓</a><strong>Supercell 重启 Mo.co</strong> — 赛季制+免费抽卡，轻量化狩猎游戏的迭代策略解析</li><li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-vendor');return false;">↓</a><strong>Love and Deepspace 全球总收入破 $10亿</strong> — 乙女向RPG赛道天花板，日本主导市场</li><li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-vendor');return false;">↓</a><strong>Esports World Cup 2026 移师巴黎</strong> — 首次离开沙特举办，行业关注度飙升</li></ol></div></div>
     </div><div class="section" id="sec-0-headlines">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-headlines&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-headlines')">
       <div class="section-icon">📌</div>
       <div class="section-title">要闻速览</div>
       <div class="section-toggle">▼</div>
     </div>
     <div class="section-body"><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-hot">新品上线</span>
-        <div class="card-title">Sword x Staff 全球正式上线 — 首发iPhone赠品活动引爆UA话题 <a href="https://www.gamedeveloper.com/press-release/sword-x-staff-officially-launches-today-begin-your-fantasy-adventure-in-the-world-of-kanstein-now" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 2026.05.19</span><span>📰 Game Developer / 行业观察</span></div>
-        <div class="card-body">Sword x Staff 于5月19日全球正式上线。首发营销策略以 iPhone 赠品活动（Launch Giveaway）为核心驱动 UA 话题，利用社交裂变扩大曝光。作为横跨卡牌放置与 RPG 元素的混合玩法产品，其全球上线后的获量策略、买量素材方向及社交声量分布值得 MLA 团队持续关注。</div><div class="card-body" style="margin-top:8px;"><strong>关注要点：</strong>上线首周欧美排名表现、买量素材创意方向、社媒话题热度走势。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/default-cubic.png" alt="" loading="lazy"></div></div><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-hot">平台变局</span>
-        <div class="card-title">Fortnite 全球重返 iOS App Store（澳洲除外） <a href="https://mobilegamer.biz/fortnite-has-now-relaunched-on-the-app-store-worldwide/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 2026.05.19</span><span>📰 Mobilegamer.biz / Game Developer</span></div>
-        <div class="card-body">距美国联邦法院裁决后重返美区近一年，Fortnite 现已在全球大部分地区重新上架 Apple App Store。唯一例外是澳大利亚——Epic 在澳胜诉后认定 Apple 支付安排仍属违法，正等待法院对补救措施作出进一步裁决。</div><div class="card-body" style="margin-top:8px;">Epic CEO Tim Sweeney 称此举为"Apple Tax 终结的开端"，指出日本、欧盟、英国监管机构都在关注此案以裁定合理佣金率。此次回归可能引发新一轮 App Store 政策调整，间接影响所有移动发行商的利润模型。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/App-store-fortnite-2.jpg" alt="" loading="lazy"></div></div></div>
+        <span class="card-label label-hot">市场整合</span>
+        <div class="card-title">Sensor Tower 收购竞品 AppMagic — 移动数据情报市场加速洗牌 <a href="https://www.pocketgamer.biz/why-sensor-tower-acquired-rival-appmagic/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 PocketGamer.biz</span></div>
+        <div class="card-body">Sensor Tower 收购竞争对手 AppMagic（交易金额未公开），这是继两年前收购 Data.ai 后的第二次重大并购。AppMagic 团队近 100 人将大部分留任。与 Data.ai 整合不同，AppMagic 将保留独立品牌和产品定位，继续面向中小开发者提供轻量级市场情报服务。Sensor Tower 首席营收官 Tom Cui 坦言"我们在服务中小开发者和独立开发者方面做得不好"，AppMagic 正好填补了这一空白。</div><div class="card-body" style="margin-top:8px;"><strong>行业影响：</strong>移动数据情报市场集中度进一步提升。AppMagic 不会涨价，Sensor Tower 有意将其打造成入门级平台。同时 Sensor Tower 正投资第一方面板数据，计划 2026 下半年推出跨平台收入估算产品。此外 Epic 与 Steam 的游戏中 DTC 支付趋势正在使传统数据估算变得更加困难。</div>
+      </div></div><div class="news-card"><div style="flex:1;min-width:0;">
+        <span class="card-label label-hot">集团重组</span>
+        <div class="card-title">Embracer 集团拆分为四大独立实体 — 古墓丽影/指环王IP进入 Fellowship Entertainment <a href="https://www.gamedeveloper.com/business/embracer-to-spin-off-major-video-game-franchises-and-studios" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 Game Developer / Mobilegamer.biz</span></div>
+        <div class="card-body">Embracer Group 宣布将拆分为四个独立上市公司：Fellowship Entertainment（IP驱动）、Coffee Stain & Friends、Asmodee（桌游）、以及保留 Embracer 品牌的主体。Fellowship Entertainment 将持有 <strong>Darksiders、Dead Island、Kingdom Come Deliverance、Metro、Remnant、指环王、古墓丽影</strong>等顶级IP，旗下包含 Crystal Dynamics、Eidos-Montréal、Warhorse Studios 等知名工作室。</div><div class="card-body" style="margin-top:8px;"><strong>移动战略：</strong>拆分后 Embracer 主体保留 <strong>CrazyLabs、Deca、Demiurge</strong> 等移动工作室，以及 THQ Nordic（35个工作室）、Aspyr、Milestone 等，聚焦移动、发行、复古和重制赛道。Embracer 董事长称分拆将带来"更锐利的管理焦点和更清晰的问责制"。</div>
+      </div></div></div>
   </div><div class="section" id="sec-0-vendor">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-vendor&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-vendor')">
       <div class="section-icon">🎮</div>
       <div class="section-title">头部厂商 &amp; 产品动态</div>
       <div class="section-toggle">▼</div>
     </div>
     <div class="section-body"><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-green">经典长青</span>
-        <div class="card-title">Terraria 移动版销量逼近 2000 万，跨平台联机开发中 <a href="https://www.pocketgamer.biz/terraria-mobile-sales-approach-20m-as-game-surpasses-70m-copies-sold/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 undefined</span><span>📰 undefined</span></div>
-        <div class="card-body">Re-Logic 宣布《Terraria》全平台累计销量突破 7000 万份，其中移动版贡献近 2000 万。同时确认跨平台联机功能正在开发中。验证了沙盒/创造类游戏在移动端的强大长尾变现能力。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/terraria-mobile-sales-approach-20m-as-game-surpasses-70m-copies-sold_l1200.jpg" alt="" loading="lazy"></div></div><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-info">新品速报</span>
-        <div class="card-title">Nintendo 发布新 App "Pictonico" — 5月28日上线 <a href="https://www.pocketgamer.biz/nintendo-reveals-kind-of-silly-photo-game-pictonico-with-80-minigames-promised/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 undefined</span><span>📰 undefined</span></div>
-        <div class="card-body">任天堂公布全新移动端 App《Pictonico》，"把照片变成游戏"的创意工具，内置 80+ 款迷你游戏，5月28日上线。延续任天堂在移动端"创意工具+轻游戏"的探索路线。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/nintendo-pictonico_l1200.jpg" alt="" loading="lazy"></div></div><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-green">销售捷报</span>
-        <div class="card-title">Arc Raiders 销量破 1600 万，Nexon 准备引入中国 <a href="https://www.gamedeveloper.com/business/arc-raiders-tops-16-million-sales-and-could-be-heading-to-china" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 undefined</span><span>📰 undefined</span></div>
-        <div class="card-body">Embark Studios（Nexon 旗下）开发的提取射击游戏 Arc Raiders 全球销量突破 1600 万份，仅 Q1 2026 就新增 460 万份。玩家参与度极高——过半活跃玩家在 Q1 游戏时长超 100 小时，总游戏时长 15 亿小时。Nexon 称其为"公司史上最成功的发行"。</div><div class="card-body" style="margin-top:8px;">Nexon 已获得中国 ISBN 版号，计划在中国市场进行多轮封闭测试。Q1 收入同比增长 34% 至 ¥1522 亿（约 $9.58 亿）。同时 Nexon 取消了 3 个项目，将资源重新分配给《Nakwon: Last Paradise》等项目。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/Arc_Header.png" alt="" loading="lazy"></div></div><div class="news-card"><div style="flex:1;min-width:0;">
-        <span class="card-label label-warn">并购风云</span>
-        <div class="card-title">StreamElements 确认洽谈收购，回应倒闭传闻 <a href="https://www.pocketgamer.biz/streamelements-confirms-acquisition-talks-amid-shutdown-speculation/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
-        <div class="card-meta"><span>📅 2026.05.18</span><span>📰 PocketGamer.biz</span></div>
-        <div class="card-body">直播工具平台 StreamElements 正式确认正在与潜在买家进行"积极谈判"，回应业界关于其即将关闭的传闻。直播工具赛道的整合持续。</div>
-      </div><div class="news-img-wrap-image"><img src="./行业与竞品调研日报_files/streamelements-logo_l1200.jpg" alt="" loading="lazy"></div></div><div class="page-controls">
+        <span class="card-label label-green">产品重启</span>
+        <div class="card-title">Supercell 重启 Mo.co — 赛季制+免费抽卡，轻量化狩猎游戏迭代 <a href="https://mobilegamer.biz/supercell-reboots-its-lowkey-monster-hunting-game-mo-co-with-seasons-and-free-gacha-pulls/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20-21</span><span>📰 Mobilegamer.biz</span></div>
+        <div class="card-body">Supercell 旗下轻量化狩猎游戏 Mo.co 以"Neo Mo.co"名义全面重启，引入月度赛季通行证和免费抽卡系统 "Perks"。社区经理明确表态"玩家不能用现金购买 Perks，也没有计划对其进行商业化"，游戏收入仍仅靠外观饰品。Appmagic 估算 Mo.co 自 2025年3月起累计 IAP 约 $470 万，下载量 850 万，Top 市场为美国（26%）、德国（9%）、法国（8%）。</div><div class="card-body" style="margin-top:8px;"><strong>关注要点：</strong>Supercell 在 Squad Busters 停运后对 Mo.co 的坚持值得关注。赛季制+免费抽卡的设计是否有效提升留存？视觉风格和玩法是否适合当前市场？</div>
+      </div></div><div class="news-card"><div style="flex:1;min-width:0;">
+        <span class="card-label label-purple">里程碑</span>
+        <div class="card-title">Love and Deepspace 全球总收入突破 $10亿 — 乙女向赛道天花板 <a href="https://mobilegamer.biz/data-digest-love-and-deepspace-hits-1bn-pokemon-tcg-tops-200m-installs-plus-fresh-funding-and-financial-news/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 Mobilegamer.biz / Appmagic</span></div>
+        <div class="card-body">Paperfold Games 开发的乙女向 RPG《Love and Deepspace》全球总收入突破 $10 亿（IAP $7.49 亿）。峰值日收入达 $700 万，由大型活动驱动。其中"Throne of Eros"抽卡活动单期收入超 $2200 万，推动日流水暴涨 154%。同日 <strong>Pokémon TCG Pocket</strong> 宣布全球安装量突破 2 亿，IAP 收入约 $11.6 亿，日本贡献 45% 收入（美国 24%）。</div>
+      </div></div><div class="news-card"><div style="flex:1;min-width:0;">
+        <span class="card-label label-info">战略分享</span>
+        <div class="card-title">Inside Scopely's Rise — COO 谈15年增长与长线运营哲学 <a href="https://www.pocketgamer.biz/inside-scopelys-rise-to-a-global-mobile-games-giant/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 PocketGamer.biz</span></div>
+        <div class="card-body">Scopely COO Eunice Lee 分享公司 15 年成长历程与长线 live service 游戏构建哲学。Scopely 自 Monopoly Go 上线以来已产生超 $30 亿收入，巴塞罗那办公室从 5 人扩张至 750 人。核心洞察：打造能持续运营数年的游戏需要"组织耐心和长期投入"，而非追求短期爆款。Monopoly Go 的视觉识别案例将登 PGC Barcelona（6月15-16日）。</div>
+      </div></div><div class="news-card"><div style="flex:1;min-width:0;">
+        <span class="card-label label-warn">电竞赛事</span>
+        <div class="card-title">Esports World Cup 2026 移师巴黎 — 首次离开沙特举办 <a href="https://www.pocketgamer.biz/esports-world-cup-2026-relocates-from-saudi-arabia-to-paris-amid-regional-uncertainty/" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>
+        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 PocketGamer.biz</span></div>
+        <div class="card-body">Esports World Cup 2026 宣布从沙特阿拉伯移师巴黎举办，这是 EWC 首次在沙特以外地区举行。此举被认为与近期地区局势不确定性有关。EWC 是全球奖金池最高的电竞锦标赛之一，包含多个游戏项目。移师欧洲可能带来更高的观众参与度和品牌合作机会。</div>
+      </div></div><div class="page-controls">
         <button class="page-btn" onclick="vendorPrev()" disabled="">‹</button>
         <span class="page-indicator">1 / 2</span>
         <button class="page-btn" onclick="vendorNext()">›</button>
       </div></div>
   </div><div class="section" id="sec-0-trending">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-trending&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-trending')">
       <div class="section-icon">🔥</div>
       <div class="section-title">社媒热点</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body"><div class="country-bar"><button class="country-btn active" onclick="switchCountry(&#39;us&#39;)">🇺🇸 美国</button><button class="country-btn" onclick="switchCountry(&#39;uk&#39;)">🇬🇧 英国</button><button class="country-btn" onclick="switchCountry(&#39;de&#39;)">🇩🇪 德国</button><button class="country-btn" onclick="switchCountry(&#39;fr&#39;)">🇫🇷 法国</button></div><div class="trend-panel active" id="trend-us">
+    <div class="section-body"><div class="country-bar"><button class="country-btn active" onclick="switchCountry('us')">🇺🇸 美国</button><button class="country-btn" onclick="switchCountry('uk')">🇬🇧 英国</button><button class="country-btn" onclick="switchCountry('de')">🇩🇪 德国</button><button class="country-btn" onclick="switchCountry('fr')">🇫🇷 法国</button></div><div class="trend-panel active" id="trend-us">
       <div class="trend-card">
-        <div class="trend-header">NBA季后赛 + 政治选举主导</div>
-        <div class="trend-meta">📅 2026.05.20 · 📰 trends24.in</div>
-        <div class="trend-body"><strong>🏀 NBA 季后赛（最高热度）</strong><br>Harden / Knicks / Brunson / Cavs / Donovan Mitchell 占据前列。尼克斯 vs 骑士系列赛是焦点。NBA 季后赛观众与游戏核心用户高度重叠。<br><br><strong>🎬 流行文化</strong><br>TADC（The Amazing Digital Circus）仍在热搜。Ahmadinejad 国际新闻上榜。<br><br><strong>🇺🇸 政治</strong><br>Kentucky / Rand Paul 初选话题，AIPAC/MIGA 中东政策讨论。</div>
+        <div class="trend-header">The Boys 热度持续 + NBA All-Rookie + 科技股关注</div>
+        <div class="trend-meta">📅 2026.05.21 · 📰 trends24.in</div>
+        <div class="trend-body"><strong>📺 娱乐主导</strong><br>Betty Boop 登顶热搜。Homelander / The Boys / Butcher 等《黑袍纠察队》相关词集体上榜（Homelander 持续热搜 19 小时），显示该剧新一季热度极高。<br><br><strong>🏀 NBA</strong><br>All-Rookie 阵容公布，Cedric Coward / Drew Anderson / VJ Edgecombe 等新秀上榜。<br><br><strong>💻 科技/金融</strong><br>$NVDA（NVIDIA）持续热搜 — 关注最新 AI/GPU 动态。$SPCX（SpaceX 股票）上榜，Bezos 排名第 4 位。<br><br><strong>🎵 K-pop</strong><br>#FELIXxLVCRUISE27（Stray Kids Felix）上榜。</div>
       </div>
     </div><div class="trend-panel" id="trend-uk">
       <div class="trend-card">
-        <div class="trend-header">英超比赛日全面主导</div>
-        <div class="trend-meta">📅 2026.05.20 · 📰 trends24.in</div>
-        <div class="trend-body"><strong>⚽ 英超比赛日（热搜 80% 被足球占据）</strong><br>Arsenal / Southampton / Bournemouth / Man City / Chelsea 全部上榜。#COYG / #BOUMCI / #CHETOT 比赛标签活跃。Championship 升级附加赛同样火热：Hull / Boro / Oxford 均在榜。<br><br><strong>其他</strong><br>#RoseWednesday（WWE NXT）是非体育类热搜。North Sea 可能涉及能源政策讨论。</div>
+        <div class="trend-header">欧联杯决赛 — Aston Villa 冲击冠军全面霸榜</div>
+        <div class="trend-meta">📅 2026.05.21 · 📰 trends24.in</div>
+        <div class="trend-body"><strong>⚽ 欧联杯决赛日（绝对主导）</strong><br>Aston Villa vs Freiburg 的欧联杯决赛引发全英关注。Villa / #AVFC / Unai Emery / John McGinn / Buendia / Tielemans / #UELfinal / "Champions of Europe" 等话题全面霸榜。Harvey Elliott（利物浦）可能涉及转会传闻。<br><br><strong>📺 娱乐</strong><br>#AEWDynamite 摔角节目上榜。Homelander / The Boys 同步上线。<br><br><strong>🌍 政治</strong><br>Ben Gvir 国际政治话题。Prince William 相关新闻上榜。</div>
       </div>
     </div><div class="trend-panel" id="trend-de">
       <div class="trend-card">
-        <div class="trend-header">政治 + K-pop + 足球</div>
-        <div class="trend-meta">📅 2026.05.20 · 📰 trends24.in</div>
-        <div class="trend-body"><strong>🗳️ 政治与社会</strong><br>Merkel / Ditib（土耳其伊斯兰联盟）/ Schulpflicht（义务教育）均在榜。Orden / Beileid 因社会事件上榜。<br><br><strong>🎵 K-pop 粉丝活跃</strong><br>#OUR_GLOW_IS_SEVEN 和 #BLUE_MOON_7_DESTINY 两个 SEVENTEEN 粉丝标签同时热搜。<br><br><strong>⚽ 体育</strong><br>Arsenal / Nagelsmann（德国国家队主帅）上榜。<br><br><strong>📺 娱乐</strong><br>#dasperfektedinner 热门电视节目常青话题。</div>
+        <div class="trend-header">欧联决赛 + K-pop + 政治社会话题</div>
+        <div class="trend-meta">📅 2026.05.21 · 📰 trends24.in</div>
+        <div class="trend-body"><strong>⚽ 欧联杯决赛</strong><br>Freiburg 迎战 Aston Villa 占据核心。Fribourg / #SCFAVL / #FREAVL 上榜。Arsenal / Unai Emery 关联话题。<br><br><strong>🎵 K-pop 持续活跃</strong><br>#BLUE_MOON_7_DESTINY 和 #OUR_GLOW_IS_SEVEN（SEVENTEEN粉丝标签）持续在德国热搜。<br><br><strong>🗳️ 政治与社会</strong><br>#Lanz（脱口秀）/ Merkel 再次上榜。Orden / Erkenntnisproblem 反映社会讨论。Führerschein（驾校）话题关注度上升，Ebola 因相关新闻上榜。Breaking Bad 经典剧集仍活跃讨论。<br><br><strong>📈 金融</strong><br>$VIRL 上榜。</div>
       </div>
     </div><div class="trend-panel" id="trend-fr">
       <div class="trend-card">
-        <div class="trend-header">Koh-Lanta + 足球 + NBA 法国球星</div>
-        <div class="trend-meta">📅 2026.05.20 · 📰 trends24.in</div>
-        <div class="trend-body"><strong>📺 真人秀霸榜</strong><br>#KohLanta 多话题上榜，选手 Guillaume / Cindy / Hugo / Truffert 均热搜。<br><br><strong>⚽ 足球</strong><br>Arsenal / Bournemouth 上榜。Neymar / Brésil 可能关联转会传闻。<br><br><strong>🏀 NBA</strong><br>Wemby（Victor Wembanyama）和 Harden 双双上榜。<br><br><strong>🎬 文化/财经</strong><br>Bolloré / Pigasse 商业动态。Gilles Lellouche 可能关联戛纳电影节。<br><br><strong>🎵 K-pop 同现</strong><br>#OUR_GLOW_IS_SEVEN / #BLUE_MOON_7_DESTINY 同样在法国上榜。</div>
+        <div class="trend-header">Jean Moulin + The Boys + #TopChef 多元话题并行</div>
+        <div class="trend-meta">📅 2026.05.21 · 📰 trends24.in</div>
+        <div class="trend-body"><strong>🇫🇷 历史/政治</strong><br>Jean Moulin（法国二战抵抗运动英雄）登顶热搜，可能与纪念活动或纪录片相关。Sandrine Rousseau 政治人物上榜。Bolloré / Banque de France 财经话题。Ben Gvir 国际政治。<br><br><strong>📺 娱乐霸屏</strong><br>The Boys / Homelander / Butcher 集体上榜。Koh-Lanta 真人秀持续热度。#TopChef 烹饪节目热搜。#MicromaniaYoshi 可能关联游戏新闻。<br><br><strong>⚽ 足球</strong><br>Aston Villa / Arsenal / Unai Emery / Europa League 均上榜。<br><br><strong>🎵 K-pop 同步</strong><br>#OUR_GLOW_IS_SEVEN 同样在法国上榜。</div>
       </div>
     </div></div>
   </div><div class="section" id="sec-0-reddit">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-reddit&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-reddit')">
       <div class="section-icon">🤖</div>
       <div class="section-title">Reddit 热点</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body">
-    <div class="reddit-card">
-      <span class="card-label label-hot">r/gaming</span>
-      <div class="card-title">Helping my dad clean out a spare room and found a bunch of our old games.</div>
-      <div class="card-body">网友分享在帮父亲清理储藏室时发现大量童年游戏收藏，包括经典主机和游戏光盘。该帖引发社区强烈共鸣，数千名玩家跟帖晒出自己的怀旧收藏，讨论游戏行业变迁和童年回忆。</div>
-      <div class="reddit-meta">👍 15227 · <a href="https://www.reddit.com/r/gaming/comments/1tgqo7d/helping_my_dad_clean_out_a_spare_room_and_found_a/" target="_blank" style="color:var(--accent2);text-decoration:none;">🔗 查看原文</a></div>
-    </div>
-  
-    <div class="reddit-card">
-      <span class="card-label label-hot">r/gaming</span>
-      <div class="card-title">Its official: Steam decrees bullet heaven the name of the Vampire Survivors genre</div>
-      <div class="card-body">Steam 官方正式将 Vampire Survivors 类游戏归类为 'Bullet Heaven（弹幕天堂）' 子分类，结束了长期以来关于 '弹幕地狱' 和 '弹幕天堂' 的分类争议。社区对这一命名反应热烈，开发者表示此前就已推动该分类在 Steam 上的正式确立。</div>
-      <div class="reddit-meta">👍 11565 · <a href="https://www.reddit.com/r/gaming/comments/1th4rw1/its_official_steam_decrees_bullet_heaven_the_name/" target="_blank" style="color:var(--accent2);text-decoration:none;">🔗 查看原文</a></div>
-    </div>
-  
-    <div class="reddit-card">
-      <span class="card-label label-hot">r/gaming</span>
-      <div class="card-title">Sony Announces PlayStation Plus Price Increases Due to Ongoing Market Conditions</div>
-      <div class="card-body">Sony宣布PS Plus涨价引发玩家热议。</div>
-      <div class="reddit-meta">👍 9306 · <a href="https://www.reddit.com/r/gaming/comments/1tgs605/sony_announces_playstation_plus_price_increases/" target="_blank" style="color:var(--accent2);text-decoration:none;">🔗 查看原文</a></div>
-    </div>
-  
-    <div class="reddit-card">
-      <span class="card-label label-hot">r/gaming</span>
-      <div class="card-title">PlayStation single-player games now PlayStation Studios exclusive</div>
-      <div class="card-body">PlayStation负责人Hermen Hulst确认叙事单人游戏将成为PS Studios独占，不再登陆其他平台。</div>
-      <div class="reddit-meta">👍 7915 · <a href="https://www.reddit.com/r/gaming/comments/1tgy89i/its_official_playstation_boss_hermen_hulst_told/" target="_blank" style="color:var(--accent2);text-decoration:none;">🔗 查看原文</a></div>
-    </div>
-  <div class="page-controls"><button class="page-btn" onclick="redditPrev()" disabled="">‹</button><span class="page-indicator">1 / 2</span><button class="page-btn" onclick="redditNext()">›</button></div></div>
+    <div class="section-body"><div class="reddit-card" style="text-align:center;color:var(--text2);padding:24px;">
+      <div style="font-size:36px;margin-bottom:8px;">🤖</div>
+      <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">Reddit 数据暂未获取</div>
+      <div style="font-size:var(--fs-card);">今日 Reddit API 暂时不可达，将在下次抓取时自动填充。请查看其他板块获取行业动态。</div>
+    </div></div>
   </div><div class="section" id="sec-0-competitor">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-competitor&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-competitor')">
       <div class="section-icon">🆚</div>
       <div class="section-title">竞品追踪</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body"><div class="comp-bar"><button class="comp-btn" onclick="switchCompetitorTab(&#39;MLA&#39;)">🎴 MLA</button><button class="comp-btn" onclick="switchCompetitorTab(&#39;Lovania&#39;)">🏡 Lovania</button><button class="comp-btn" onclick="switchCompetitorTab(&#39;Acecraft&#39;)">✈️ Acecraft</button><button class="comp-btn active" onclick="switchCompetitorTab(&#39;Haunted&#39;)">👻 Haunted</button></div><div class="trend-panel" id="comp-panel-MLA">
+    <div class="section-body"><div class="comp-bar"><button class="comp-btn" onclick="switchCompetitorTab('MLA')">🎴 MLA</button><button class="comp-btn" onclick="switchCompetitorTab('Lovania')">🏡 Lovania</button><button class="comp-btn" onclick="switchCompetitorTab('Acecraft')">✈️ Acecraft</button><button class="comp-btn active" onclick="switchCompetitorTab('Haunted')">👻 Haunted</button></div><div class="trend-panel" id="comp-panel-MLA">
       <div class="competitor-card">
         <div style="font-size:var(--fs-title);font-weight:600;color:var(--accent);margin-bottom:12px;">🎴 MLA 方向（卡牌放置 / RPG）</div>
         <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
@@ -457,8 +424,8 @@
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
           Sword x Staff <span class="tag tag-blue">重点关注</span>
         </div>
-        <div class="card-body" style="margin-bottom:2px;">全球上线，首发 iPhone 赠品活动驱动 UA 话题。建议评估 ROI。</div>
-        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：全球上线 + 首发赠品活动</div>
+        <div class="card-body" style="margin-bottom:2px;">全球上线第3天，关注首发周排名表现和买量素材。</div>
+        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：已上线 Day 3，持续追踪 Rank 和 UA</div>
       </div>
       </div>
     </div><div class="trend-panel" id="comp-panel-Lovania">
@@ -468,13 +435,13 @@
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
           Petit Planet（星布谷地）(Hoyoverse) <span class="tag tag-orange">⚠️ 最高优先</span>
         </div>
-        <div class="card-body" style="margin-bottom:2px;">米哈游打造，跨 iOS/Android/PC。预注册已开启。米哈游的 UA 预算规模意味着上线后将大规模买量，是 Lovania 未来最强竞品。</div>
-        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：预注册开启</div>
+        <div class="card-body" style="margin-bottom:2px;">米哈游打造，跨 iOS/Android/PC。Mobilegamer.biz 最新新品汇总提及为市场关注焦点。</div>
+        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：被多家行业媒体列为最值得关注新品</div>
       </div><div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
           Heartopia (XD Inc.) <span class="tag tag-green">已上线</span>
         </div>
-        <div class="card-body" style="margin-bottom:2px;">2026年初上线，有 My Little Pony 联动等主题活动。可作对标产品研究运营节奏。</div>
+        <div class="card-body" style="margin-bottom:2px;">2026年初上线，持续运营中。</div>
         <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：持续运营中</div>
       </div><div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
@@ -526,8 +493,8 @@
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
           🔥 Tomb Busters (Giant Games) <span class="tag tag-red">⚠️ 最高预警</span>
         </div>
-        <div class="card-body" style="margin-bottom:2px;">5月27日全球上线。中国已验证 2亿+ 下载 / 1000万 DAU。恐怖提取玩法+移动端的品类可行性已被验证。</div>
-        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：5月27日全球上线（6天后）</div>
+        <div class="card-body" style="margin-bottom:2px;">5月27日全球上线（倒计时6天）。中国已验证 2亿+ 下载 / 1000万 DAU。</div>
+        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：还有6天全球上线</div>
       </div><div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
         <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
           無盡輪迴：鬼域摸金 <span class="tag tag-blue">监测中</span>
@@ -544,14 +511,14 @@
       </div>
     </div></div>
   </div><div class="section" id="sec-0-newproducts">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-newproducts&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-newproducts')">
       <div class="section-icon">🆕</div>
       <div class="section-title">新品 &amp; 软测监测</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body"><div class="news-card"><div style="font-size:var(--fs-title);font-weight:600;margin-bottom:4px;">即将上线 / 测试重点产品</div><table class="data-table"><thead><tr><th>产品</th><th>开发商</th><th>品类</th><th>平台</th><th>时间</th><th>商店链接</th><th>关注理由</th></tr></thead><tbody><tr><td>UFL</td><td>Strikerz Inc.</td><td>足球体育</td><td>iOS/Android</td><td>5月22日软测</td><td><a class="store-link" href="https://play.google.com/store/search?q=UFL&amp;c=apps" target="_blank">Google Play</a></td><td>EA FC竞品？全球软测</td></tr><tr><td>Slime Rancher（史莱姆牧场）</td><td>Playdigious</td><td>生活模拟</td><td>iOS/Android/PC</td><td>5月26日</td><td><a class="store-link" href="https://play.google.com/store/apps/details?id=com.playdigious.slimerancher" target="_blank">Google Play</a></td><td>PC独立IP移动化</td></tr><tr style="background:rgba(192,57,43,0.06);font-weight:600;"><td style="background:rgba(192,57,43,0.06);font-weight:600;">🔥 Tomb Busters</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">Giant Games</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">恐怖提取</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">iOS/Android</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">5月27日</td><td style="background:rgba(192,57,43,0.06);font-weight:600;"><a class="store-link" href="https://play.google.com/store/search?q=Tomb+Busters&amp;c=apps" target="_blank">Google Play</a></td><td style="background:rgba(192,57,43,0.06);font-weight:600;">⚠️ Haunted Headline最强竞品</td></tr><tr><td>Pictonico</td><td>Nintendo</td><td>创意轻游戏</td><td>iOS</td><td>5月28日</td><td><a class="store-link" href="https://apps.apple.com/search?term=pictonico" target="_blank">App Store</a></td><td>任天堂移动端新方向</td></tr><tr><td>Mini Football Legends</td><td>Miniclip/Tencent</td><td>休闲足球</td><td>iOS (AA)</td><td>6月4日</td><td><a class="store-link" href="https://apps.apple.com/search?term=Mini+Football+Legends" target="_blank">App Store</a></td><td>Apple Arcade独占</td></tr><tr><td>Limit Zero Breakers</td><td>NCsoft</td><td>二次元动作RPG</td><td>iOS/Android/Steam</td><td>6月10-15日</td><td><a class="store-link" href="https://store.steampowered.com/search/?term=Limit+Zero+Breakers" target="_blank">Steam</a></td><td>二次元+动作融合</td></tr><tr><td>Overwatch Rush</td><td>Blizzard</td><td>俯视角英雄射击</td><td>iOS/Android</td><td>菲律宾测试中</td><td><a class="store-link" href="https://play.google.com/store/search?q=Overwatch+Rush&amp;c=apps" target="_blank">Google Play</a></td><td>暴雪移动端重要布局</td></tr><tr><td>Monster Hunter Outlanders</td><td>Capcom/Tencent</td><td>开放世界狩猎</td><td>iOS/Android</td><td>Beta测试中</td><td><a class="store-link" href="https://play.google.com/store/search?q=Monster+Hunter+Outlanders&amp;c=apps" target="_blank">Google Play</a></td><td>顶级IP移动化</td></tr><tr><td>PVZ 3: Evolved</td><td>EA</td><td>塔防+合并</td><td>iOS/Android</td><td>爱尔兰/菲律宾EA</td><td><a class="store-link" href="https://play.google.com/store/search?q=Plants+vs+Zombies+3&amp;c=apps" target="_blank">Google Play</a></td><td>EA经典系列新作</td></tr><tr><td>Hill Climb Racing 3（登山赛车3）</td><td>Fingersoft</td><td>赛车/实时多人</td><td>Android</td><td>英国/北欧软测</td><td><a class="store-link" href="https://play.google.com/store/search?q=Hill+Climb+Racing+3&amp;c=apps" target="_blank">Google Play</a></td><td>经典IP续作</td></tr></tbody></table></div></div>
+    <div class="section-body"><div class="news-card"><div style="font-size:var(--fs-title);font-weight:600;margin-bottom:4px;">即将上线 / 测试重点产品</div><table class="data-table"><thead><tr><th>产品</th><th>开发商</th><th>品类</th><th>平台</th><th>时间</th><th>商店链接</th><th>关注理由</th></tr></thead><tbody><tr><td>UFL</td><td>Strikerz Inc.</td><td>足球体育</td><td>iOS/Android</td><td>5月22日全球软测</td><td><a class="store-link" href="https://play.google.com/store/search?q=UFL&c=apps" target="_blank">Google Play</a></td><td>EA FC竞品，明日软测</td></tr><tr><td>Slime Rancher（史莱姆牧场）</td><td>Playdigious</td><td>生活模拟</td><td>iOS/Android/PC</td><td>5月26日</td><td><a class="store-link" href="https://play.google.com/store/apps/details?id=com.playdigious.slimerancher" target="_blank">Google Play</a></td><td>PC独立IP移动化</td></tr><tr style="background:rgba(192,57,43,0.06);font-weight:600;"><td style="background:rgba(192,57,43,0.06);font-weight:600;">🔥 Tomb Busters</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">Giant Games</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">恐怖提取</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">iOS/Android</td><td style="background:rgba(192,57,43,0.06);font-weight:600;">5月27日</td><td style="background:rgba(192,57,43,0.06);font-weight:600;"><a class="store-link" href="https://play.google.com/store/search?q=Tomb+Busters&c=apps" target="_blank">Google Play</a></td><td style="background:rgba(192,57,43,0.06);font-weight:600;">⚠️ Haunted Headline最强竞品</td></tr><tr><td>Pictonico</td><td>Nintendo</td><td>创意轻游戏</td><td>iOS</td><td>5月28日</td><td><a class="store-link" href="https://apps.apple.com/search?term=pictonico" target="_blank">App Store</a></td><td>任天堂移动端新方向</td></tr><tr><td>Mini Football Legends</td><td>Miniclip/Tencent</td><td>休闲足球</td><td>iOS (AA)</td><td>6月4日</td><td><a class="store-link" href="https://apps.apple.com/search?term=Mini+Football+Legends" target="_blank">App Store</a></td><td>Apple Arcade独占</td></tr><tr><td>Limit Zero Breakers</td><td>NCsoft</td><td>二次元动作RPG</td><td>iOS/Android/Steam</td><td>6月10-15日</td><td><a class="store-link" href="https://store.steampowered.com/search/?term=Limit+Zero+Breakers" target="_blank">Steam</a></td><td>NCsoft Genshin-like新作</td></tr><tr><td>Overwatch Rush</td><td>Blizzard</td><td>俯视角英雄射击</td><td>iOS/Android</td><td>菲律宾测试中</td><td><a class="store-link" href="https://play.google.com/store/search?q=Overwatch+Rush&c=apps" target="_blank">Google Play</a></td><td>暴雪移动端重要布局</td></tr><tr><td>Monster Hunter Outlanders</td><td>Capcom/Tencent</td><td>开放世界狩猎</td><td>iOS/Android</td><td>Beta测试中</td><td><a class="store-link" href="https://play.google.com/store/search?q=Monster+Hunter+Outlanders&c=apps" target="_blank">Google Play</a></td><td>顶级IP移动化</td></tr><tr><td>PVZ 3: Evolved</td><td>EA</td><td>塔防+合并</td><td>iOS/Android</td><td>爱尔兰/菲律宾EA</td><td><a class="store-link" href="https://play.google.com/store/search?q=Plants+vs+Zombies+3&c=apps" target="_blank">Google Play</a></td><td>EA经典系列新作</td></tr><tr><td>Hill Climb Racing 3（登山赛车3）</td><td>Fingersoft</td><td>赛车/实时多人</td><td>Android</td><td>英国/北欧软测</td><td><a class="store-link" href="https://play.google.com/store/search?q=Hill+Climb+Racing+3&c=apps" target="_blank">Google Play</a></td><td>经典IP续作</td></tr></tbody></table></div></div>
   </div><div class="section" id="sec-0-reports">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-reports&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-reports')">
       <div class="section-icon">📑</div>
       <div class="section-title">研报 &amp; 行业分析</div>
       <div class="section-toggle">▼</div>
@@ -559,16 +526,16 @@
     <div class="section-body"><div class="news-card"><div style="flex:1;min-width:0;">
         <span class="card-label label-warn">研报缺失</span>
         <div class="card-title">本周无新增行业调研报告</div>
-        <div class="card-meta"><span>📅 2026.05.20</span><span>📰 —</span></div>
-        <div class="card-body">本周（5月14日-20日）主要游戏媒体未发布新的行业调研报告或白皮书。研报类内容通常以周/月为频率发布。</div>
+        <div class="card-meta"><span>📅 2026.05.21</span><span>📰 —</span></div>
+        <div class="card-body">本周（5月14日-21日）主要游戏媒体未发布新的行业调研报告或白皮书。研报类内容通常以周/月为频率发布。</div>
       </div></div></div>
   </div><div class="section" id="sec-0-alerts">
-    <div class="section-header" onclick="toggleSection(&#39;sec-0-alerts&#39;)">
+    <div class="section-header" onclick="toggleSection('sec-0-alerts')">
       <div class="section-icon">⚠️</div>
       <div class="section-title">特别预警与建议</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body"><div class="alert-banner"><div class="alert-title">🔥 红色预警：Tomb Busters 5月27日全球上线 — 仅剩6天</div><div class="alert-body">这款产品在中国已验证 2亿+ 下载和 1000万 DAU。建议：① 上线首周追踪全球排名和获量策略；② 亲自体验，分析竖屏适配、恐怖元素运用、变现设计；③ 关注用户评价和媒体评测，找差异化空间。</div></div><div class="alert-banner"><div class="alert-title">📌 Fortnite 重返 iOS 的连锁效应 — 持续关注</div><div class="alert-body">Fortnite 全球重返 iOS 可能引发新一轮 App Store 政策调整。如果 Epic 在更多市场胜诉，30% 佣金率的松动将影响所有移动发行商的利润模型。</div></div></div>
+    <div class="section-body"><div class="alert-banner"><div class="alert-title">🔥 红色预警：Tomb Busters 5月27日全球上线 — 仅剩6天</div><div class="alert-body">倒计时持续。建议：① 团队已体验并产出竞品分析文档；② 上线首周（5/27-6/3）重点追踪全球下载/收入排名；③ 预注册用户数监测，判断买量规模。</div></div><div class="alert-banner"><div class="alert-title">📌 Sensor Tower + AppMagic 整合的行业信号</div><div class="alert-body">移动数据情报市场加速整合，Sensor Tower 已先后收购 Data.ai 和 AppMagic，形成双品牌覆盖大客户+SMB 的全市场格局。对发行团队的影响：未来市场情报工具的定价权和数据可及性可能受到影响，建议多元化数据源。</div></div></div>
   </div><div class="source-footer">📡 信息源：PocketGamer.biz · Mobilegamer.biz · Game Developer · GameWorldObserver · DualShockers · TheGamer · GameRant · Overwolf · Sensor Tower Blog · Deconstructor of Fun · EA News · Xbox Wire · Sony Interactive · GameDiscoverCo · YPulse · Morning Consult · 199it · trends24.in</div></div></div>
 
 <!-- Calendar Modal -->
@@ -582,12 +549,11 @@
   </div>
 </div>
 
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:&#39;smooth&#39;})">↑</button>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
 const reportData = [];
 
-// Calendar data
 const calendarMonths = [
   {
     key:'2026-05', title:'2026年5月',
@@ -615,27 +581,26 @@ const calendarMonths = [
   }
 ];
 
-// Country trend data
 const trendData = {
   us: {
     label:'🇺🇸 美国',
-    title:'NBA季后赛 + 政治选举主导',
-    body:'<strong>🏀 NBA 季后赛（最高热度）</strong><br>Harden / Knicks / Brunson / Cavs / Donovan Mitchell 占据前列。尼克斯 vs 骑士系列赛是焦点。NBA 季后赛观众与游戏核心用户高度重叠。<br><br><strong>🎬 流行文化</strong><br>TADC（The Amazing Digital Circus）仍在热搜。Ahmadinejad 国际新闻上榜。<br><br><strong>🇺🇸 政治</strong><br>Kentucky / Rand Paul 初选话题，AIPAC/MIGA 中东政策讨论。'
+    title:'The Boys 热度持续 + NBA All-Rookie + 科技股关注',
+    body:'<strong>📺 娱乐主导</strong><br>Betty Boop 登顶热搜。Homelander / The Boys / Butcher 等《黑袍纠察队》相关词集体上榜（Homelander 持续热搜 19 小时），显示该剧新一季热度极高。<br><br><strong>🏀 NBA</strong><br>All-Rookie 阵容公布，Cedric Coward / Drew Anderson / VJ Edgecombe 等新秀上榜。<br><br><strong>💻 科技/金融</strong><br>$NVDA（NVIDIA）持续热搜 — 关注最新 AI/GPU 动态。$SPCX（SpaceX 股票）上榜，Bezos 排名第 4 位。<br><br><strong>🎵 K-pop</strong><br>#FELIXxLVCRUISE27（Stray Kids Felix）上榜。'
   },
   uk: {
     label:'🇬🇧 英国',
-    title:'英超比赛日全面主导',
-    body:'<strong>⚽ 英超比赛日（热搜 80% 被足球占据）</strong><br>Arsenal / Southampton / Bournemouth / Man City / Chelsea 全部上榜。#COYG / #BOUMCI / #CHETOT 比赛标签活跃。Championship 升级附加赛同样火热：Hull / Boro / Oxford 均在榜。<br><br><strong>其他</strong><br>#RoseWednesday（WWE NXT）是非体育类热搜。North Sea 可能涉及能源政策讨论。'
+    title:'欧联杯决赛 — Aston Villa 冲击冠军全面霸榜',
+    body:'<strong>⚽ 欧联杯决赛日（绝对主导）</strong><br>Aston Villa vs Freiburg 的欧联杯决赛引发全英关注。Villa / #AVFC / Unai Emery / John McGinn / Buendia / Tielemans / #UELfinal / "Champions of Europe" 等话题全面霸榜。Harvey Elliott（利物浦）可能涉及转会传闻。<br><br><strong>📺 娱乐</strong><br>#AEWDynamite 摔角节目上榜。Homelander / The Boys 同步上线。<br><br><strong>🌍 政治</strong><br>Ben Gvir 国际政治话题。Prince William 相关新闻上榜。'
   },
   de: {
     label:'🇩🇪 德国',
-    title:'政治 + K-pop + 足球',
-    body:'<strong>🗳️ 政治与社会</strong><br>Merkel / Ditib（土耳其伊斯兰联盟）/ Schulpflicht（义务教育）均在榜。Orden / Beileid 因社会事件上榜。<br><br><strong>🎵 K-pop 粉丝活跃</strong><br>#OUR_GLOW_IS_SEVEN 和 #BLUE_MOON_7_DESTINY 两个 SEVENTEEN 粉丝标签同时热搜。<br><br><strong>⚽ 体育</strong><br>Arsenal / Nagelsmann（德国国家队主帅）上榜。<br><br><strong>📺 娱乐</strong><br>#dasperfektedinner 热门电视节目常青话题。'
+    title:'欧联决赛 + K-pop + 政治社会话题',
+    body:'<strong>⚽ 欧联杯决赛</strong><br>Freiburg 迎战 Aston Villa 占据核心。Fribourg / #SCFAVL / #FREAVL 上榜。Arsenal / Unai Emery 关联话题。<br><br><strong>🎵 K-pop 持续活跃</strong><br>#BLUE_MOON_7_DESTINY 和 #OUR_GLOW_IS_SEVEN（SEVENTEEN粉丝标签）持续在德国热搜。<br><br><strong>🗳️ 政治与社会</strong><br>#Lanz（脱口秀）/ Merkel 再次上榜。Orden / Erkenntnisproblem 反映社会讨论。Führerschein（驾校）话题关注度上升，Ebola 因相关新闻上榜。Breaking Bad 经典剧集仍活跃讨论。<br><br><strong>📈 金融</strong><br>$VIRL 上榜。'
   },
   fr: {
     label:'🇫🇷 法国',
-    title:'Koh-Lanta + 足球 + NBA 法国球星',
-    body:'<strong>📺 真人秀霸榜</strong><br>#KohLanta 多话题上榜，选手 Guillaume / Cindy / Hugo / Truffert 均热搜。<br><br><strong>⚽ 足球</strong><br>Arsenal / Bournemouth 上榜。Neymar / Brésil 可能关联转会传闻。<br><br><strong>🏀 NBA</strong><br>Wemby（Victor Wembanyama）和 Harden 双双上榜。<br><br><strong>🎬 文化/财经</strong><br>Bolloré / Pigasse 商业动态。Gilles Lellouche 可能关联戛纳电影节。<br><br><strong>🎵 K-pop 同现</strong><br>#OUR_GLOW_IS_SEVEN / #BLUE_MOON_7_DESTINY 同样在法国上榜。'
+    title:'Jean Moulin + The Boys + #TopChef 多元话题并行',
+    body:'<strong>🇫🇷 历史/政治</strong><br>Jean Moulin（法国二战抵抗运动英雄）登顶热搜，可能与纪念活动或纪录片相关。Sandrine Rousseau 政治人物上榜。Bolloré / Banque de France 财经话题。Ben Gvir 国际政治。<br><br><strong>📺 娱乐霸屏</strong><br>The Boys / Homelander / Butcher 集体上榜。Koh-Lanta 真人秀持续热度。#TopChef 烹饪节目热搜。#MicromaniaYoshi 可能关联游戏新闻。<br><br><strong>⚽ 足球</strong><br>Aston Villa / Arsenal / Unai Emery / Europa League 均上榜。<br><br><strong>🎵 K-pop 同步</strong><br>#OUR_GLOW_IS_SEVEN 同样在法国上榜。'
   }
 };
 
@@ -649,83 +614,82 @@ reportData.push({
     { text:'<strong>Terraria 移动版销量逼近2000万</strong>，跨平台联机开发中，沙盒品类长尾价值验证', anchor:'vendor', anchorIdx:0 }
   ],
   sections:[
-    // ——— 1. 要闻速览 ———
     {
       id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
       items:[
-        { type:'news', label:{text:'新品上线',cls:'label-hot'}, img:'https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltba62518415cda0e2/652fe6ddbc479f8697ef691f/default-cubic.png?disable=upscale&width=1200&height=630&fit=crop',
+        { type:'news', label:{text:'新品上线',cls:'label-hot'},
           title:'Sword x Staff 全球正式上线 — 首发iPhone赠品活动引爆UA话题',
           date:'2026.05.19', source:'Game Developer / 行业观察',
           url:'https://www.gamedeveloper.com/press-release/sword-x-staff-officially-launches-today-begin-your-fantasy-adventure-in-the-world-of-kanstein-now',
           body:'Sword x Staff 于5月19日全球正式上线。首发营销策略以 iPhone 赠品活动（Launch Giveaway）为核心驱动 UA 话题，利用社交裂变扩大曝光。作为横跨卡牌放置与 RPG 元素的混合玩法产品，其全球上线后的获量策略、买量素材方向及社交声量分布值得 MLA 团队持续关注。\n\n<strong>关注要点：</strong>上线首周欧美排名表现、买量素材创意方向、社媒话题热度走势。' },
-        { type:'news', label:{text:'平台变局',cls:'label-hot'}, img:'https://i0.wp.com/mobilegamer.biz/wp-content/uploads/2025/05/App-store-fortnite-2.jpg?fit=1200%2C496&ssl=1',
+        { type:'news', label:{text:'平台变局',cls:'label-hot'},
           title:'Fortnite 全球重返 iOS App Store（澳洲除外）',
           date:'2026.05.19', source:'Mobilegamer.biz / Game Developer',
           url:'https://mobilegamer.biz/fortnite-has-now-relaunched-on-the-app-store-worldwide/',
           body:'距美国联邦法院裁决后重返美区近一年，Fortnite 现已在全球大部分地区重新上架 Apple App Store。唯一例外是澳大利亚——Epic 在澳胜诉后认定 Apple 支付安排仍属违法，正等待法院对补救措施作出进一步裁决。\n\nEpic CEO Tim Sweeney 称此举为"Apple Tax 终结的开端"，指出日本、欧盟、英国监管机构都在关注此案以裁定合理佣金率。此次回归可能引发新一轮 App Store 政策调整，间接影响所有移动发行商的利润模型。' }
       ]
     },
-    // ——— 2. 头部厂商&产品动态 ———
     {
       id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
       items:[
-        { type:'news', label:{text:'经典长青',cls:'label-green'}, img:'https://media.pocketgamer.biz/images/139352/88966/terraria-mobile-sales-approach-20m-as-game-surpasses-70m-copies-sold_l1200.jpg',
+        { type:'news', label:{text:'经典长青',cls:'label-green'},
           title:'Terraria 移动版销量逼近 2000 万，跨平台联机开发中',
-	          date:'2026.05.19', source:'PocketGamer.biz',
+          date:'2026.05.19', source:'PocketGamer.biz',
           url:'https://www.pocketgamer.biz/terraria-mobile-sales-approach-20m-as-game-surpasses-70m-copies-sold/',
           body:'Re-Logic 宣布《Terraria》全平台累计销量突破 7000 万份，其中移动版贡献近 2000 万。同时确认跨平台联机功能正在开发中。验证了沙盒/创造类游戏在移动端的强大长尾变现能力。' },
-        { type:'news', label:{text:'新品速报',cls:'label-info'}, img:'https://media.pocketgamer.biz/images/139357/88969/nintendo-pictonico_l1200.jpg',
+        { type:'news', label:{text:'新品速报',cls:'label-info'},
           title:'Nintendo 发布新 App "Pictonico" — 5月28日上线',
-	          date:'2026.05.19', source:'PocketGamer.biz',
+          date:'2026.05.19', source:'PocketGamer.biz',
           url:'https://www.pocketgamer.biz/nintendo-reveals-kind-of-silly-photo-game-pictonico-with-80-minigames-promised/',
           body:'任天堂公布全新移动端 App《Pictonico》，"把照片变成游戏"的创意工具，内置 80+ 款迷你游戏，5月28日上线。延续任天堂在移动端"创意工具+轻游戏"的探索路线。' },
-        { type:'news', label:{text:'销售捷报',cls:'label-green'}, img:'https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltd927b9bd30d7c512/6a0af1c1fc6d782514b34bb7/Arc_Header.png?disable=upscale&width=1200&height=630&fit=crop',
+        { type:'news', label:{text:'销售捷报',cls:'label-green'},
           title:'Arc Raiders 销量破 1600 万，Nexon 准备引入中国',
-	          date:'2026.05.19', source:'Game Developer',
+          date:'2026.05.19', source:'Game Developer',
           url:'https://www.gamedeveloper.com/business/arc-raiders-tops-16-million-sales-and-could-be-heading-to-china',
           body:'Embark Studios（Nexon 旗下）开发的提取射击游戏 Arc Raiders 全球销量突破 1600 万份，仅 Q1 2026 就新增 460 万份。玩家参与度极高——过半活跃玩家在 Q1 游戏时长超 100 小时，总游戏时长 15 亿小时。Nexon 称其为"公司史上最成功的发行"。\n\nNexon 已获得中国 ISBN 版号，计划在中国市场进行多轮封闭测试。Q1 收入同比增长 34% 至 ¥1522 亿（约 $9.58 亿）。同时 Nexon 取消了 3 个项目，将资源重新分配给《Nakwon: Last Paradise》等项目。' },
-        { type:'news', label:{text:'并购风云',cls:'label-warn'}, img:'https://media.pocketgamer.biz/images/139344/88958/streamelements-logo_l1200.jpg',
+        { type:'news', label:{text:'并购风云',cls:'label-warn'},
           title:'StreamElements 确认洽谈收购，回应倒闭传闻',
           date:'2026.05.18', source:'PocketGamer.biz',
           url:'https://www.pocketgamer.biz/streamelements-confirms-acquisition-talks-amid-shutdown-speculation/',
           body:'直播工具平台 StreamElements 正式确认正在与潜在买家进行"积极谈判"，回应业界关于其即将关闭的传闻。直播工具赛道的整合持续。' },
-        { type:'news', label:{text:'Scopely / Monopoly Go',cls:'label-teal'}, img:'https://media.pocketgamer.biz/images/139338/88959/howard-shin-pgc-barcelona_l1200.jpg',
+        { type:'news', label:{text:'Scopely / Monopoly Go',cls:'label-teal'},
           title:'Monopoly Go 视觉识别案例将登 PGC Barcelona',
           date:'2026.05.18', source:'PocketGamer.biz',
           url:'https://www.pocketgamer.biz/learn-how-scopely-crafted-a-distinct-visual-identity-for-monopoly-go-at-pgc-barcelona/',
           body:'Scopely 将在 PGC Barcelona（6月15-16日）分享 Monopoly Go 的视觉识别打造经验。Monopoly Go 自 2023 年上线以来已超 $30 亿收入。巴塞罗那办公室从 5 人扩张至 750 人，是欧洲增长最快的游戏工作室之一。' },
-        { type:'news', label:{text:'Supercell / Metacore',cls:'label-teal'}, img:'https://i0.wp.com/mobilegamer.biz/wp-content/uploads/2025/07/metacore-e1777985870102.jpg?fit=1200%2C544&ssl=1',
+        { type:'news', label:{text:'Supercell / Metacore',cls:'label-teal'},
           title:'全资收购 Metacore（Merge Mansion），裁减超半数员工',
           date:'2026.05.18-19', source:'Mobilegamer.biz / GameWorldObserver',
           url:'https://mobilegamer.biz/supercell-to-fully-acquire-merge-mansion-maker-metacore-as-it-restructure-with-160-jobs-at-risk/',
           body:'Supercell 全资收购 Merge Mansion 开发商 Metacore，同步裁减最多 160 人（超总员工一半）。CEO 坦承"建立了与增长预期不匹配的组织架构"，自 Merge Mansion 后未能推出第二款成功产品。Merge Mansion 将并入 Supercell 的 live game 组合。再次印证头部发行商"收购→整合→瘦身"的模式。' },
-        { type:'news', label:{text:'Sony / PS Plus',cls:'label-purple'}, img:'https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/blt673f7fecb064c428/6a0c2c7cfb25ab177611aa0b/PS_Plus_Header.png?disable=upscale&width=1200&height=630&fit=crop',
+        { type:'news', label:{text:'Sony / PS Plus',cls:'label-purple'},
           title:'PlayStation Plus 涨价：新用户每月 $9.99→$10.99',
           date:'2026.05.19', source:'Game Developer',
           url:'https://www.gamedeveloper.com/business/sony-increasing-the-price-of-playstation-plus-for-new-customers',
           body:'Sony 宣布 PlayStation Plus 涨价，5月20日起对新用户生效。Essential 月费从 $9.99 涨至 $10.99（1英鎊/1欧元涨幅）。现有用户不受影响除非订阅中断。Sony 将涨价归因于"持续的市场环境"。土耳其和印度市场的现有用户也将面临涨价。' },
-        { type:'news', label:{text:'SNK / 格斗游戏',cls:'label-info'}, img:'https://eu-images.contentstack.com/v3/assets/blt740a130ae3c5d529/bltbacc57df2dd931be/6a05ff4c2ce750da24a1fbf0/dsks.jpg?disable=upscale&width=1200&height=630&fit=crop',
+        { type:'news', label:{text:'SNK / 格斗游戏',cls:'label-info'},
           title:'铁拳制作人原田胜弘加盟 SNK，担任新工作室 CEO',
           date:'2026.05.18（近期）', source:'Game Developer',
           url:'https://www.gamedeveloper.com/business/tekken-veteran-katsuhiro-harada-to-lead-new-snk-subsidiary',
           body:'前 Bandai Namco 铁拳系列制作人原田胜弘（Katsuhiro Harada）在 2025 年 12 月离职后，加盟 SNK 担任新子公司 VS Studio SNK 的 CEO。该工作室于 5 月 1 日成立。SNK 近期动作频繁——2024 年开设新加坡工作室、成立 KOF Studio，并在沙特资本（EGDC）全资控股下持续扩张。' }
       ]
     },
-    // ——— 3. 社媒热点 ———
     {
       id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
-      items:[
-        { type:'trending' }
-      ]
+      items:[{ type:'trending' }]
     },
-    // ——— 4. Reddit 热点 ———
     {
       id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:true,
-      items:[
-        { type:'reddit-trending' }
-      ]
+      items:[{ type:'reddit', posts:[
+        { subreddit:"gaming", title:"Helping my dad clean out a spare room and found a bunch of our old games.", summary:"网友分享在帮父亲清理储藏室时发现大量童年游戏收藏，包括经典主机和游戏光盘。该帖引发社区强烈共鸣，数千名玩家跟帖晒出自己的怀旧收藏，讨论游戏行业变迁和童年回忆。", url:"https://www.reddit.com/r/gaming/comments/1tgqo7d/helping_my_dad_clean_out_a_spare_room_and_found_a/", ups:15227 },
+        { subreddit:"gaming", title:"Its official: Steam decrees bullet heaven the name of the Vampire Survivors genre", summary:"Steam 官方正式将 Vampire Survivors 类游戏归类为 'Bullet Heaven（弹幕天堂）' 子分类，结束了长期以来关于 '弹幕地狱' 和 '弹幕天堂' 的分类争议。社区对这一命名反应热烈，开发者表示此前就已推动该分类在 Steam 上的正式确立。", url:"https://www.reddit.com/r/gaming/comments/1th4rw1/its_official_steam_decrees_bullet_heaven_the_name/", ups:11565 },
+        { subreddit:"gaming", title:"Sony Announces PlayStation Plus Price Increases Due to Ongoing Market Conditions", summary:"Sony宣布PS Plus涨价引发玩家热议。", url:"https://www.reddit.com/r/gaming/comments/1tgs605/sony_announces_playstation_plus_price_increases/", ups:9306 },
+        { subreddit:"gaming", title:"PlayStation single-player games now PlayStation Studios exclusive", summary:"PlayStation负责人Hermen Hulst确认叙事单人游戏将成为PS Studios独占，不再登陆其他平台。", url:"https://www.reddit.com/r/gaming/comments/1tgy89i/its_official_playstation_boss_hermen_hulst_told/", ups:7915 },
+        { subreddit:"gaming", title:"Anyone else found themselves retiring from PvP gaming?", summary:"玩家热议PvP疲劳现象，工作后越来越不想玩竞技游戏。", url:"https://www.reddit.com/r/gaming/comments/1tgw3p1/anyone_else_found_themselves_retiring_from_pvp/", ups:6350 },
+        { subreddit:"gaming", title:"Warhorse Studios Confirmed That They Are Working on a LOTR Open World RPG", summary:"Warhorse Studios（天国:拯救开发商）确认正在开发指环王开放世界RPG。", url:"https://www.reddit.com/r/gaming/comments/1tif5hy/warhorse_studios_confirmed_that_they_are_working/", ups:3590 },
+        { subreddit:"games", title:"Kickstarter removes new mature content guidelines after backlash", summary:"Kickstarter宣布撤回新的成人内容审核政策，恢复原有标准。", url:"https://www.reddit.com/r/Games/comments/1thvwj1/kickstarter_an_apology_rethinking_our_mature/", ups:2258 }
+      ]}]
     },
-    // ——— 5. 竞品追踪 ———
     {
       id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
       items:[{
@@ -760,7 +724,6 @@ reportData.push({
         ]
       }]
     },
-    // ——— 6. 新品 & 软测监测（合并） ———
     {
       id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
       items:[
@@ -781,7 +744,6 @@ reportData.push({
         }
       ]
     },
-    // ——— 7. 研报 & 行业分析 ———
     {
       id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
       items:[
@@ -792,7 +754,6 @@ reportData.push({
           body:'本周（5月14日-20日）主要游戏媒体未发布新的行业调研报告或白皮书。研报类内容通常以周/月为频率发布。' }
       ]
     },
-    // ——— 8. 特别预警 ———
     {
       id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
       items:[
@@ -800,6 +761,160 @@ reportData.push({
           body:'这款产品在中国已验证 2亿+ 下载和 1000万 DAU。建议：① 上线首周追踪全球排名和获量策略；② 亲自体验，分析竖屏适配、恐怖元素运用、变现设计；③ 关注用户评价和媒体评测，找差异化空间。' },
         { type:'alert', title:'📌 Fortnite 重返 iOS 的连锁效应 — 持续关注',
           body:'Fortnite 全球重返 iOS 可能引发新一轮 App Store 政策调整。如果 Epic 在更多市场胜诉，30% 佣金率的松动将影响所有移动发行商的利润模型。' }
+      ]
+    }
+  ]
+});
+
+reportData.push({
+  date:'2026-05-21', weekday:'周四',
+  highlights:[
+    { text:'<strong>Sensor Tower 收购 AppMagic</strong> — 移动数据情报市场加速整合，AppMagic保持独立品牌服务中小开发者', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>Embracer 集团拆分为四大独立实体</strong> — Fellowship Entertainment 持有古墓丽影/指环王等IP，移动业务保留', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>Supercell 重启 Mo.co</strong> — 赛季制+免费抽卡，轻量化狩猎游戏的迭代策略解析', anchor:'vendor', anchorIdx:0 },
+    { text:'<strong>Love and Deepspace 全球总收入破 $10亿</strong> — 乙女向RPG赛道天花板，日本主导市场', anchor:'vendor', anchorIdx:1 },
+    { text:'<strong>Esports World Cup 2026 移师巴黎</strong> — 首次离开沙特举办，行业关注度飙升', anchor:'vendor', anchorIdx:3 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'市场整合',cls:'label-hot'},
+          title:'Sensor Tower 收购竞品 AppMagic — 移动数据情报市场加速洗牌',
+          date:'2026.05.20', source:'PocketGamer.biz',
+          url:'https://www.pocketgamer.biz/why-sensor-tower-acquired-rival-appmagic/',
+          body:'Sensor Tower 收购竞争对手 AppMagic（交易金额未公开），这是继两年前收购 Data.ai 后的第二次重大并购。AppMagic 团队近 100 人将大部分留任。与 Data.ai 整合不同，AppMagic 将保留独立品牌和产品定位，继续面向中小开发者提供轻量级市场情报服务。Sensor Tower 首席营收官 Tom Cui 坦言"我们在服务中小开发者和独立开发者方面做得不好"，AppMagic 正好填补了这一空白。\n\n<strong>行业影响：</strong>移动数据情报市场集中度进一步提升。AppMagic 不会涨价，Sensor Tower 有意将其打造成入门级平台。同时 Sensor Tower 正投资第一方面板数据，计划 2026 下半年推出跨平台收入估算产品。此外 Epic 与 Steam 的游戏中 DTC 支付趋势正在使传统数据估算变得更加困难。' },
+        { type:'news', label:{text:'集团重组',cls:'label-hot'},
+          title:'Embracer 集团拆分为四大独立实体 — 古墓丽影/指环王IP进入 Fellowship Entertainment',
+          date:'2026.05.20', source:'Game Developer / Mobilegamer.biz',
+          url:'https://www.gamedeveloper.com/business/embracer-to-spin-off-major-video-game-franchises-and-studios',
+          body:'Embracer Group 宣布将拆分为四个独立上市公司：Fellowship Entertainment（IP驱动）、Coffee Stain & Friends、Asmodee（桌游）、以及保留 Embracer 品牌的主体。Fellowship Entertainment 将持有 Darksiders、Dead Island、Kingdom Come Deliverance、Metro、Remnant、指环王、古墓丽影等顶级IP，旗下包含 Crystal Dynamics、Eidos-Montréal、Warhorse Studios 等知名工作室。\n\n<strong>移动战略：</strong>拆分后 Embracer 主体保留 CrazyLabs、Deca、Demiurge 等移动工作室，以及 THQ Nordic（35个工作室）、Aspyr、Milestone 等，聚焦移动、发行、复古和重制赛道。Embracer 董事长称分拆将带来"更锐利的管理焦点和更清晰的问责制"。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'产品重启',cls:'label-green'},
+          title:'Supercell 重启 Mo.co — 赛季制+免费抽卡，轻量化狩猎游戏迭代',
+          date:'2026.05.20-21', source:'Mobilegamer.biz',
+          url:'https://mobilegamer.biz/supercell-reboots-its-lowkey-monster-hunting-game-mo-co-with-seasons-and-free-gacha-pulls/',
+          body:'Supercell 旗下轻量化狩猎游戏 Mo.co 以"Neo Mo.co"名义全面重启，引入月度赛季通行证和免费抽卡系统 "Perks"。社区经理明确表态"玩家不能用现金购买 Perks，也没有计划对其进行商业化"，游戏收入仍仅靠外观饰品。Appmagic 估算 Mo.co 自 2025年3月起累计 IAP 约 $470 万，下载量 850 万，Top 市场为美国（26%）、德国（9%）、法国（8%）。\n\n<strong>关注要点：</strong>Supercell 在 Squad Busters 停运后对 Mo.co 的坚持值得关注。赛季制+免费抽卡的设计是否有效提升留存？视觉风格和玩法是否适合当前市场？' },
+        { type:'news', label:{text:'里程碑',cls:'label-purple'},
+          title:'Love and Deepspace 全球总收入突破 $10亿 — 乙女向赛道天花板',
+          date:'2026.05.20', source:'Mobilegamer.biz / Appmagic',
+          url:'https://mobilegamer.biz/data-digest-love-and-deepspace-hits-1bn-pokemon-tcg-tops-200m-installs-plus-fresh-funding-and-financial-news/',
+          body:'Paperfold Games 开发的乙女向 RPG《Love and Deepspace》全球总收入突破 $10 亿（IAP $7.49 亿）。峰值日收入达 $700 万，由大型活动驱动。其中"Throne of Eros"抽卡活动单期收入超 $2200 万，推动日流水暴涨 154%。同日 Pokémon TCG Pocket 宣布全球安装量突破 2 亿，IAP 收入约 $11.6 亿，日本贡献 45% 收入（美国 24%）。' },
+        { type:'news', label:{text:'战略分享',cls:'label-info'},
+          title:'Inside Scopely\'s Rise — COO 谈15年增长与长线运营哲学',
+          date:'2026.05.20', source:'PocketGamer.biz',
+          url:'https://www.pocketgamer.biz/inside-scopelys-rise-to-a-global-mobile-games-giant/',
+          body:'Scopely COO Eunice Lee 分享公司 15 年成长历程与长线 live service 游戏构建哲学。Scopely 自 Monopoly Go 上线以来已产生超 $30 亿收入，巴塞罗那办公室从 5 人扩张至 750 人。核心洞察：打造能持续运营数年的游戏需要"组织耐心和长期投入"，而非追求短期爆款。Monopoly Go 的视觉识别案例将登 PGC Barcelona（6月15-16日）。' },
+        { type:'news', label:{text:'电竞赛事',cls:'label-warn'},
+          title:'Esports World Cup 2026 移师巴黎 — 首次离开沙特举办',
+          date:'2026.05.20', source:'PocketGamer.biz',
+          url:'https://www.pocketgamer.biz/esports-world-cup-2026-relocates-from-saudi-arabia-to-paris-amid-regional-uncertainty/',
+          body:'Esports World Cup 2026 宣布从沙特阿拉伯移师巴黎举办，这是 EWC 首次在沙特以外地区举行。此举被认为与近期地区局势不确定性有关。EWC 是全球奖金池最高的电竞锦标赛之一，包含多个游戏项目。移师欧洲可能带来更高的观众参与度和品牌合作机会。' },
+        { type:'news', label:{text:'财报/减记',cls:'label-warn'},
+          title:'Embracer 移动部门减记 $1.9亿 — Easybrain 出售后销售额下降',
+          date:'2026.05.20', source:'Mobilegamer.biz',
+          url:'https://mobilegamer.biz/embracer-writes-down-its-mobile-arm-by-190m-as-sales-fall-after-easybrain-sale/',
+          body:'Embracer 在 Easybrain 出售后对其移动业务进行 $1.9亿 减记，移动部门销售额下降。目前 Embracer 旗下 Top 移动产品包括 Sled Surfers、Glow: Fashion Idol、Lamar Idle Vlogger、Flop House、Party in My Dorm 等。此次减记进一步验证 Embracer 拆分战略的合理性——移动业务将独立运营，聚焦休闲和超休闲赛道。' },
+        { type:'news', label:{text:'社责',cls:'label-teal'},
+          title:'Roblox 扩大心理健康合作 — 与 Koko / ThroughLine 等合作',
+          date:'2026.05.20', source:'PocketGamer.biz',
+          url:'https://www.pocketgamer.biz/roblox-expands-mental-health-efforts-with-new-partnerships-and-well-being-resources/',
+          body:'Roblox 宣布与心理健康平台 Koko、ThroughLine 和 Thrive 合作，拓展平台内的心理健康资源。此举是 Roblox 平台社会责任战略的一部分，也是行业头部公司日益重视青少年用户心理健康的缩影。对于以青少年为核心用户的游戏产品，这是值得关注的行业趋势。' },
+        { type:'news', label:{text:'行业整合',cls:'label-warn'},
+          title:'Playtika 旗下 Wooga 再度裁员 — 管理层决策遭前员工谴责',
+          date:'2026.05.20', source:'Mobilegamer.biz',
+          url:'https://mobilegamer.biz/another-round-of-layoffs-at-playtika-owned-wooga/',
+          body:'Playtika 旗下休闲游戏开发商 Wooga 再次裁员。前员工公开谴责"管理层的糟糕决策"。此前 Playtika 已宣布全面转向 casual 品类（casual 现占收入 76%），将社交 casino 定性为"管理下滑"。Wooga 的持续裁员反映了 Playtika 在战略转型过程中的组织阵痛。' },
+        { type:'news', label:{text:'硬件/创新',cls:'label-info'},
+          title:'Nex Playground 美国销量超越 Xbox — "我们的野心和 Wii 一样大"',
+          date:'2026.05.20', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/-our-ambitions-are-as-big-as-the-wii-the-heady-dreams-powering-the-nex-playground',
+          body:'Nex Playground 体感游戏主机在美国市场销量已超过 Xbox，CEO 称其目标是瞄准 Nintendo Wii 级别的全球市场。Nex 主打家庭聚会体感游戏，定位独特。该产品的成功表明家庭客厅娱乐市场仍有增量空间，对游戏行业的发行渠道和用户触达策略有一定参考意义。' }
+      ]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[] }]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'MLA',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey', status:'监测中', detail:'莉莉丝最新力作，融合开放世界探索的放置 RPG。代表了放置品类的进化方向。', movement:'暂无重大新动态' },
+              { name:'AFK Arena', status:'监测中', detail:'莉莉丝经典放置 RPG，长线运营标杆。', movement:'暂无重大新动态' },
+              { name:'Sword x Staff', status:'重点关注', detail:'全球上线第3天，关注首发周排名表现和买量素材。', movement:'已上线 Day 3，持续追踪 Rank 和 UA' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Petit Planet（星布谷地）(Hoyoverse)', status:'⚠️ 最高优先', detail:'米哈游打造，跨 iOS/Android/PC。Mobilegamer.biz 最新新品汇总提及为市场关注焦点。', movement:'被多家行业媒体列为最值得关注新品' },
+              { name:'Heartopia (XD Inc.)', status:'已上线', detail:'2026年初上线，持续运营中。', movement:'持续运营中' },
+              { name:'Planet Party Time（星绘友晴天）', status:'未上线', detail:'国产生活模拟新品。', movement:'等待上线' },
+              { name:'Animula Nook（粒粒的小人国）', status:'未上线', detail:'国产生活模拟新品。', movement:'等待上线' },
+              { name:'Cozy Grove', status:'监测中', detail:'生活模拟品类参考产品。', movement:'稳定' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Sky Force Reloaded', status:'监测中', detail:'经典飞行射击标杆。', movement:'稳定' },
+              { name:'Galaxy Attack', status:'监测中', detail:'经典竖屏飞行射击。', movement:'稳定' },
+              { name:'Phoenix 2', status:'监测中', detail:'高品质竖版射击。', movement:'稳定' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters (Giant Games)', status:'⚠️ 最高预警', detail:'5月27日全球上线（倒计时6天）。中国已验证 2亿+ 下载 / 1000万 DAU。', movement:'还有6天全球上线' },
+              { name:'無盡輪迴：鬼域摸金', status:'监测中', detail:'仅上港澳台。轮回题材恐怖手游。', movement:'暂无最新动态' },
+              { name:'英雄來搞鬼：房間保衛戰', status:'监测中', detail:'同类产品，持续关注。', movement:'暂无最新动态' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['UFL','Strikerz Inc.','足球体育','iOS/Android','5月22日全球软测','<a class="store-link" href="https://play.google.com/store/search?q=UFL&c=apps" target="_blank">Google Play</a>','EA FC竞品，明日软测'] },
+            { cells:['Slime Rancher（史莱姆牧场）','Playdigious','生活模拟','iOS/Android/PC','5月26日','<a class="store-link" href="https://play.google.com/store/apps/details?id=com.playdigious.slimerancher" target="_blank">Google Play</a>','PC独立IP移动化'] },
+            { cells:['🔥 Tomb Busters','Giant Games','恐怖提取','iOS/Android','5月27日','<a class="store-link" href="https://play.google.com/store/search?q=Tomb+Busters&c=apps" target="_blank">Google Play</a>','⚠️ Haunted Headline最强竞品'], highlight:true },
+            { cells:['Pictonico','Nintendo','创意轻游戏','iOS','5月28日','<a class="store-link" href="https://apps.apple.com/search?term=pictonico" target="_blank">App Store</a>','任天堂移动端新方向'] },
+            { cells:['Mini Football Legends','Miniclip/Tencent','休闲足球','iOS (AA)','6月4日','<a class="store-link" href="https://apps.apple.com/search?term=Mini+Football+Legends" target="_blank">App Store</a>','Apple Arcade独占'] },
+            { cells:['Limit Zero Breakers','NCsoft','二次元动作RPG','iOS/Android/Steam','6月10-15日','<a class="store-link" href="https://store.steampowered.com/search/?term=Limit+Zero+Breakers" target="_blank">Steam</a>','NCsoft Genshin-like新作'] },
+            { cells:['Overwatch Rush','Blizzard','俯视角英雄射击','iOS/Android','菲律宾测试中','<a class="store-link" href="https://play.google.com/store/search?q=Overwatch+Rush&c=apps" target="_blank">Google Play</a>','暴雪移动端重要布局'] },
+            { cells:['Monster Hunter Outlanders','Capcom/Tencent','开放世界狩猎','iOS/Android','Beta测试中','<a class="store-link" href="https://play.google.com/store/search?q=Monster+Hunter+Outlanders&c=apps" target="_blank">Google Play</a>','顶级IP移动化'] },
+            { cells:['PVZ 3: Evolved','EA','塔防+合并','iOS/Android','爱尔兰/菲律宾EA','<a class="store-link" href="https://play.google.com/store/search?q=Plants+vs+Zombies+3&c=apps" target="_blank">Google Play</a>','EA经典系列新作'] },
+            { cells:['Hill Climb Racing 3（登山赛车3）','Fingersoft','赛车/实时多人','Android','英国/北欧软测','<a class="store-link" href="https://play.google.com/store/search?q=Hill+Climb+Racing+3&c=apps" target="_blank">Google Play</a>','经典IP续作'] }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'研报缺失',cls:'label-warn'},
+          title:'本周无新增行业调研报告',
+          date:'2026.05.21', source:'—',
+          url:'',
+          body:'本周（5月14日-21日）主要游戏媒体未发布新的行业调研报告或白皮书。研报类内容通常以周/月为频率发布。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔥 红色预警：Tomb Busters 5月27日全球上线 — 仅剩6天',
+          body:'倒计时持续。建议：① 团队已体验并产出竞品分析文档；② 上线首周（5/27-6/3）重点追踪全球下载/收入排名；③ 预注册用户数监测，判断买量规模。' },
+        { type:'alert', title:'📌 Sensor Tower + AppMagic 整合的行业信号',
+          body:'移动数据情报市场加速整合，Sensor Tower 已先后收购 Data.ai 和 AppMagic，形成双品牌覆盖大客户+SMB 的全市场格局。对发行团队的影响：未来市场情报工具的定价权和数据可及性可能受到影响，建议多元化数据源。' }
       ]
     }
   ]
@@ -819,29 +934,31 @@ function getVendorPageCount() {
 function vendorPrev() { if (vendorPage > 1) { vendorPage--; renderPanels(); } }
 function vendorNext() { if (vendorPage < getVendorPageCount()) { vendorPage++; renderPanels(); } }
 
-// Reddit pagination
 let redditPage = 1;
 const REDDIT_PAGE_SIZE = 4;
-function getRedditPageCount() { return Math.ceil(redditPosts.length / REDDIT_PAGE_SIZE); }
+function getRedditPageCount() {
+  const day = reportData[activeDay];
+  if (!day) return 1;
+  const sec = day.sections.find(s => s.id === 'reddit');
+  const posts = sec && sec.items[0] && sec.items[0].posts ? sec.items[0].posts : [];
+  return Math.ceil(posts.length / REDDIT_PAGE_SIZE) || 1;
+}
 function redditPrev() { if (redditPage > 1) { redditPage--; renderPanels(); } }
 function redditNext() { if (redditPage < getRedditPageCount()) { redditPage++; renderPanels(); } }
 
-// Reddit data (fetched and embedded at build time)
-const redditPosts = [
-  { subreddit:"gaming", title:"Helping my dad clean out a spare room and found a bunch of our old games.", summary:"网友分享在帮父亲清理储藏室时发现大量童年游戏收藏，包括经典主机和游戏光盘。该帖引发社区强烈共鸣，数千名玩家跟帖晒出自己的怀旧收藏，讨论游戏行业变迁和童年回忆。", url:"https://www.reddit.com/r/gaming/comments/1tgqo7d/helping_my_dad_clean_out_a_spare_room_and_found_a/", ups:15227 },
-  { subreddit:"gaming", title:"Its official: Steam decrees bullet heaven the name of the Vampire Survivors genre", summary:"Steam 官方正式将 Vampire Survivors 类游戏归类为 'Bullet Heaven（弹幕天堂）' 子分类，结束了长期以来关于 '弹幕地狱' 和 '弹幕天堂' 的分类争议。社区对这一命名反应热烈，开发者表示此前就已推动该分类在 Steam 上的正式确立。", url:"https://www.reddit.com/r/gaming/comments/1th4rw1/its_official_steam_decrees_bullet_heaven_the_name/", ups:11565 },
-  { subreddit:"gaming", title:"Sony Announces PlayStation Plus Price Increases Due to Ongoing Market Conditions", summary:"Sony宣布PS Plus涨价引发玩家热议。", url:"https://www.reddit.com/r/gaming/comments/1tgs605/sony_announces_playstation_plus_price_increases/", ups:9306 },
-  { subreddit:"gaming", title:"PlayStation single-player games now PlayStation Studios exclusive", summary:"PlayStation负责人Hermen Hulst确认叙事单人游戏将成为PS Studios独占，不再登陆其他平台。", url:"https://www.reddit.com/r/gaming/comments/1tgy89i/its_official_playstation_boss_hermen_hulst_told/", ups:7915 },
-  { subreddit:"gaming", title:"Anyone else found themselves retiring from PvP gaming?", summary:"玩家热议PvP疲劳现象，工作后越来越不想玩竞技游戏。", url:"https://www.reddit.com/r/gaming/comments/1tgw3p1/anyone_else_found_themselves_retiring_from_pvp/", ups:6350 },
-  { subreddit:"gaming", title:"Warhorse Studios Confirmed That They Are Working on a LOTR Open World RPG", summary:"Warhorse Studios（天国:拯救开发商）确认正在开发指环王开放世界RPG。", url:"https://www.reddit.com/r/gaming/comments/1tif5hy/warhorse_studios_confirmed_that_they_are_working/", ups:3590 },
-  { subreddit:"games", title:"Kickstarter removes new mature content guidelines after backlash", summary:"Kickstarter宣布撤回新的成人内容审核政策，恢复原有标准。", url:"https://www.reddit.com/r/Games/comments/1thvwj1/kickstarter_an_apology_rethinking_our_mature/", ups:2258 },
-];
+const redditPosts = [];
 
-function renderRedditTrending() {
-  if (!redditPosts.length) return '<div class="reddit-card" style="text-align:center;color:var(--text2);padding:24px;">暂无 Reddit 热门数据（将在下次抓取时填充）</div>';
+function renderRedditTrending(posts) {
+  if (!posts || !posts.length) {
+    return '<div class="reddit-card" style="text-align:center;color:var(--text2);padding:24px;">' +
+      '<div style="font-size:36px;margin-bottom:8px;">🤖</div>' +
+      '<div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">Reddit 数据暂未获取</div>' +
+      '<div style="font-size:var(--fs-card);">今日 Reddit API 暂时不可达，将在下次抓取时自动填充。请查看其他板块获取行业动态。</div>' +
+      '</div>';
+  }
   const start = (redditPage - 1) * REDDIT_PAGE_SIZE;
   const end = start + REDDIT_PAGE_SIZE;
-  const pagePosts = redditPosts.slice(start, end);
+  const pagePosts = posts.slice(start, end);
   let html = pagePosts.map(p => `
     <div class="reddit-card">
       <span class="card-label label-hot">r/${p.subreddit}</span>
@@ -850,7 +967,7 @@ function renderRedditTrending() {
       <div class="reddit-meta">👍 ${p.ups} · <a href="${p.url}" target="_blank" style="color:var(--accent2);text-decoration:none;">🔗 查看原文</a></div>
     </div>
   `).join('');
-  const totalPages = getRedditPageCount();
+  const totalPages = Math.ceil(posts.length / REDDIT_PAGE_SIZE);
   if (totalPages > 1) {
     html += '<div class="page-controls">' +
       '<button class="page-btn" onclick="redditPrev()"' + (redditPage <= 1 ? ' disabled' : '') + '>‹</button>' +
@@ -861,7 +978,6 @@ function renderRedditTrending() {
   return html;
 }
 
-// ============ RENDER ============
 function renderCalendar(monthIdx) {
   const m = calendarMonths[monthIdx];
   const [y, month] = m.key.split('-').map(Number);
@@ -871,43 +987,24 @@ function renderCalendar(monthIdx) {
   const isThisMonth = today.getFullYear()===y && (today.getMonth()+1)===month;
   const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   let grid = '<div class="cal-grid">';
-  dayNames.forEach(d => { grid += `<div class="cal-header">${d}</div>`; });
+  dayNames.forEach(d => { grid += '<div class="cal-header">'+d+'</div>'; });
   for (let i=0; i<firstDay; i++) grid += '<div class="cal-day empty"></div>';
   for (let d=1; d<=daysInMonth; d++) {
     const evts = m.events[d] || [];
     const isToday = isThisMonth && today.getDate()===d;
-    let c = `<div class="cal-day${isToday?' today':''}"><div class="day-num">${d}</div>`;
-    evts.forEach(e => { c += `<div class="day-event ${e.cls}">${e.text}</div>`; });
+    let c = '<div class="cal-day'+(isToday?' today':'')+'"><div class="day-num">'+d+'</div>';
+    evts.forEach(e => { c += '<div class="day-event '+e.cls+'">'+e.text+'</div>'; });
     c += '</div>';
     grid += c;
   }
   grid += '</div>';
-  return `
-    <div class="cal-card">
-      <div class="cal-header-row">
-        <div class="cal-title">${m.title}</div>
-        <div class="cal-nav">
-          <button onclick="prevCal()">‹</button>
-          <button onclick="nextCal()">›</button>
-          <button class="cal-expand-btn" onclick="openCalModal()" title="展开大日历">⛶</button>
-        </div>
-      </div>
-      ${grid}
-      <div class="cal-legend">
-        <span>🔴 热点</span> <span>🔵 上线</span> <span>🟠 活动</span>
-      </div>
-    </div>`;
+  return '<div class="cal-card"><div class="cal-header-row"><div class="cal-title">'+m.title+'</div><div class="cal-nav">'+
+    '<button onclick="prevCal()">‹</button><button onclick="nextCal()">›</button>'+
+    '<button class="cal-expand-btn" onclick="openCalModal()" title="展开大日历">⛶</button></div></div>'+grid+
+    '<div class="cal-legend"><span>🔴 热点</span> <span>🔵 上线</span> <span>🟠 活动</span></div></div>';
 }
 
-let calIdx = 0;
-function renderCalSection() {
-  const el = document.getElementById('cal-container');
-  if (el) el.innerHTML = renderCalendar(calIdx);
-}
-function prevCal() { calIdx = Math.max(0, calIdx-1); renderCalSection(); }
-function nextCal() { calIdx = Math.min(calendarMonths.length-1, calIdx+1); renderCalSection(); }
-
-function renderLargeCalendar(monthIdx) {
+function renderCalendarModal(monthIdx) {
   const m = calendarMonths[monthIdx];
   const [y, month] = m.key.split('-').map(Number);
   const firstDay = new Date(y, month-1, 1).getDay();
@@ -916,232 +1013,230 @@ function renderLargeCalendar(monthIdx) {
   const isThisMonth = today.getFullYear()===y && (today.getMonth()+1)===month;
   const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   let grid = '<div class="modal-cal-grid">';
-  dayNames.forEach(d => { grid += `<div class="modal-cal-header">${d}</div>`; });
+  dayNames.forEach(d => { grid += '<div class="modal-cal-header">'+d+'</div>'; });
   for (let i=0; i<firstDay; i++) grid += '<div class="modal-cal-day empty"></div>';
   for (let d=1; d<=daysInMonth; d++) {
     const evts = m.events[d] || [];
     const isToday = isThisMonth && today.getDate()===d;
-    let c = `<div class="modal-cal-day${isToday?' today':''}"><div class="day-num">${d}</div>`;
-    evts.forEach(e => { c += `<div class="day-event ${e.cls}">${e.text}</div>`; });
+    let c = '<div class="modal-cal-day'+(isToday?' today':'')+'"><div class="day-num">'+d+'</div>';
+    evts.forEach(e => { c += '<div class="day-event '+e.cls+'">'+e.text+'</div>'; });
     c += '</div>';
     grid += c;
   }
   grid += '</div>';
   return grid;
 }
+
+let calMonthIdx = 0;
+function prevCal() { calMonthIdx = Math.max(0, calMonthIdx-1); renderCal(); }
+function nextCal() { calMonthIdx = Math.min(calendarMonths.length-1, calMonthIdx+1); renderCal(); }
 function openCalModal() {
   document.getElementById('calModal').classList.add('show');
-  document.getElementById('calModalTitle').textContent = '📅 ' + calendarMonths[calIdx].title;
-  document.getElementById('calModalBody').innerHTML = renderLargeCalendar(calIdx);
+  document.getElementById('calModalTitle').textContent = '📅 '+calendarMonths[calMonthIdx].title;
+  document.getElementById('calModalBody').innerHTML = renderCalendarModal(calMonthIdx);
 }
-function closeCalModal(ev) {
-  if (!ev || ev.target === ev.currentTarget) {
-    document.getElementById('calModal').classList.remove('show');
-  }
+function closeCalModal(e) { if (!e || e.target.id==='calModal') document.getElementById('calModal').classList.remove('show'); }
+
+function switchTab(idx) { activeDay=idx; vendorPage=1; redditPage=1; document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===idx)); renderPanels(); }
+function setFontSize(s) { document.body.className = s==='md'?'':'font-'+s; document.querySelectorAll('.fs-group button').forEach(b=>b.classList.toggle('active',b.textContent.includes(s==='md'?'A':s==='sm'?'A⁻':'A⁺'))); }
+function toggleAll() { document.querySelectorAll('.section').forEach(s=>s.classList.toggle('collapsed')); }
+function toggleSection(id) { document.getElementById(id).classList.toggle('collapsed'); }
+function jumpToSection(id) { setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:'smooth'}),100); }
+
+function switchCountry(c) {
+  document.querySelectorAll('.country-btn').forEach(b=>b.classList.toggle('active', b.textContent.includes({us:'🇺🇸',uk:'🇬🇧',de:'🇩🇪',fr:'🇫🇷'}[c])));
+  document.querySelectorAll('.trend-panel[id^="trend-"]').forEach(p=>p.classList.toggle('active', p.id==='trend-'+c));
 }
 
-function renderTopRow(h) {
-  let hlHTML = '';
-  if (h && h.length) {
-    const items = h.map(item =>
-      `<li><a class="hl-link" href="#" onclick="jumpToSection('sec-0-${item.anchor}');return false;">↓</a>${item.text}</li>`
-    ).join('');
-    hlHTML = `<div class="highlights-card"><div style="font-weight:600;font-size:var(--fs-title);margin-bottom:8px;color:var(--accent);">📌 今日速览</div><ol>${items}</ol></div>`;
-  }
-  return `
-    <div class="top-row">
-      <div class="cal-col" id="cal-container">${renderCalendar(0)}</div>
-      <div class="hl-col">${hlHTML}</div>
-    </div>`;
-}
-
-function jumpToSection(id) {
-  const el = document.getElementById(id);
-  if (el) {
-    el.classList.remove('collapsed');
-    const header = document.querySelector('.header');
-    const offset = header ? header.offsetHeight + 16 : 100;
-    const top = el.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({top, behavior:'smooth'});
-    el.style.transition = 'background .3s';
-    el.style.background = 'rgba(79,111,207,0.06)';
-    setTimeout(() => { el.style.background = ''; }, 1500);
-  }
-}
-
-function renderTrending() {
-  const countries = Object.keys(trendData);
-  let btns = countries.map((k,i) =>
-    `<button class="country-btn${i===0?' active':''}" onclick="switchCountry('${k}')">${trendData[k].label}</button>`
-  ).join('');
-  let panels = countries.map((k,i) => {
-    const d = trendData[k];
-    return `<div class="trend-panel${i===0?' active':''}" id="trend-${k}">
-      <div class="trend-card">
-        <div class="trend-header">${d.title}</div>
-        <div class="trend-meta">📅 2026.05.20 · 📰 trends24.in</div>
-        <div class="trend-body">${d.body}</div>
-      </div>
-    </div>`;
-  }).join('');
-  return `<div class="country-bar">${btns}</div>${panels}`;
-}
-
-let activeCountry = 'us';
-function switchCountry(k) {
-  activeCountry = k;
-  document.querySelectorAll('.country-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.trend-panel').forEach(p => p.classList.remove('active'));
-  document.querySelector(`.country-btn[onclick*="'${k}'"]`).classList.add('active');
-  document.getElementById(`trend-${k}`).classList.add('active');
-}
-
-let activeCompetitorTab = 'MLA';
-function renderCompetitorGroup(item) {
-  const def = activeCompetitorTab;
-  const panels = item.groups.map(g => {
-    const entriesHTML = g.entries.map(e =>
-      `<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border);">
-        <div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">
-          ${e.name} <span class="tag ${e.status.includes('预警')?'tag-red':e.status.includes('优先')?'tag-orange':e.status.includes('上线')?'tag-green':'tag-blue'}">${e.status}</span>
-        </div>
-        <div class="card-body" style="margin-bottom:2px;">${e.detail}</div>
-        <div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：${e.movement}</div>
-      </div>`
-    ).join('');
-    const active = g.key === def ? ' active' : '';
-    return `<div class="trend-panel${active}" id="comp-panel-${g.key}">
-      <div class="competitor-card">
-        <div style="font-size:var(--fs-title);font-weight:600;color:var(--accent);margin-bottom:12px;">${g.title}</div>
-        ${entriesHTML}
-      </div>
-    </div>`;
-  }).join('');
-  const btns = item.groups.map(g => {
-    const active = g.key === def ? ' active' : '';
-    return `<button class="comp-btn${active}" onclick="switchCompetitorTab('${g.key}')">${g.label}</button>`;
-  }).join('');
-  return `<div class="comp-bar">${btns}</div>${panels}`;
-}
-function switchCompetitorTab(k) {
-  activeCompetitorTab = k;
-  document.querySelectorAll('.comp-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('[id^="comp-panel-"]').forEach(p => p.classList.remove('active'));
-  document.querySelector(`.comp-btn[onclick*="'${k}'"]`).classList.add('active');
-  document.getElementById(`comp-panel-${k}`).classList.add('active');
-}
-
-function sectionHTML(s, dayIdx) {
-  const open = s.defaultOpen ? '' : 'collapsed';
-  let bodyHTML = '';
-  const isVendor = s.id === 'vendor';
-  s.items.forEach((item, idx) => {
-    if (isVendor) {
-      const start = (vendorPage - 1) * VENDOR_PAGE_SIZE;
-      const end = start + VENDOR_PAGE_SIZE;
-      if (idx < start || idx >= end) return;
-    }
-    if (item.type === 'trending') {
-      bodyHTML += renderTrending();
-    } else if (item.type === 'reddit-trending') {
-      bodyHTML += renderRedditTrending();
-    } else if (item.type === 'news') {
-      const urlPart = item.url ? ` <a href="${item.url}" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a>` : '';
-      const imgHtml = item.img ? `<div class="news-img-wrap-image"><img src="${item.img}" alt="" loading="lazy"></div>` : '';
-      const contentHtml = `<div style="flex:1;min-width:0;">
-        <span class="card-label ${item.label.cls}">${item.label.text}</span>
-        <div class="card-title">${item.title}${urlPart}</div>
-        <div class="card-meta"><span>📅 ${item.date}</span><span>📰 ${item.source}</span></div>
-        <div class="card-body">${item.body.replace(/\n\n/g,'</div><div class="card-body" style="margin-top:8px;">')}</div>
-      </div>`;
-      bodyHTML += `<div class="news-card">${contentHtml}${imgHtml}</div>`;
-    } else if (item.type === 'competitor-group') {
-      bodyHTML += renderCompetitorGroup(item);
-    } else if (item.type === 'table') {
-      const ths = item.headers.map(h => `<th>${h}</th>`).join('');
-      const trs = item.rows.map(r => {
-        const cells = Array.isArray(r) ? r : r.cells;
-        const hl = r.highlight ? ' style="background:rgba(192,57,43,0.06);font-weight:600;"' : '';
-        return `<tr${hl}>${cells.map(c => `<td${hl}>${c}</td>`).join('')}</tr>`;
-      }).join('');
-      const titleLine = item.tableTitle ? `<div style="font-size:var(--fs-title);font-weight:600;margin-bottom:4px;">${item.tableTitle}</div>` : '';
-      bodyHTML += `<div class="news-card">${titleLine}<table class="data-table"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
-    } else if (item.type === 'alert') {
-      bodyHTML += `<div class="alert-banner"><div class="alert-title">${item.title}</div><div class="alert-body">${item.body}</div></div>`;
-    }
+function switchCompetitorTab(key) {
+  document.querySelectorAll('.comp-btn').forEach((b,i)=>{
+    const keys=['MLA','Lovania','Acecraft','Haunted'];
+    b.classList.toggle('active', keys[i]===key);
   });
-  let pageControls = '';
-  if (isVendor) {
-    const totalPages = getVendorPageCount();
-    if (totalPages > 1) {
-      pageControls = `<div class="page-controls">
-        <button class="page-btn" onclick="vendorPrev()"${vendorPage <= 1 ? ' disabled' : ''}>‹</button>
-        <span class="page-indicator">${vendorPage} / ${totalPages}</span>
-        <button class="page-btn" onclick="vendorNext()"${vendorPage >= totalPages ? ' disabled' : ''}>›</button>
-      </div>`;
-    }
-  }
-  return `<div class="section" id="sec-${dayIdx}-${s.id}">
-    <div class="section-header" onclick="toggleSection('sec-${dayIdx}-${s.id}')">
-      <div class="section-icon">${s.icon}</div>
-      <div class="section-title">${s.title}</div>
-      <div class="section-toggle">▼</div>
-    </div>
-    <div class="section-body">${bodyHTML}${pageControls}</div>
-  </div>`;
+  document.querySelectorAll('[id^="comp-panel-"]').forEach(p=>p.classList.toggle('active', p.id==='comp-panel-'+key));
 }
+
+function renderCal() { document.getElementById('cal-container').innerHTML = renderCalendar(calMonthIdx); }
 
 function renderPanels() {
-  const main = document.getElementById('appMain');
-  let html = '';
-  reportData.forEach((r, i) => {
-    const active = i === activeDay ? ' active' : '';
-    const topRow = renderTopRow(r.highlights);
-    const sectionsHTML = r.sections.map(s => sectionHTML(s, i)).join('');
-    const src = `<div class="source-footer">📡 信息源：PocketGamer.biz · Mobilegamer.biz · Game Developer · GameWorldObserver · DualShockers · TheGamer · GameRant · Overwolf · Sensor Tower Blog · Deconstructor of Fun · EA News · Xbox Wire · Sony Interactive · GameDiscoverCo · YPulse · Morning Consult · 199it · trends24.in</div>`;
-    html += `<div class="day-panel${active}" data-day="${i}">${topRow}${sectionsHTML}${src}</div>`;
+  const day = reportData[activeDay];
+  if (!day) return;
+  // Update tab bar
+  const tabBar = document.getElementById('tabBar');
+  tabBar.innerHTML = reportData.map((d,i) =>
+    '<button class="tab-btn'+(i===activeDay?' active':'')+'" onclick="switchTab('+i+')">'+d.date+' '+d.weekday+(i===reportData.length-1?'<span class="badge-new">NEW</span>':'')
+  ).join('');
+
+  // Build highlights
+  let hlHtml = '<div class="highlights-card"><div style="font-weight:600;font-size:var(--fs-title);margin-bottom:8px;color:var(--accent);">📌 今日速览</div><ol>';
+  day.highlights.forEach((h,i) => {
+    hlHtml += '<li><a class="hl-link" href="#" onclick="jumpToSection(\'sec-'+activeDay+'-'+h.anchor+'\');return false;">↓</a>'+h.text+'</li>';
   });
-  main.innerHTML = html;
+  hlHtml += '</ol></div>';
+
+  // Build section content
+  let sectionsHtml = '';
+  day.sections.forEach((sec, si) => {
+    if (sec.items[0] && sec.items[0].type === 'trending') {
+      sectionsHtml += renderTrendingSection(sec, si);
+    } else if (sec.items[0] && (sec.items[0].type === 'reddit-fallback' || sec.items[0].type === 'reddit')) {
+      sectionsHtml += renderRedditSection(sec, si);
+    } else if (sec.items[0] && sec.items[0].type === 'competitor-group') {
+      sectionsHtml += renderCompetitorSection(sec, si);
+    } else if (sec.items[0] && sec.items[0].type === 'table') {
+      sectionsHtml += renderTableSection(sec, si);
+    } else {
+      sectionsHtml += renderGenericSection(sec, si);
+    }
+  });
+
+  document.querySelector('.day-panel.active .hl-col').innerHTML = hlHtml;
+  // Rebuild sections
+  const panel = document.querySelector('.day-panel.active');
+  // Remove old sections
+  panel.querySelectorAll('.section').forEach(s => s.remove());
+  // Insert after top-row
+  const topRow = panel.querySelector('.top-row');
+  topRow.insertAdjacentHTML('afterend', sectionsHtml);
+
+  // Render vendor pagination
+  renderVendorPagination();
+  renderCal();
 }
 
-function switchTab(idx) {
-  activeDay = idx;
-  vendorPage = 1;
-  redditPage = 1;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
-  document.querySelectorAll('.day-panel')[idx].classList.add('active');
+function renderVendorPagination() {
+  const day = reportData[activeDay];
+  const sec = day.sections.find(s => s.id === 'vendor');
+  if (!sec) return;
+  const totalPages = Math.ceil(sec.items.length / VENDOR_PAGE_SIZE);
+  const vendorSec = document.getElementById('sec-'+activeDay+'-vendor');
+  if (!vendorSec) return;
+  const body = vendorSec.querySelector('.section-body');
+  const cards = body.querySelectorAll('.news-card');
+  cards.forEach((c, i) => {
+    c.style.display = (i >= (vendorPage-1)*VENDOR_PAGE_SIZE && i < vendorPage*VENDOR_PAGE_SIZE) ? '' : 'none';
+  });
+  const controls = body.querySelector('.page-controls');
+  if (controls) {
+    controls.querySelector('.page-indicator').textContent = vendorPage+' / '+totalPages;
+    controls.querySelector('.page-btn:first-child').disabled = vendorPage <= 1;
+    controls.querySelector('.page-btn:last-child').disabled = vendorPage >= totalPages;
+  }
 }
 
-function toggleSection(id) { document.getElementById(id)?.classList.toggle('collapsed'); }
-function toggleAll() {
-  const all = document.querySelectorAll('.section');
-  const anyOpen = Array.from(all).some(s => !s.classList.contains('collapsed'));
-  all.forEach(s => s.classList.toggle('collapsed', anyOpen));
-}
-function setFontSize(size) {
-  document.body.className = size==='md' ? '' : `font-${size}`;
-  document.querySelectorAll('.fs-group button').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.fs-group button').forEach(b => {
-    if ((size==='sm'&&b.textContent.includes('⁻'))||(size==='md'&&b.textContent==='A')||(size==='lg'&&b.textContent.includes('⁺'))) b.classList.add('active');
+function renderTrendingSection(sec, si) {
+  let html = '<div class="section" id="sec-'+activeDay+'-'+sec.id+'">';
+  html += '<div class="section-header" onclick="toggleSection(\'sec-'+activeDay+'-'+sec.id+'\')">';
+  html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
+  html += '<div class="section-body">';
+  html += '<div class="country-bar">';
+  const countries = ['us','uk','de','fr'];
+  const labels = ['🇺🇸 美国','🇬🇧 英国','🇩🇪 德国','🇫🇷 法国'];
+  countries.forEach((c,i) => {
+    html += '<button class="country-btn'+(i===0?' active':'')+'" onclick="switchCountry(\''+c+'\')">'+labels[i]+'</button>';
   });
+  html += '</div>';
+  countries.forEach((c,i) => {
+    const t = trendData[c];
+    html += '<div class="trend-panel'+(i===0?' active':'')+'" id="trend-'+c+'">';
+    html += '<div class="trend-card"><div class="trend-header">'+t.title+'</div>';
+    html += '<div class="trend-meta">📅 '+reportData[activeDay].date+' · 📰 trends24.in</div>';
+    html += '<div class="trend-body">'+t.body+'</div></div></div>';
+  });
+  html += '</div></div>';
+  return html;
 }
-window.addEventListener('scroll', ()=>{
+
+function renderRedditSection(sec, si) {
+  const posts = sec.items[0] && sec.items[0].posts ? sec.items[0].posts : [];
+  let html = '<div class="section" id="sec-'+activeDay+'-'+sec.id+'">';
+  html += '<div class="section-header" onclick="toggleSection(\'sec-'+activeDay+'-'+sec.id+'\')">';
+  html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
+  html += '<div class="section-body">'+renderRedditTrending(posts)+'</div></div>';
+  return html;
+}
+
+function renderCompetitorSection(sec, si) {
+  const group = sec.items[0];
+  let html = '<div class="section" id="sec-'+activeDay+'-'+sec.id+'">';
+  html += '<div class="section-header" onclick="toggleSection(\'sec-'+activeDay+'-'+sec.id+'\')">';
+  html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
+  html += '<div class="section-body"><div class="comp-bar">';
+  group.groups.forEach((g, i) => {
+    html += '<button class="comp-btn'+(g.key===group.defaultTab?' active':'')+'" onclick="switchCompetitorTab(\''+g.key+'\')">'+g.label+'</button>';
+  });
+  html += '</div>';
+  group.groups.forEach(g => {
+    html += '<div class="trend-panel'+(g.key===group.defaultTab?' active':'')+'" id="comp-panel-'+g.key+'">';
+    html += '<div class="competitor-card"><div style="font-size:var(--fs-title);font-weight:600;color:var(--accent);margin-bottom:12px;">'+g.title+'</div>';
+    g.entries.forEach((e, ei) => {
+      html += '<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:'+(ei<g.entries.length-1?'1px solid var(--border)':'none')+';">';
+      html += '<div style="font-weight:600;font-size:var(--fs-title);margin-bottom:4px;">'+e.name+' <span class="tag '+(e.status.includes('最高')?'tag-red':e.status.includes('重点')?'tag-orange':e.status.includes('上线')?'tag-green':'tag-blue')+'">'+e.status+'</span></div>';
+      html += '<div class="card-body" style="margin-bottom:2px;">'+e.detail+'</div>';
+      html += '<div style="font-size:var(--fs-small);color:var(--text2);margin-top:4px;"><span style="color:var(--orange);">▸</span> 最新动态：'+e.movement+'</div>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+  html += '</div></div>';
+  return html;
+}
+
+function renderTableSection(sec, si) {
+  const table = sec.items[0];
+  let html = '<div class="section" id="sec-'+activeDay+'-'+sec.id+'">';
+  html += '<div class="section-header" onclick="toggleSection(\'sec-'+activeDay+'-'+sec.id+'\')">';
+  html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
+  html += '<div class="section-body"><div class="news-card"><div style="font-size:var(--fs-title);font-weight:600;margin-bottom:4px;">即将上线 / 测试重点产品</div><table class="data-table"><thead><tr>';
+  table.headers.forEach(h => html += '<th>'+h+'</th>');
+  html += '</tr></thead><tbody>';
+  table.rows.forEach(r => {
+    html += '<tr'+(r.highlight?' style="background:rgba(192,57,43,0.06);font-weight:600;"':'')+'>';
+    r.cells.forEach(c => html += '<td'+(r.highlight?' style="background:rgba(192,57,43,0.06);font-weight:600;"':'')+'>'+c+'</td>');
+    html += '</tr>';
+  });
+  html += '</tbody></table></div></div></div>';
+  return html;
+}
+
+function renderGenericSection(sec, si) {
+  let html = '<div class="section" id="sec-'+activeDay+'-'+sec.id+'">';
+  html += '<div class="section-header" onclick="toggleSection(\'sec-'+activeDay+'-'+sec.id+'\')">';
+  html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
+  html += '<div class="section-body">';
+  const isVendor = sec.id === 'vendor';
+  sec.items.forEach((item, idx) => {
+    if (item.type === 'news') {
+      html += '<div class="news-card"><div style="flex:1;min-width:0;">';
+      html += '<span class="card-label '+item.label.cls+'">'+item.label.text+'</span>';
+      html += '<div class="card-title">'+item.title+' <a href="'+item.url+'" target="_blank" style="font-size:var(--fs-small);color:var(--accent2);text-decoration:none;">🔗 来源</a></div>';
+      html += '<div class="card-meta"><span>📅 '+item.date+'</span><span>📰 '+item.source+'</span></div>';
+      html += '<div class="card-body">'+item.body.replace(/\n\n/g,'</div><div class="card-body" style="margin-top:8px;">')+'</div>';
+      html += '</div></div>';
+    } else if (item.type === 'alert') {
+      html += '<div class="alert-banner"><div class="alert-title">'+item.title+'</div><div class="alert-body">'+item.body+'</div></div>';
+    }
+  });
+  if (isVendor) {
+    const totalPages = Math.ceil(sec.items.length / VENDOR_PAGE_SIZE);
+    html += '<div class="page-controls">';
+    html += '<button class="page-btn" onclick="vendorPrev()" disabled="">‹</button>';
+    html += '<span class="page-indicator">1 / '+totalPages+'</span>';
+    html += '<button class="page-btn" onclick="vendorNext()">›</button>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
+// Initial render
+renderPanels();
+
+// Back to top
+window.addEventListener('scroll', function() {
   document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
 });
-
-function renderTabs() {
-  const bar = document.getElementById('tabBar');
-  bar.innerHTML = reportData.map((r,i)=>{
-    const isLatest = i===reportData.length-1;
-    return `<button class="tab-btn${i===reportData.length-1?' active':''}" onclick="switchTab(${i})">${r.date} ${r.weekday}${isLatest?'<span class="badge-new">NEW</span>':''}</button>`;
-  }).join('');
-}
-
-renderTabs();
-renderPanels();
 </script>
 
-
-</body></html>
+</body>
+</html>

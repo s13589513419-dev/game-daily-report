@@ -842,42 +842,42 @@ reportData.push({
             { type:'news', label:{text:'厂商重组',cls:'label-hot'},
               title:'育碧重大重组换血 — 多款新3A档期曝光，腾讯在幕后推动',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143327.shtml',
               body:'据游民星空报道，育碧正在进行重大重组，多款新3A大作的档期被重新曝光。报道指出腾讯在育碧此次重组中扮演了幕后推动角色。这与此前腾讯收购育碧部分股份的布局一脉相承，显示中国资本正在更深层次参与全球游戏巨头的战略调整。' },
             { type:'news', label:{text:'厂商动态',cls:'label-info'},
               title:'2026年网易游戏520线上发布会圆满落幕 — 多款新品亮相',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143377.shtml',
               body:'网易游戏520线上发布会于5月20日圆满落幕，多款新品及现有产品重大更新在发布会上亮相。作为中国头部游戏厂商的年度重要活动，网易520发布会是观察其产品线布局和战略方向的关键窗口。' },
             { type:'news', label:{text:'行业趋势',cls:'label-warn'},
               title:'大厂裁员不断，甚至裁出了创意：游戏行业"裁员大逃杀"',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143331.shtml',
               body:'行业裁员潮持续蔓延，有评论戏称这是游戏行业的"裁员大逃杀"。报道指出大厂在持续裁员的压力下反而催生了一些新的创意模式——被裁员工组建独立工作室、小型团队以更低成本实现创新突破。这一趋势与近期Studio Reset、Cosmic Division等工作室的成立形成呼应。' },
             { type:'news', label:{text:'法律争议',cls:'label-warn'},
               title:'V社回怼赌博论：G胖称"玩家可喜欢CS开箱子了"',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143324.shtml',
               body:'Valve在回应纽约州诉讼时坚称CS2开箱系统没有问题，称"玩家享受惊喜感"，试图驳回诉讼。国内媒体游民星空的报道标题更为直白——"G胖脸皮厚？V社回怼赌博论"。该事件再次将游戏开箱/抽卡机制的法律风险推上风口浪尖，海外和国内市场均高度关注。' },
             { type:'news', label:{text:'行业评论',cls:'label-info'},
               title:'孩之宝奚落服务型游戏 — 翻车不断，难赚大钱',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143325.shtml',
               body:'孩之宝高管公开嘲讽游戏行业的服务型游戏模式，称其"翻车不断"且难以持续盈利。作为桌面游戏和IP授权巨头，孩之宝的此番言论反映了传统娱乐公司对游戏行业商业模式转型的观察和判断。' },
             { type:'news', label:{text:'国产游戏',cls:'label-green'},
               title:'袁和平加盟国产3A任动作顾问 — 武侠动作有了神级指导',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143432.shtml',
               body:'著名武术指导袁和平（《卧虎藏龙》《黑客帝国》动作指导）加盟某款国产3A游戏担任动作顾问。这是中国游戏产业在高端人才引进方面的标志性事件，表明国产3A游戏在品质追求上正在向国际顶尖水平看齐。' },
             { type:'news', label:{text:'平台动态',cls:'label-purple'},
               title:'曝索尼PS发布会阵容：含战神新作和全新独占IP',
               date:'2026.05.21', source:'游民星空',
-              url:'',
+              url:'https://www.gamersky.com/news/202605/2143328.shtml',
               body:'游民星空援引爆料称，即将到来的索尼PlayStation发布会阵容强大，不仅包括《战神》新作，还有全新的第一方独占IP。索尼近期官宣的发布会将是E3后首次线下直播活动，时长超1小时，备受行业关注。' },
             { type:'news', label:{text:'新品预告',cls:'label-teal'},
               title:'《明日方舟：终末地》新版本前瞻预告将于5月22日播出',
               date:'2026.05.21', source:'机核网',
-              url:'',
+              url:'https://www.gcores.com/articles/214657',
               body:'鹰角网络旗下《明日方舟：终末地》宣布将于5月22日播出新版本前瞻预告节目。作为《明日方舟》IP的衍生作品，《终末地》是国产二次元游戏领域的重要新品，其开发进展和版本更新值得重点关注。' }
           ]}
         ]
@@ -1185,6 +1185,12 @@ function renderVendorPagination() {
   cards.forEach((c, i) => {
     c.style.display = (i >= (vendorPage-1)*VENDOR_PAGE_SIZE && i < vendorPage*VENDOR_PAGE_SIZE) ? '' : 'none';
   });
+  if (!isGrouped) {
+    const cards = body.querySelectorAll('.news-card');
+    cards.forEach((c, i) => {
+      c.style.display = (i >= (vendorPage-1)*VENDOR_PAGE_SIZE && i < vendorPage*VENDOR_PAGE_SIZE) ? '' : 'none';
+    });
+  }
   const controls = body.querySelector('.page-controls');
   if (controls) {
     controls.querySelector('.page-indicator').textContent = vendorPage+' / '+totalPages;

@@ -1181,10 +1181,6 @@ function renderVendorPagination() {
   const vendorSec = document.getElementById('sec-'+activeDay+'-vendor');
   if (!vendorSec) return;
   const body = vendorSec.querySelector('.section-body');
-  const cards = body.querySelectorAll('.news-card');
-  cards.forEach((c, i) => {
-    c.style.display = (i >= (vendorPage-1)*VENDOR_PAGE_SIZE && i < vendorPage*VENDOR_PAGE_SIZE) ? '' : 'none';
-  });
   if (!isGrouped) {
     const cards = body.querySelectorAll('.news-card');
     cards.forEach((c, i) => {

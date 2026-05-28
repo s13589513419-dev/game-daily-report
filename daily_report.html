@@ -363,7 +363,7 @@
       <div class="section-title">社媒热点</div>
       <div class="section-toggle">▼</div>
     </div>
-    <div class="section-body"><div class="country-bar"><button class="country-btn active" onclick="switchCountry('us')">🇺🇸 美国</button><button class="country-btn" onclick="switchCountry('uk')">🇬🇧 英国</button><button class="country-btn" onclick="switchCountry('de')">🇩🇪 德国</button><button class="country-btn" onclick="switchCountry('fr')">🇫🇷 法国</button></div><div class="trend-panel active" id="trend-us">
+    <div class="section-body"><div class="country-bar"><button class="country-btn active" onclick="switchCountry('us')">🇺🇸 美国</button><button class="country-btn" onclick="switchCountry('uk')">🇬🇧 英国</button><button class="country-btn" onclick="switchCountry('de')">🇩🇪 德国</button><button class="country-btn" onclick="switchCountry('fr')">🇫🇷 法国</button><button class="country-btn" onclick="switchCountry('br')">🇧🇷 巴西</button><button class="country-btn" onclick="switchCountry('mx')">🇲🇽 墨西哥</button><button class="country-btn" onclick="switchCountry('co')">🇨🇴 哥伦比亚</button><button class="country-btn" onclick="switchCountry('pe')">🇵🇪 秘鲁</button><button class="country-btn" onclick="switchCountry('ar')">🇦🇷 阿根廷</button><button class="country-btn" onclick="switchCountry('cl')">🇨🇱 智利</button></div><div class="trend-panel active" id="trend-us">
       <div class="trend-card">
         <div class="trend-header">The Boys 热度持续 + NBA All-Rookie + 科技股关注</div>
         <div class="trend-meta">📅 2026.05.21 · 📰 trends24.in</div>
@@ -558,12 +558,14 @@ const calendarMonths = [
   {
     key:'2026-05', title:'2026年5月',
     events: {
+      1:[{text:'国际劳动节 🌍',cls:'orange'}],
       4:[{text:'Star Wars Day🌟',cls:'hot'}],
-      5:[{text:'Cinco de Mayo',cls:'orange'}],
+      5:[{text:'Cinco de Mayo (墨)',cls:'orange'}],
       10:[{text:'母亲节 (US)',cls:'hot'}],
-      21:[{text:'Clash of Critters上线',cls:'accent'}],
+      20:[{text:'古巴独立日',cls:'orange'}],
+      21:[{text:'智利海军节',cls:'orange'},{text:'Clash of Critters上线',cls:'accent'}],
       22:[{text:'UFL全球软测',cls:'accent'}],
-      25:[{text:'Memorial Day (US)',cls:'orange'}],
+      25:[{text:'阿根廷五月革命',cls:'orange'},{text:'Memorial Day (US)',cls:'orange'}],
       26:[{text:'Slime Rancher上线',cls:'accent'}],
       27:[{text:'🔥 Tomb Busters上线',cls:'hot'}],
       28:[{text:'Pictonico上线',cls:'accent'}]
@@ -572,15 +574,49 @@ const calendarMonths = [
   {
     key:'2026-06', title:'2026年6月',
     events: {
-      1:[{text:'Pride Month开始',cls:'hot'}],
+      1:[{text:'Pride Month开始 🏳️🌈',cls:'hot'}],
       3:[{text:'Sony State of Play',cls:'orange'}],
       4:[{text:'Mini Football Legends',cls:'accent'}],
+      5:[{text:'世界环境日 🌍',cls:'orange'}],
+      6:[{text:'D-Day诺曼底登陆纪念',cls:'orange'}],
       8:[{text:'WWDC / Apple设计奖',cls:'orange'}],
-      10:[{text:'Limit Zero Breakers CBT',cls:'accent'}],
+      10:[{text:'葡萄牙日 (巴西)',cls:'orange'},{text:'Limit Zero Breakers CBT',cls:'accent'}],
+      12:[{text:'巴西情人节 Dia dos Namorados 💕',cls:'hot'}],
       14:[{text:'Flag Day (US)',cls:'orange'}],
       15:[{text:'PGC Barcelona',cls:'orange'}],
       19:[{text:'Juneteenth (US)',cls:'orange'}],
-      21:[{text:'父亲节 (US)',cls:'hot'}]
+      20:[{text:'夏至 Summer Solstice ☀️',cls:'orange'}],
+      21:[{text:'父亲节 (US)',cls:'hot'}],
+      23:[{text:'圣约翰节 San Juan 🔥',cls:'hot'}],
+      24:[{text:'太阳祭 Inti Raymi (秘鲁)',cls:'orange'}],
+      28:[{text:'国际骄傲日 🏳️🌈',cls:'hot'}],
+      29:[{text:'圣彼得圣保罗节 (拉美)',cls:'orange'}]
+    }
+  },
+  {
+    key:'2026-07', title:'2026年7月',
+    events: {
+      1:[{text:'加拿大日 🍁',cls:'orange'}],
+      4:[{text:'美国独立日 🎆',cls:'hot'}],
+      7:[{text:'Comic-Con动漫展',cls:'orange'}],
+      9:[{text:'阿根廷独立日',cls:'orange'}],
+      14:[{text:'法国国庆日 🇫🇷',cls:'orange'}],
+      16:[{text:'Virgen del Carmen (秘鲁)',cls:'orange'}],
+      20:[{text:'哥伦比亚独立日',cls:'orange'}],
+      24:[{text:'西蒙·玻利瓦尔诞辰',cls:'orange'}],
+      28:[{text:'秘鲁独立日',cls:'hot'}],
+      29:[{text:'秘鲁独立日 (续)',cls:'orange'}]
+    }
+  },
+  {
+    key:'2026-08', title:'2026年8月',
+    events: {
+      6:[{text:'玻利维亚独立日',cls:'orange'}],
+      9:[{text:'世界原住民国际日',cls:'orange'}],
+      14:[{text:'巴拉圭独立日',cls:'orange'}],
+      15:[{text:'圣母升天节 (拉美)',cls:'orange'}],
+      25:[{text:'乌拉圭独立日',cls:'orange'}],
+      30:[{text:'国际失踪者日',cls:'orange'}]
     }
   }
 ];
@@ -605,6 +641,36 @@ const trendData = {
     label:'🇫🇷 法国',
     title:'Gordon/Rashford/Alvarez 足球三强 + Ferrari F1 + Eid Mubarak',
     body:'<strong>⚽ 足球全面主导</strong><br>Gordon（#1）、Rashford（#3）、Alvarez（#4）— 三位国际球星成为法国热搜。Raphinha（#5）、Crystal Palace（#9）— 更多球员和俱乐部话题。Flick（#10）— 巴萨教练 Hansi Flick 相关讨论。<br><br><strong>🏎️ Ferrari F1</strong><br>Ferrari（#6）— 摩纳哥大奖赛后热度延续。<br><br><strong>🏛️ 政治/社会</strong><br>Jean Messiha（#7）— 法籍埃及裔政治评论家相关话题。<br><br><strong>🎲 博彩</strong><br>#feebetsbetclic（#8）— Betclic 博彩平台推广活动。<br><br><strong>🕌 Eid Mubarak 宰牲节</strong><br>Eid Mubarak（#2）— 宰牲节祝福持续占据热搜。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  br: {
+    label:'🇧🇷 巴西',
+    title:'Erika Hilton 政治热议 + Corinthians 足球 + BANGTAN K-pop',
+    body:'<strong>🏛️ 政治热议 Erika Hilton</strong><br>Erika Hilton（#1）— 巴西跨性别议员相关政治话题持续 24 小时热搜。PSOL（#5）— 左翼政党相关讨论。<br><br><strong>⚽ Corinthians 足球主导</strong><br>Corinthians（#3）、Yuri Alberto、Pedro Raul — 科林蒂安足球俱乐部相关讨论驱动体育热搜。<br><br><strong>🎵 K-pop BANGTAN</strong><br>BANGTAN（#4）— BTS 相关话题持续在巴西拥有庞大粉丝群体。<br><br><strong>📺 Hugo 真人秀</strong><br>Hugo（#2）— 巴西真人秀热点。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  mx: {
+    label:'🇲🇽 墨西哥',
+    title:'#BoletosJustosParaSTAY 演唱会票价抗议 + BANGTAN + Ocesa',
+    body:'<strong>🎵 演唱会票价争议 #BoletosJustosParaSTAY</strong><br>#BoletosJustosParaSTAY（#2）— STAY 粉丝抗议演唱会票价过高。#OcesaAbusivo（#3）— 针对主办方 Ocesa 的票价批评。BANGTAN（#1）— BTS 话题持续热度。<br><br><strong>🏛️ 政治/社会</strong><br>Sheinbaum（#4）— 墨西哥总统相关讨论。INE（#6）— 国家选举机构话题。<br><br><strong>⚽ 足球</strong><br>Chivas（#5）— 瓜达拉哈拉俱乐部相关讨论。América（#8）— Club América 球队话题。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  co: {
+    label:'🇨🇴 哥伦比亚',
+    title:'#LaCasaDeLosFamososCol3 真人秀霸榜 + Petro 政治 + Mariana',
+    body:'<strong>📺 #LaCasaDeLosFamososCol3 真人秀全面主导</strong><br>#LaCasaDeLosFamososCol3（#1）— 哥伦比亚版名人老大哥第三季，真人秀话题占据热搜核心。Cepeda（#2）、Abelardo（#3）、Paloma（#4）、Mariana（#6）、Alexa（#7）、Marilyn（#8）— 多位参赛者同时上榜。<br><br><strong>🏛️ 政治</strong><br>Petro（#5）— 总统 Gustavo Petro 相关讨论。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  pe: {
+    label:'🇵🇪 秘鲁',
+    title:'#YoSoy 选秀节目 + Huancayo 地区话题 + BANGTAN',
+    body:'<strong>📺 #YoSoy 选秀节目</strong><br>#YoSoy（#2）— 秘鲁热门模仿选秀节目持续播出。<br><br><strong>📍 Huancayo 地区</strong><br>Huancayo（#3）— 秘鲁中部城市相关话题。Perú（#8）— 国家认同讨论。<br><br><strong>🎵 BANGTAN K-pop</strong><br>BANGTAN（#1）、#Treat_SevEN_With_Dignity（#4）、#Hee_Said_ENGENESMAN（#5）— BTS 粉丝话题在秘鲁拥有高热度。<br><br><strong>⚽ 足球</strong><br>Gordon（#6）— 足球相关话题。<br><br><strong>🎬 Shirley 娱乐</strong><br>Shirley（#7）— 秘鲁娱乐人物相关。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  ar: {
+    label:'🇦🇷 阿根廷',
+    title:'CINZIA 真人秀 + Nigro/Copa Libertadores 足球 + Silva',
+    body:'<strong>📺 CINZIA AL 9009 真人秀</strong><br>CINZIA AL 9009（#1）— 阿根廷真人秀热点。<br><br><strong>⚽ 足球/解放者杯</strong><br>Nigro（#3）— 阿根廷知名体育记者/评论员。Platense（#4）、#CopaLibertadores（#7）— 解放者杯赛事热度。Corinthians（#8）、Peñarol（#9）、Blooming（#10）— 参赛球队话题。<br><br><strong>🎵 娱乐</strong><br>Silva（#2）— 音乐人/艺人相关。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
+  },
+  cl: {
+    label:'🇨🇱 智利',
+    title:'#FiebreDeBaileCHV 舞蹈真人秀 + #STRAYCITYLATAM + Raffo',
+    body:'<strong>📺 #FiebreDeBaileCHV 舞蹈真人秀</strong><br>#FiebreDeBaileCHV（#1）— 智利 CHV 频道热门舞蹈真人秀。<br><br><strong>🎵 K-pop #STRAYCITYLATAM</strong><br>#STRAYCITYLATAM（#3）— Stray Kids 拉美巡演智利站。#STRAYCITYEnSantiago（#5）— 圣地亚哥演唱会相关。BANGTAN（#2）— BTS 热度持续。<br><br><strong>⚽ 足球</strong><br>Raffo（#6）— 足球相关话题。#vecinosallímite（#7）— 邻里真人秀。Chile（#4）— 国家话题。<br><br><strong>📚 Junaeb</strong><br>Junaeb（#8）— 智利国家学生援助委员会相关。<br><br><strong>🎮 游戏</strong><br>主流热搜中无纯游戏话题。'
   }
 };
 
@@ -2198,7 +2264,7 @@ function toggleSection(id) { document.getElementById(id).classList.toggle('colla
 function jumpToSection(id) { setTimeout(()=>document.getElementById(id).scrollIntoView({behavior:'smooth'}),100); }
 
 function switchCountry(c) {
-  document.querySelectorAll('.country-btn').forEach(b=>b.classList.toggle('active', b.textContent.includes({us:'🇺🇸',uk:'🇬🇧',de:'🇩🇪',fr:'🇫🇷'}[c])));
+  document.querySelectorAll('.country-btn').forEach(b=>b.classList.toggle('active', b.textContent.includes({us:'🇺🇸',uk:'🇬🇧',de:'🇩🇪',fr:'🇫🇷',br:'🇧🇷',mx:'🇲🇽',co:'🇨🇴',pe:'🇵🇪',ar:'🇦🇷',cl:'🇨🇱'}[c])));
   document.querySelectorAll('.trend-panel[id^="trend-"]').forEach(p=>p.classList.toggle('active', p.id==='trend-'+c));
 }
 
@@ -2330,8 +2396,8 @@ function renderTrendingSection(sec, si) {
   html += '<div class="section-icon">'+sec.icon+'</div><div class="section-title">'+sec.title+'</div><div class="section-toggle">▼</div></div>';
   html += '<div class="section-body">';
   html += '<div class="country-bar">';
-  const countries = ['us','uk','de','fr'];
-  const labels = ['🇺🇸 美国','🇬🇧 英国','🇩🇪 德国','🇫🇷 法国'];
+  const countries = ['us','uk','de','fr','br','mx','co','pe','ar','cl'];
+  const labels = ['🇺🇸 美国','🇬🇧 英国','🇩🇪 德国','🇫🇷 法国','🇧🇷 巴西','🇲🇽 墨西哥','🇨🇴 哥伦比亚','🇵🇪 秘鲁','🇦🇷 阿根廷','🇨🇱 智利'];
   countries.forEach((c,i) => {
     html += '<button class="country-btn'+(i===0?' active':'')+'" onclick="switchCountry(\''+c+'\')">'+labels[i]+'</button>';
   });

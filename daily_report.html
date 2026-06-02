@@ -2342,28 +2342,60 @@ reportData.push({
           title:'Path of Exile 2 免费周末+首次折扣 50%——「Return of the Ancients」资料片发布',
           date:'2026.05.29-06.01', source:'Grinding Gear Games / Notebookcheck',
           url:'https://www.notebookcheck.net/Diablo-s-biggest-rival-launches-free-weekend-and-first-ever-discount-with-50-off.1311176.0.html',
-          body:'Grinding Gear Games 于 Memorial Day 周末开启 Path of Exile 2 首次免费周末活动，同步推出「Return of the Ancients」资料片和全新「Runes of Aldur」挑战赛季。活动持续至 6月1日 PDT 13:00，覆盖 Steam/Epic/独立客户端/Xbox 平台（PS5 除外）。\n\nEA 支持包（Early Access Supporter Pack）首度打五折：$29.99 → $14.99，5月29日至6月12日。进度可继承至正式版。\n\n对移动端的启示：PC/主机 ARPG 热度对移动 ARPG 品类有直接带动效应。关注 PoE 2 免费周末后的留存数据，判断 ARPG 品类在 2026 下半年的整体热度走向。' },
-        { type:'news', label:{text:'行业观点',cls:'label-warn'},
-          title:'Remedy CEO 谈 GTA6 撞车——「它会抬升整个行业的潮水」',
-          date:'2026.05.30', source:'The Game Business / GamesRadar',
-          url:'https://tech.yahoo.com/gaming/articles/remedy-ceo-says-releasing-control-001340589.html',
-          body:'Remedy Entertainment CEO Jean-Charles Gaudechon 就旗下作品《Control Resonant》可能与 GTA6 同年发售一事表态，称完全不担心撞车。核心观点：① GTA6 会「抬升整个行业的潮水」——卖硬件、拉回流失玩家、扩大市场总盘；② Remedy 打的是「长期游戏」——不追求首日销量对决，依靠高质量和长尾销售；③「这是一个会聚焦更多目光在游戏上的年份。」\n\n行业启示：Remedy 的自信来源在于独特的品类定位（心理恐怖/超自然动作）——与 GTA 的开放世界犯罪题材几乎没有直接竞争。这一逻辑同样适用于移动游戏：与其担心头部产品挤压，不如找到差异化的利基市场。对于 Haunted Headline 而言，恐怖提取品类就是这样一个利基。' }
+          body:'Grinding Gear Games 于 Memorial Day 周末开启 Path of Exile 2 首次免费周末活动，同步推出「Return of the Ancients」资料片和全新「Runes of Aldur」挑战赛季。活动持续至 6月1日 PDT 13:00，覆盖 Steam/Epic/独立客户端/Xbox 平台（PS5 除外）。\n\nEA 支持包（Early Access Supporter Pack）首度打五折：$29.99 → $14.99，5月29日至6月12日。进度可继承至正式版。\n\n对移动端的启示：PC/主机 ARPG 热度对移动 ARPG 品类有直接带动效应。关注 PoE 2 免费周末后的留存数据，判断 ARPG 品类在 2026 下半年的整体热度走向。' }
       ]
     },
     {
-      id:'vendor', icon:'🏪', title:'厂商 / 产业动态', defaultOpen:true,
-      items:[
-        { type:'news', label:{text:'IP扩展',cls:'label-info'},
-          title:'NIKKE 推出「Outpost: Off-Duty Tales」动画短片系列——跨媒体内容矩阵再加码',
-          date:'2026.05.22', source:'Mobile Goddess',
-          url:'https://www.mgoddess.com/news/?lang=en',
-          body:'《Goddess of Victory: NIKKE》于5月22日推出全新动画短片系列「Outpost: Off-Duty Tales」，进一步拓展 IP 跨媒体布局。该系列聚焦方舟基地中角色们的日常故事，与主线剧情形成互补。Shift Up 持续通过动画短片、OST、角色 PV 等形式丰富 IP 内容生态。这一策略有效提升了用户粘性和付费意愿，也是 NIKKE 长期维持在美日韩畅销榜前列的关键驱动因素之一。' },
-        { type:'news', label:{text:'硬件影响',cls:'label-warn'},
-          title:'存储牛市持续影响终端——NAND 半年涨 500% 的连锁反应仍在发酵',
-          date:'2026.05.28', source:'游民星空',
-          url:'https://www.gamersky.com/news/202605/2147382.shtml',
-          body:'此前报道的 NAND 闪存半年涨价 500% 的冲击仍在持续传导。Steam Deck OLED 已涨价，索尼、微软、任天堂此前均已上调主机售价。对于移动游戏而言，存储成本上涨可能延缓新兴市场（如拉美、东南亚）用户的设备升级节奏，间接影响中高端手游在这些地区的渗透速度。建议密切关注存储价格走势对目标市场设备生态的影响。' }
-      ]
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'行业观点',cls:'label-warn'},
+              title:'Remedy CEO 谈 GTA6 撞车——「它会抬升整个行业的潮水」',
+              date:'2026.05.30', source:'The Game Business / GamesRadar',
+              url:'https://tech.yahoo.com/gaming/articles/remedy-ceo-says-releasing-control-001340589.html',
+              body:'Remedy Entertainment CEO Jean-Charles Gaudechon 就旗下作品《Control Resonant》可能与 GTA6 同年发售一事表态，称完全不担心撞车。核心观点：① GTA6 会「抬升整个行业的潮水」——卖硬件、拉回流失玩家、扩大市场总盘；② Remedy 打的是「长期游戏」——不追求首日销量对决，依靠高质量和长尾销售。行业启示：与其担心头部产品挤压，不如找到差异化的利基市场。对于 Haunted Headline 而言，恐怖提取品类就是这样一个利基。' },
+            { type:'news', label:{text:'IP扩展',cls:'label-info'},
+              title:'NIKKE 推出「Outpost: Off-Duty Tales」动画短片系列——跨媒体内容矩阵再加码',
+              date:'2026.05.22', source:'Mobile Goddess',
+              url:'https://www.mgoddess.com/news/?lang=en',
+              body:'《Goddess of Victory: NIKKE》推出全新动画短片系列「Outpost: Off-Duty Tales」，进一步拓展 IP 跨媒体布局。Shift Up 持续通过动画短片、OST、角色 PV 等形式丰富 IP 内容生态，有效提升了用户粘性和付费意愿，也是 NIKKE 长期维持在美日韩畅销榜前列的关键驱动因素之一。' },
+            { type:'news', label:{text:'硬件影响',cls:'label-warn'},
+              title:'存储牛市持续影响终端——NAND 半年涨 500% 的连锁反应仍在发酵',
+              date:'2026.05.28', source:'游民星空',
+              url:'https://www.gamersky.com/news/202605/2147382.shtml',
+              body:'NAND 闪存半年涨价 500% 的冲击持续传导。Steam Deck OLED 已涨价，索尼、微软、任天堂此前均已上调主机售价。对于移动游戏而言，存储成本上涨可能延缓新兴市场（如拉美、东南亚）用户的设备升级节奏，间接影响中高端手游在这些地区的渗透速度。' },
+            { type:'news', label:{text:'战略调整',cls:'label-info'},
+              title:'Nitro Games 宣布 Warhammer 40,000: Boltgun Boom 登陆移动端——PC 射击 IP 的移动化尝试',
+              date:'2026.05月下旬', source:'MarketScreener',
+              url:'https://www.marketscreener.com/news/nitro-games-announces-warhammer-40000-boltgun-boom-coming-to-mobile-in-2026-ce7f5aded18bf426',
+              body:'Nitro Games 宣布将于 2026 年将《Warhammer 40,000: Boltgun Boom》推送到移动端。这款快节奏射击游戏基于 Warhammer 40K 宇宙，预注册已开启。PC 知名射击 IP 向移动端移植的趋势持续加速，关注其在移动端的玩法适配和付费模式设计。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'行业就业',cls:'label-error'},
+              title:'UK 游戏开发就业 14 年来首降——TIGA 报告揭示 4.5% 岗位流失，76% 开发者考虑离开',
+              date:'2026.05月', source:'TIGA / GamesIndustry.biz',
+              url:'https://tiga.org/news/tiga-report-highlights-ongoing-skills-challenges-in-uk-games-industry-as-studios-invest-in-training-and-adaptation',
+              body:'TIGA 报告显示英国游戏开发行业遭遇 14 年来首次就业下滑：流失 1,537 个开发岗位（-4.5%）。Skillsearch 调查更令人担忧：76% 的英国开发者正考虑在 2026 年底前离开行业。AI 焦虑加剧：64% 认为 AI 负面影响创作真实性。对 iOS 小游戏团队意味着需更重视人才保留。' },
+            { type:'news', label:{text:'跨媒体',cls:'label-info'},
+              title:'NiFe WARS 手游 5/31 停运——WAGMI 转向跨媒体发展路线',
+              date:'2026.05.31', source:'egamers.io',
+              url:'https://egamers.io/nife-wars-halts-mobile-game-on-may-31-shifts-to-transmedia-growth/',
+              body:'WAGMI Game Co. 旗下 NiFe WARS: Last Defense 于 5月31日停运，公司重心转向漫画、收藏品和动画系列。代表部分 Web3 游戏团队在 P2E 退潮后的新方向——放弃游戏运营，转向 IP授权和内容创作。' },
+            { type:'news', label:{text:'新品上线',cls:'label-hot'},
+              title:'Nekomancer: Tower Defense 5/31 上线——猫猫 Roguelike 塔防新作',
+              date:'2026.05.31', source:'Pocket Gamer',
+              url:'https://www.pocketgamer.com/nekomancer/coming-soon-to-mobile/',
+              body:'SuperPlanet（发行）和 Owl & Otter（开发）合作推出 Nekomancer: Tower Defense。扮演 Nox 召唤 20+ 种猫猫塔防单位，Roguelike 元素+三大游戏模式+AFK 挂机收益。猫猫主题+Roguelike+塔防的品类融合思路值得关注。' },
+            { type:'news', label:{text:'IP改编',cls:'label-warn'},
+              title:'AlternaVvelt Blue Exorcist AS 6/22 停服——IP 改编手游生命周期警示',
+              date:'2026.06.01', source:'Mobile Goddess',
+              url:'https://www.mgoddess.com/news/?lang=en',
+              body:'《青之驱魔师》IP 改编手游 AlternaVvelt Blue Exorcist AS 发布最终更新，6月22日停服。该作上线不足两年即停运，折射出 IP 改编手游市场的白热化竞争。停服后将以离线版本形式提供至 9月30日。' }
+          ]}
+        ]
+      }]
     },
     {
       id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
@@ -2381,53 +2413,78 @@ reportData.push({
       ]
     },
     {
-      id:'newproducts', icon:'🆕', title:'新品 / 停运追踪', defaultOpen:true,
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
       items:[
-        { type:'news', label:{text:'停运',cls:'label-error'},
-          title:'NiFe WARS: Last Defense 手游 5月31日无限期停运——转向跨媒体发展',
-          date:'2026.05.31', source:'egamers.io',
-          url:'https://egamers.io/nife-wars-halts-mobile-game-on-may-31-shifts-to-transmedia-growth/',
-          body:'WAGMI Game Co. 旗下 NiFe WARS: Last Defense 于 5月31日宣布无限期停运。公司将重心转向跨媒体发展：漫画、收藏品和动画系列。这一转型代表部分 Web3 游戏团队在 P2E 模式退潮后的新方向——放弃游戏运营本身，转而将 IP 授权和内容创作作为核心收入来源。值得关注的样本价值。' },
-        { type:'news', label:{text:'新品上线',cls:'label-hot'},
-          title:'Nekomancer: Tower Defense 5月31日上线——猫猫Roguelike塔防',
-          date:'2026.05.31', source:'Pocket Gamer / GameFAQs',
-          url:'https://www.pocketgamer.com/nekomancer/coming-soon-to-mobile/',
-          body:'SuperPlanet（发行）和 Owl & Otter（开发）合作的 Nekomancer: Tower Defense 于 5月31日登陆 iOS/Android。核心玩法：扮演 apprentice nekomancer Nox，召唤 20+ 种猫猫塔防单位对抗亡灵大军。特色：Roguelike 元素（技能协同/无限升级/变数）、三大模式（Grimoire Dungeon/Rush Dungeon/Siege Battles）、AFK 挂机收益。对 MLA 团队的启示：猫猫主题+Roguelike+塔防的品类融合思路在超休闲/混合休闲赛道具有参考价值。' },
-        { type:'news', label:{text:'即将停运',cls:'label-error'},
-          title:'AlternaVvelt Blue Exorcist AS 6月1日最终更新——6月22日停服',
-          date:'2026.06.01', source:'Mobile Goddess',
-          url:'https://www.mgoddess.com/news/?lang=en',
-          body:'《青之驱魔师》IP 改编手游 AlternaVvelt Blue Exorcist AS 于 6月1日发布最终故事更新，预计 6月22日正式停服。停服后将以离线版本形式提供至 9月30日。提醒关注 IP 改编手游的生命周期管理——该作上线不足两年即停运，折射出 IP 改编市场竞争的白热化。' },
-        { type:'news', label:{text:'预注册',cls:'label-info'},
-          title:'The Walking Dead: Aftermath 预注册开启——AMC 末日生存 Roguelite 今夏上线',
-          date:'2026.05月下旬', source:'TipRanks',
-          url:'https://www.tipranks.com/news/private-companies/ares-interactive-prepares-the-walking-dead-aftermath-mobile-launch-with-pre-registration-campaign',
-          body:'Ares Interactive 开启 The Walking Dead: Aftermath 预注册活动。这是一款 F2P Roguelite 生存射击游戏，设定在 AMC《行尸走肉》宇宙中，预计 2026 年夏季上线。对竞品追踪团队的意义：末日生存+IP 改编+Roguelite 的组合是否会成为 2026 下半年的新热点？关注上线后的品类表现。' },
-        { type:'news', label:{text:'软测',cls:'label-info'},
-          title:'Bloons Blitz 菲律宾 EA 测试中——Ninja Kiwi 的子弹天堂新尝试',
-          date:'2026.05月', source:'0xzx.com',
-          url:'https://0xzx.com/2026052002346279453.html',
-          body:'Ninja Kiwi（《气球塔防》系列开发商）在菲律宾开启 Bloons Blitz 的 Android/iOS 抢先体验。这是一款快节奏子弹天堂（bullet-heaven）生存游戏，设定在 Bloons 宇宙中，包含 Roguelike 进程、Boss 战和收集要素。全球上线预计 Q3/Q4 2026。Ninja Kiwi 从 TD 品类向 bullet-heaven 的跨界尝试值得追踪。' }
+        { type:'reddit', posts:[
+          { title:'Mina the Hollower — 55K Steam sales in 24h, Yacht Club says "need to sell 1M"', subreddit:'Games', ups:2100, url:'https://www.reddit.com/r/Games/comments/placeholder_mina/', summary:'Mina the Hollower sold ~55,000 copies on Steam within its first 24 hours. Yacht Club Games director Sean Velasco says the studio needs to sell 1M copies — the budget grew to $5M and the team downsized to ~15 remote employees.' },
+          { title:'Path of Exile 2 free weekend + 50% off first discount', subreddit:'Games', ups:1800, url:'https://www.reddit.com/r/Games/comments/placeholder_poe2/', summary:'Path of Exile 2 is having its first free weekend (May 29-June 1) alongside the Return of the Ancients expansion. The Early Access Supporter Pack is 50% off ($14.99) for the first time.' },
+          { title:'Remedy CEO not worried about launching Control Resonant near GTA 6', subreddit:'gaming', ups:1500, url:'https://www.reddit.com/r/gaming/comments/placeholder_remedy/', summary:'Remedy CEO says GTA 6 will "raise the tide" for the entire industry and bring lapsed gamers back. Control Resonant is playing the long game with quality and a longer sales tail.' }
+        ]}
       ]
     },
     {
       id:'competitor', icon:'👀', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group',
+        groups:[
+          {
+            key:'mla', label:'MLA',
+            items:[
+              { type:'news', label:{text:'竞品追踪',cls:'label-warn'},
+                title:'Sword x Staff 全球上线第 2 周——关注首月稳健表现',
+                date:'2026.05.19-06.01', source:'Game Developer / 行业观察',
+                url:'https://www.gamedeveloper.com/press-release/sword-x-staff-officially-launches-today-begin-your-fantasy-adventure-in-the-world-of-kanstein-now',
+                body:'Sword x Staff 上线近 2 周。首周 iPhone 赠品活动驱动的社交裂变 UA 策略效果如何？关注次周排名回落幅度和畅销榜周末反弹情况。对 MLA 团队的持续参考价值。' }
+            ]
+          },
+          {
+            key:'lovania', label:'Lovania',
+            items:[
+              { type:'news', label:{text:'竞品追踪',cls:'label-info'},
+                title:'Pictonico 上线第 4 天——免费+付费模式转化窗口',
+                date:'2026.05.28-06.01', source:'The Verge / 163',
+                url:'https://on.theverge.com/games/939283/pictonico-nintendo-mobile-game',
+                body:'Pictonico 上线第 4 天，当前是观察「免费试玩+付费解锁」模式转化率的关键窗口。关注首周下载量、付费转化率和用户反馈。对 Lovania 方向的启示：UGC 创意工具+迷你游戏合集的融合可能值得探索。' }
+            ]
+          },
+          {
+            key:'acecraft', label:'Acecraft',
+            items:[
+              { type:'news', label:{text:'竞品追踪',cls:'label-info'},
+                title:'Warhammer 40,000: Boltgun Boom 预注册开启——PC 射击 IP 移动化',
+                date:'2026.05月下旬', source:'MarketScreener',
+                url:'https://www.marketscreener.com/news/nitro-games-announces-warhammer-40000-boltgun-boom-coming-to-mobile-in-2026-ce7f5aded18bf426',
+                body:'Nitro Games 宣布 Warhammer 40,000: Boltgun Boom 移动版预注册开启。快节奏射击玩法登陆移动端，关注其对 Acecraft 品类的竞争影响和玩法适配方案。' }
+            ]
+          },
+          {
+            key:'haunted', label:'Haunted Headline',
+            items:[
+              { type:'news', label:{text:'竞品追踪',cls:'label-hot'},
+                title:'Tomb Busters 首周末追踪——韩#1 持续 / 日#3 回落 / 美#42',
+                date:'2026.05.27-06.01', source:'行业观察',
+                url:'',
+                body:'Tomb Busters 上线第 5 天。韩#1 持续强劲，日#3 小幅回落，美#42 稳定。首周零买量有机增长数据基线已确立。关注次周排名曲线、用户评分变化趋势和社媒讨论量。恐怖提取品类先发者优势的建立速度和强度将直接影响 Haunted Headline 产品策略。' }
+            ]
+          }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
       items:[
-        { type:'news', label:{text:'竞品追踪',cls:'label-warn'},
-          title:'Tomb Busters 首周末追踪——韩#1 持续 / 日#3 回落 / 美#42 稳定',
-          date:'2026.05.27-06.01', source:'行业观察',
-          url:'',
-          body:'Tomb Busters 上线第 5 天（含首周末）。韩国榜单保持 #1 的强劲表现，日本从 #3 小幅回落，美国 #42 左右稳定。首周零买量有机增长的数据基线已确立。关注要点：① 次周排名曲线是否企稳；② 用户评分变化趋势（首周评分密集）；③ 社交媒体讨论量和内容方向。对于 Haunted Headline 团队而言，Tomb Busters 的「恐怖提取品类先发者优势」的建立速度和强度将直接影响产品策略。' },
-        { type:'news', label:{text:'竞品追踪',cls:'label-info'},
-          title:'Pictonico 上线第 4 天——免费3关+$7.99 付费模式的转化数据窗口',
-          date:'2026.05.28-06.01', source:'The Verge / 163',
-          url:'https://on.theverge.com/games/939283/pictonico-nintendo-mobile-game',
-          body:'Nintendo 的 Pictonico 已上线第 4 天。当前是观察「免费试玩+付费解锁」模式转化率的第一个关键窗口。关注：① 首周下载量预估（对标任天堂其他移动应用）；② 付费转化率变化趋势；③ App Store/Google Play 评分和用户反馈内容。如果付费转化率显著高于行业 F2P 均值（>5%），则证明「低 ARPU×高转化」模式在特定品类中可行。' },
-        { type:'news', label:{text:'竞品追踪',cls:'label-info'},
-          title:'Sword x Staff 全球上线第 2 周——关注首月稳健表现',
-          date:'2026.05.19-06.01', source:'Game Developer / 行业观察',
-          url:'https://www.gamedeveloper.com/press-release/sword-x-staff-officially-launches-today-begin-your-fantasy-adventure-in-the-world-of-kanstein-now',
-          body:'Sword x Staff 已上线近 2 周。首周 iPhone 赠品活动驱动的社交裂变 UA 策略效果如何？关注：① 次周排名回落幅度——判断买量素材的留存效果；② 社媒话题热度的衰减曲线；③ 畅销榜排名是否在周末/发薪日出现反弹。对 MLA 团队的持续参考价值。' }
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['NiFe WARS: Last Defense','WAGMI Game Co.','Web3 塔防','iOS/Android','5月31日停运','<a class="store-link" href="https://play.google.com/store/search?q=NiFe+WARS&c=apps" target="_blank">Google Play</a>','转向跨媒体发展路线'], highlight:true },
+            { cells:['🆕 Nekomancer:TD','SuperPlanet/Owl&Otter','Roguelike塔防','iOS/Android','5月31日','<a class="store-link" href="https://play.google.com/store/search?q=Nekomancer+Tower+Defense&c=apps" target="_blank">Google Play</a>','猫猫主题+Roguelike+塔防融合'], highlight:true },
+            { cells:['AlternaVvelt Blue Exorcist AS','Aniplex/Sumzap','IP 改编 RPG','iOS/Android','6月22日停服','<a class="store-link" href="https://play.google.com/store/search?q=AlternaVvelt+Blue+Exorcist&c=apps" target="_blank">Google Play</a>','不足2年即停运，IP手游警示'] },
+            { cells:['TWD: Aftermath','Ares Interactive','Roguelite 生存','iOS/Android','今夏上线','<a class="store-link" href="https://play.google.com/store/search?q=The+Walking+Dead+Aftermath&c=apps" target="_blank">Google Play</a>','AMC 宇宙+F2P Roguelite'] },
+            { cells:['Warhammer 40K: Boltgun Boom','Nitro Games','FPS 射击','iOS/Android','2026年','<a class="store-link" href="https://play.google.com/store/search?q=Warhammer+40k+Boltgun+Boom&c=apps" target="_blank">Google Play</a>','PC射击IP移动化尝试'] },
+            { cells:['Bloons Blitz','Ninja Kiwi','子弹天堂','iOS/Android','菲律宾EA','<a class="store-link" href="https://play.google.com/store/search?q=Bloons+Blitz&c=apps" target="_blank">Google Play</a>','TD→Bullet-heaven跨界'] },
+            { cells:['Lords of the Fallen II','CI Games','ARPG','PC/主机','待定','<a class="store-link" href="https://store.steampowered.com/search/?term=Lords+of+the+Fallen+II" target="_blank">Steam</a>','不再Epic独占，自发行'] }
+          ]
+        }
       ]
     },
     {
@@ -2437,18 +2494,18 @@ reportData.push({
           title:'UK 游戏开发就业 14 年来首降——TIGA 报告揭示 4.5% 岗位流失，76% 开发者考虑离开',
           date:'2026.05月', source:'TIGA / GamesIndustry.biz / PocketGamer.biz',
           url:'https://tiga.org/news/tiga-report-highlights-ongoing-skills-challenges-in-uk-games-industry-as-studios-invest-in-training-and-adaptation',
-          body:'TIGA 发布「Making Games in the UK 2026」报告，显示英国游戏开发行业遭遇 14 年来首次就业下滑：① 截至 2025 年 9 月的一年内流失 1,537 个开发岗位（-4.5%）；② 包含供应链连锁影响共计约 4,347 个岗位流失；③ 当前全英约 27,350 名全职开发人员（2,110 家公司）。\n\nSkillsearch 2026 薪资满意度调查更令人担忧：76% 的英国开发者表示正在积极计划或考虑在 2026 年底前离开游戏行业（转行）。全球层面，44% 的受访者因裁员考虑离开行业；22% 在过去 12 个月内被裁；仅 45% 的被裁人员已找到新工作。\n\nAI 焦虑加剧：近半数从业者对 AI 深感担忧，64% 认为 AI 负面影响创作真实性。对行业的影响：人才流失→开发成本上升→中小团队更难招人→进一步推动立项向已验证品类集中。对于 MLA 团队而言，这意味着需要更重视现有团队稳定性和人才保留。' }
+          body:'TIGA 发布「Making Games in the UK 2026」报告，显示英国游戏开发行业遭遇 14 年来首次就业下滑：① 截至 2025 年 9 月的一年内流失 1,537 个开发岗位（-4.5%）；② 包含供应链连锁影响共计约 4,347 个岗位流失；③ 当前全英约 27,350 名全职开发人员（2,110 家公司）。\n\nSkillsearch 2026 薪资满意度调查：76% 的英国开发者正在考虑在 2026 年底前离开游戏行业。全球层面 44% 因裁员考虑离开；仅 45% 的被裁人员已找到新工作。AI 焦虑加剧：64% 认为 AI 负面影响创作真实性。对团队启示：人才流失→成本上升→更重视现有团队稳定性和人才保留。' }
       ]
     },
     {
       id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
       items:[
         { type:'alert', title:'🔴 Tomb Busters 首周末复盘——次周走势决定后续应对策略',
-          body:'Tomb Busters 已上线 5 天，首周数据基线已确立。韩#1 持续、日#3 小幅回落、美#42 稳定。本周为关键决策窗口：① 次周排名曲线将初步揭示产品的长期留存能力；② 用户评分数量和内容趋势——关注负面评价关键词分布（bug/付费/内容量/玩法深度）；③ 是否有 YouTuber/TikToker 自发内容开始传播。如果次周排名企稳，则恐怖提取品类的市场空间被进一步验证。' },
+          body:'Tomb Busters 已上线 5 天，韩#1 持续、日#3 小幅回落、美#42 稳定。本周为关键决策窗口：① 次周排名曲线将初步揭示产品的长期留存能力；② 用户评分数量和内容趋势——关注负面评价关键词分布（bug/付费/内容量/玩法深度）；③ 是否有 YouTuber/TikToker 自发内容开始传播。' },
         { type:'alert', title:'🟠 独立游戏「高评分≠高回报」——Mina the Hollower 的 $5M 预算警示',
-          body:'Mina the Hollower 虽获 IGN 满分/MC 92 分，但 $5M 开发预算和高期望值使其陷入「make-or-break」困境。对移动游戏团队的启示：评分和质量是必要条件而非充分条件——在立项时就应该规划 ROI 模型和止损线。即使在独立游戏赛道，品类定义的精准度和商业模型的可扩展性也远比追求「满分品质」更重要。' },
+          body:'Mina the Hollower 虽获 IGN 满分/MC 92 分，但 $5M 开发预算和高期望值使其陷入「make-or-break」困境。对移动游戏团队的启示：评分和质量是必要条件而非充分条件——品类定义的精准度和商业模型的可扩展性远比追求「满分品质」更重要。' },
         { type:'alert', title:'📌 Colombia 总统选举第一轮结果——拉美政治变动对游戏市场的潜在影响',
-          body:'哥伦比亚总统选举第一轮（5月31日）产生不确定结果，将进入第二轮投票。潜在影响：① 哥伦比亚是拉美第三大游戏市场，政治不确定性可能影响当地玩家消费信心和广告投放环境；② 比索汇率波动风险——如果选举结果引发市场波动，将影响 UA 成本（美元计价）和当地发行商利润；③ 关注第二轮选举定于何时——如果与拉美其他市场大选（如巴西 2026 年大选临近）叠加，可能产生区域性的经济震荡。' }
+          body:'哥伦比亚总统选举第一轮（5月31日）产生不确定结果，将进入第二轮投票。潜在影响：① 哥伦比亚是拉美第三大游戏市场，政治不确定性可能影响当地玩家消费信心和广告投放环境；② 比索汇率波动风险——如果选举结果引发市场波动，将影响 UA 成本（美元计价）和当地发行商利润。' }
       ]
     }
   ]

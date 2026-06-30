@@ -43,8 +43,17 @@
   }
   .header-actions button:hover { background:var(--border); color:var(--text); }
 
-  .tab-bar { display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; }
+  .tab-bar { display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; scroll-behavior:smooth; }
   .tab-bar::-webkit-scrollbar { display:none; }
+  .tab-scroll-wrap { display:flex; align-items:center; gap:4px; }
+  .tab-scroll-btn {
+    flex-shrink:0; width:28px; height:28px; border:none; border-radius:50%;
+    background:var(--surface2); color:var(--text2); cursor:pointer;
+    font-size:16px; line-height:28px; text-align:center; padding:0;
+    transition:all .2s; display:none;
+  }
+  .tab-scroll-btn:hover { background:var(--accent); color:#fff; }
+  @media (pointer:fine) { .tab-scroll-btn { display:block; } }
   .tab-btn {
     padding:10px 18px; border:none; background:transparent; color:var(--text2);
     cursor:pointer; font-size:14px; font-weight:500; border-bottom:3px solid transparent;
@@ -288,7 +297,11 @@
       </div>
     </div>
   </div>
-  <div class="tab-bar" id="tabBar"><button class="tab-btn active" onclick="switchTab(0)">2026-05-21 周四<span class="badge-new">NEW</span></button></div>
+  <div class="tab-scroll-wrap">
+    <button class="tab-scroll-btn tab-scroll-left" onclick="scrollTabBar(-1)" title="← 左移">‹</button>
+    <div class="tab-bar" id="tabBar"><button class="tab-btn active" onclick="switchTab(0)">2026-05-21 周四<span class="badge-new">NEW</span></button></div>
+    <button class="tab-scroll-btn tab-scroll-right" onclick="scrollTabBar(1)" title="右移 →">›</button>
+  </div>
 </div>
 
 <div class="main" id="appMain"><div class="day-panel active" data-day="0">
@@ -4413,6 +4426,13 @@ let activeDay = reportData.length - 1;
 let vendorPage = 1;
 let vendorGroupTab = 'intl';
 const VENDOR_PAGE_SIZE = 4;
+
+function scrollTabBar(dir) {
+  const bar = document.getElementById('tabBar');
+  if (!bar) return;
+  const step = dir > 0 ? 200 : -200;
+  bar.scrollBy({ left: step, behavior: 'smooth' });
+}
 
 function getVendorPageCount() {
   const day = reportData[activeDay];

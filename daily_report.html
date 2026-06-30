@@ -3088,6 +3088,743 @@ reportData.push({
   ]
 });
 reportData.push({
+  date:'2026-06-20', weekday:'周六',
+  highlights:[
+    { text:'<strong>育碧联合创始人 Claude Guillemot 坠机离世</strong> — 69岁的创始人在法国西部塞斯纳轻型飞机失事中遇难,Guillemot 五兄弟之一', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>《Doom》《Duke Nukem 3D》作曲家 Bobby Prince 去世</strong> — 享年81岁,经典FPS音乐的奠基人之一,一周内行业失去两位标志性人物', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>《Meccha Chameleon》10天销量破500万</strong> — $5.99多人躲猫猫游戏Steam峰值24.4万同时在线,轻量Party Game蓝海再获验证', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>《Forza Horizon 6》155GB遭Steam泄密</strong> — 未加密Steam构建版提前流出,3A游戏PC端安全再敲警钟', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>Sony SEC文件确认游戏开发中使用生成式AI</strong> — 用于QA自动化/3D建模/动画制作,大厂AI落地加速', anchor:'headlines', anchorIdx:4 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'行业人物',cls:'label-error'},
+          title:'育碧联合创始人 Claude Guillemot 坠机离世——69岁创始人在法国西部坠机事故中遇难',
+          date:'2026.06.20-22', source:'Game Developer(引 Reuters/Ouest-France)',
+          url:'https://www.gamedeveloper.com/business/obituary-ubisoft-co-founder-claude-guillemot-killed-in-plane-crash',
+          body:'据多家法媒报道,育碧联合创始人 Claude Guillemot（Guillemot 五兄弟之一）于6月20日在法国西部 La Baule 附近一架塞斯纳轻型飞机坠机事故中遇难,享年69岁,机上两人全部罹难。\n\nClaude Guillemot 于1986年与兄弟 Yves（现任育碧CEO）等共同创立育碧,缔造了《刺客信条》《孤岛惊魂》《彩虹六号》等全球顶级游戏IP的发行帝国。育碧已发表声明深表哀悼。\n\n<strong>行业影响：</strong>事件正值育碧经历重组裁员、净订金同比暴跌54%的低谷期,创始家族痛失核心成员,叠加治理与战略压力,给育碧前景再添不确定性。对中小发行启示:创始团队是早期企业的关键单点风险,应及早建立股权与决策的接班/冗余机制。' },
+        { type:'news', label:{text:'行业人物',cls:'label-error'},
+          title:'《Doom》《Duke Nukem 3D》作曲家 Bobby Prince 去世,享年81岁',
+          date:'2026.06.20', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/obituary-bobby-prince-composer-of-doom-and-duke-nukem-3d-dies-at-81',
+          body:'经典FPS游戏《Doom》和《Duke Nukem 3D》的作曲家 Bobby Prince 于近日去世,享年81岁。\n\nPrince 的音乐创作深刻影响了早期FPS游戏的文化特征——他善于将古典、摇滚和电子元素融合成游戏配乐,为1990年代游戏音乐的辨识度和艺术性确立标杆。其《Doom》E1M1等曲目至今仍是游戏音乐史上的标志性作品。\n\n<strong>行业联想：</strong>同周育碧创始人离世与 Bobby Prince 去世相继发生,「游戏产业奠基一代」正加速告别历史舞台,对行业文化遗产的梳理与传承提出更高要求。' },
+        { type:'news', label:{text:'现象级产品',cls:'label-hot'},
+          title:'《Meccha Chameleon》10天销量破500万——$5.99多人躲猫猫游戏成2026年现象级爆款',
+          date:'2026.06.20', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/meccha-chameleon-sells-5-million-units-in-10-days',
+          body:'多人 hide-and-seek 游戏《Meccha Chameleon》（超级变色龙）在发售仅10天内销量突破500万份。该游戏售价$5.99,玩法核心为「变形躲猫猫」——一名玩家追踪,其他玩家伪装成场景物品躲藏。游戏在Steam平台峰值同时在线人数达24.4万,成为2026年又一款现象级轻量多人游戏。\n\n<strong>行业启示：</strong>$5.99低定价×高复玩性的「Party Game」再次验证:在3A大作开发成本持续攀升的当下,轻量级社交/多人创意游戏能以极低成本撬动千万级销量,是中小团队回报率最高的品类之一。' },
+        { type:'news', label:{text:'重大泄露',cls:'label-warn'},
+          title:'《Forza Horizon 6》155GB遭Steam泄密——未加密构建版提前流出',
+          date:'2026.06.20', source:'Game Developer(引 The Verge)',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'微软旗下 Turn 10 工作室开发的《Forza Horizon 6》155GB完整游戏构建版在Steam平台上因未加密而遭到泄露,在官方正式发售前被提前非法流出。\n\n<strong>事件细节：</strong>泄露版本包含完整的游戏内容、开放世界地图和车辆阵容。目前微软和Turn 10尚未就泄露事件发表正式声明。该事件是继《GTA VI》2022年重大泄露后,近年来对3A游戏冲击最大的PC端泄露事件之一。\n\n<strong>行业教训：</strong>PC发行中的加密/安全流程应纳入发行前的关键检查清单——早期Steam Build的分发权限管理、加密策略和内部审核机制是防泄露的核心防线。' },
+        { type:'news', label:{text:'技术趋势',cls:'label-info'},
+          title:'Sony SEC文件确认游戏开发中使用生成式AI——用于QA/3D建模/动画',
+          date:'2026.06.20', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/sony-confirms-usage-of-generative-ai-in-game-development',
+          body:'Sony 在 SEC（美国证券交易委员会）文件中正式披露其已在游戏开发流程中应用生成式AI技术。文件指出生成式AI被用于QA自动化测试、3D建模辅助和动画制作加速。\n\n<strong>行业意义：</strong>这标志着全球头部主机/游戏厂商在公开层面正式确认AI进入核心研发流程。虽然Sony此前在内部已有多项AI相关研究和投资,但此次在监管文件中的正式确认将加速行业对AI辅助开发的合规化与标准化讨论。对中小发行商而言,AI工具的普及意味着研发成本有望进一步下降。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'行业人物',cls:'label-error'},
+              title:'育碧联合创始人 Claude Guillemot 坠机离世——创始家族痛失核心成员',
+              date:'2026.06.20-22', source:'Game Developer(引 Reuters/Ouest-France)',
+              url:'https://www.gamedeveloper.com/business/obituary-ubisoft-co-founder-claude-guillemot-killed-in-plane-crash',
+              body:'据多家法媒,育碧联合创始人 Claude Guillemot 于6月20日在法国西部 La Baule 附近的塞斯纳轻型飞机失事中遇难,享年69岁。其1986年与兄弟 Yves 等共同创立育碧。正值重组裁员低谷期,创始家族核心成员离世再添不确定性。' },
+            { type:'news', label:{text:'行业人物',cls:'label-error'},
+              title:'经典FPS作曲家 Bobby Prince 去世,享年81岁——Doom/Duke Nukem 音乐奠基人',
+              date:'2026.06.20', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/obituary-bobby-prince-composer-of-doom-and-duke-nukem-3d-dies-at-81',
+              body:'《Doom》《Duke Nukem 3D》作曲家 Bobby Prince 去世,81岁。其标志性配乐深刻定义了1990年代FPS游戏的文化特征,E1M1等曲目至今仍是游戏音乐里程碑。同日育碧创始人 Claude Guillemot 也在坠机中遇难——一周内行业连失两位奠基人物。' },
+            { type:'news', label:{text:'现象级产品',cls:'label-hot'},
+              title:'《Meccha Chameleon》10天500万销量 $5.99——多人躲猫猫成为2026年现象级爆款',
+              date:'2026.06.20', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/meccha-chameleon-sells-5-million-units-in-10-days',
+              body:'《Meccha Chameleon》Steam 10天500万份,峰值24.4万在线。$5.99低定价×高复玩性验证轻量多人Party Game蓝海。' },
+            { type:'news', label:{text:'平台更新',cls:'label-green'},
+              title:'SteamOS 3.8 稳定版发布——正式支持 Steam Machine 自建',
+              date:'2026.06.20', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/valve-releases-steamos-3-8-stable',
+              body:'Valve 发布 SteamOS 3.8 稳定版,SteamOS 3.8.10 起可用任意 PC 配件自组 Steam Machine 等效设备,不必购买官方硬件。Valve 同时公布官方 Steam Machine 512GB 型号定价1049美元。SteamOS 生态从「硬件绑定」走向「平台开放」。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'国产游戏',cls:'label-hot'},
+              title:'《钟馗传》Steam试玩火爆——3天23万愿望单,一周全球试玩破百万',
+              date:'2026.06.20', source:'游民星空',
+              url:'https://www.gamersky.com/news/202606/',
+              body:'国产神话动作游戏《钟馗传》自6月20日在Steam开启免费试玩后表现火爆:上线3天即斩获23万愿望单,一周内全球试玩人数突破100万,被媒体称为「国产神话动作游戏新黑马」。游戏以中国民间传说「钟馗捉鬼」为题材,融合高速战斗、水墨美术风格与类魂动作系统。' },
+            { type:'news', label:{text:'资本动态',cls:'label-info'},
+              title:'米哈游蝉联胡润全球独角兽榜国内游戏估值榜首——估值2000亿元',
+              date:'2026.06.20', source:'胡润百富',
+              url:'https://m.mp.oeeee.com/a/BAAFRD0000202606261615850.html',
+              body:'胡润研究院发布最新全球独角兽榜单,米哈游以约2000亿元人民币估值蝉联国内游戏行业独角兽估值榜首。在行业资本收缩的大背景下,米哈游凭借《原神》《崩坏:星穹铁道》《绝区零》等产品的持续表现,保持了中国游戏厂商在资本市场的最高估值地位。' },
+            { type:'news', label:{text:'销售捷报',cls:'label-green'},
+              title:'互动影游《盛世天下2》12天销量破200万套——Steam国区热销第一',
+              date:'2026.06.20', source:'新华网',
+              url:'http://www.news.cn/ent/20260626/643e26240a954ba2925ea25a36a0d49a/c.html',
+              body:'国产互动影像游戏《盛世天下2》发售12天内销量突破200万套,连续多日登顶Steam国区热销榜。作为互动影游品类的新标杆,《盛世天下2》以高品质真人实拍+多分支剧情为核心卖点,验证了互动叙事类产品在中国市场的巨大潜力。' },
+            { type:'news', label:{text:'平台政策',cls:'label-purple'},
+              title:'Nintendo Switch 2 获腾讯代理中国审批通过——腾讯将成为任天堂新主机中国代理',
+              date:'2026.06.20', source:'CGTN',
+              url:'https://news.cgtn.com/news/3d3d674e3545544d34457a6333566d54/index.html',
+              body:'据CGTN报道,Nintendo Switch 2已获中国审批,腾讯将担任任天堂最新一代主机在中国的代理发行商。这是继初代Switch后腾讯与任天堂的又一次深度合作。审批通过意味着Switch 2在中国大陆的官方销售渠道即将开通,对国内主机游戏市场格局和移动/PC发行竞争都将产生深远影响。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'gaming', title:'育碧联合创始人 Claude Guillemot 坠机离世——全球社区集体缅怀', summary:'育碧联合创始人 Claude Guillemot 在法国坠机事故中遇难,Reddit 玩家社区纷纷发帖缅怀其对游戏行业的贡献。大量玩家回顾育碧经典游戏回忆,讨论创始人家族对育碧企业文化的影响和育碧未来的不确定性。', url:'https://www.gamedeveloper.com/business/obituary-ubisoft-co-founder-claude-guillemot-killed-in-plane-crash', ups:'本周Top' },
+        { subreddit:'Games', title:'《Doom》《Duke Nukem》作曲家 Bobby Prince 去世——FPS音乐奠基人永别', summary:'Bobby Prince 去世消息在 Reddit 引发缅怀潮,玩家分享其经典曲目和个人回忆,讨论早期FPS游戏音乐对现代游戏配乐的深远影响。「E1M1 永远改变了游戏音乐」成为高频回帖。', url:'https://www.gamedeveloper.com/business/obituary-bobby-prince-composer-of-doom-and-duke-nukem-3d-dies-at-81', ups:'本周Top' },
+        { subreddit:'gaming', title:'《Meccha Chameleon》10天500万销量引爆Steam——现象级Party Game模式引热议', summary:'《Meccha Chameleon》以$5.99定价在Steam上10天售出500万份,社区热议其「低定价×高复玩性」的商业模式以及轻量多人游戏的蓝海潜力。大量玩家自制伪装视频在TikTok/YouTube传播,验证社交裂变威力。', url:'https://www.gamedeveloper.com/business/meccha-chameleon-sells-5-million-units-in-10-days', ups:'本周Top' },
+        { subreddit:'Games', title:'《Forza Horizon 6》155GB未加密Steam构建版遭泄露——3A安全危机再临', summary:'Forza Horizon 6完整游戏在Steam的未加密构建版被提前泄露,引发社区围绕3A游戏PC端反盗版安全的广泛讨论。许多玩家自发抵制泄露版呼吁尊重开发者劳动,但也有人将事件归咎于微软的加密策略失误。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'已上线约一个月,关注首月留存与付费表现' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作,沿用 AFK「先欧美后亚洲」打法。', movement:'5/21 全球上线,欧美留存与亚洲开服节奏观察中' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'🆕 大版本预告', detail:'生活模拟标杆,持续大版本运营。', movement:'6/18 夏季发布会公布首个「冒险包」Honeyglow Woods——含3新村民+全新区域+4新伙伴,上线日待定' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟,跨平台。', movement:'测试推进期,预计2026年内上线——最高优先监测' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'XD 出品社交生活模拟,持续运营。', movement:'持续季节性活动运营,夏季主题更新在即' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 首款治愈生活模拟 MMO。', movement:'仍处上线前研发阶段' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'最新 1.6.16 维护版,主力新作 Haunted Chocolatier' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'Bungie PvPvE 撤离射击,实时服务运营。', movement:'S2 赛季运营中(6/2 上线)' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'维护级更新,持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup 参考产品。', movement:'各平台常驻销售,本期无新内容' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'高品质竖版弹幕射击标杆。', movement:'持续运营,本周无重大事件' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters / 超自然行动组 (巨人网络)', status:'🔴 出海运营', detail:'国内累计下载超2亿后出海,微恐搜打撤直接竞品。', movement:'5/27 登陆美/日/韩,国际服持续迭代——关注海外留存与榜单走势' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服待测', detail:'TGA 撤离射击,实时服务运营。', movement:'累计销量破1500万;腾讯代理国服首测即将于6/24开启——搜打撤标杆国服化' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'🆕 新入局', detail:'UE5 黑暗奇幻搜打撤,大厂同品类入局。', movement:'6/16 开启国际服 CBT——大厂入局,与 Haunted Headline 直接竞争' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代运营中' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试节点', detail:'午夜都市灵异题材,暗黑塔防+放置养成。', movement:'6/16 发布测试版,微恐调性接近' },
+              { name:'Soul Knight (凉屋)', status:'监测中', detail:'凉屋 roguelike 射击,搜打撤受众重叠。', movement:'长线维护中,本期无重大版本事件' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['🆕 《钟馗传》Steam试玩火爆','国产独立','神话动作','PC(Steam)','6月20日试玩','<a class="store-link" href="https://store.steampowered.com/search/?term=%E9%92%9F%E9%A6%97%E4%BC%A0" target="_blank">Steam</a>','3天23万愿望单,全球试玩破百万,国产神话黑马'], highlight:true },
+            { cells:['🆕 Forza Horizon 6 泄露版','Turn 10/微软','开放世界赛车','PC/主机','待定','<a class="store-link" href="https://store.steampowered.com/search/?term=FORZA+HORIZON+6" target="_blank">Steam</a>','155GB Steam未加密构建泄露,重大安全事件'], highlight:true },
+            { cells:['Pokémon Champions','The Pokémon Company','宝可梦对战','移动端','即将上线','<a class="store-link" href="https://play.google.com/store/search?q=POKEMON+CHAMPIONS&c=apps" target="_blank">Google Play</a>','宝可梦IP移动化新作'] },
+            { cells:['Meccha Chameleon','个人/小团队','多人躲猫猫','PC(Steam)','已上线(现象级)','<a class="store-link" href="https://store.steampowered.com/search/?term=Meccha+Chameleon" target="_blank">Steam</a>','10天500万销量,Party Game蓝海标杆'] },
+            { cells:['逆水寒·新世界','网易','MMO(大版本)','PC/移动','6月26日','<a class="store-link" href="https://nshm.163.com/" target="_blank">官网</a>','头部MMO暑期大版本预热'] }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'战略分析',cls:'label-warn'},
+          title:'行业人物系列——育碧创始家族/Doom作曲家相继离世:游戏产业的文化遗产意义',
+          date:'2026.06.20', source:'Game Developer 综合',
+          url:'https://www.gamedeveloper.com/business/obituary-ubisoft-co-founder-claude-guillemot-killed-in-plane-crash',
+          body:'本周游戏行业连续失去两位标志性人物:育碧联合创始人 Claude Guillemot（坠机,69岁）和《Doom》作曲家 Bobby Prince（自然原因,81岁）。\n\n<strong>📉 双重遗产：</strong>Claude Guillemot 代表的创始一代企业家构建了现代3A游戏的发行体系;Bobby Prince 则定义了FPS游戏的音乐语言。两人分别从商业和艺术两个维度标志了游戏产业「奠基一代」的黄金时期。<br><br><strong>🎯 对行业启示：</strong>创始团队/关键人物的「单点风险」在近年的育碧(创始人相继离世/退出)和EA(创始时代早已远去)中反复验证——游戏公司应在创始团队活跃期建立完善的知识传承、品牌资产管理和接班人制度。同时,游戏文化遗产保护(音乐/设计/代码的归档与传承)作为行业成熟度指标,应得到更多行业组织和企业的重视。' },
+        { type:'news', label:{text:'安全警示',cls:'label-warn'},
+          title:'Forza Horizon 6 泄露事件——3A游戏反盗版与PC端安全警示',
+          date:'2026.06.20', source:'Game Developer(引 The Verge)',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'《Forza Horizon 6》155GB完整游戏构建在Steam上因未加密遭泄露,成为近年来对3A游戏冲击最大的PC端泄露事件之一。\n\n<strong>📋 事件复盘：</strong>据 The Verge 报道,泄露版本是在Steam平台的早期构建(Development Build)中因未启用加密保护而被非法提取和传播的。这与2022年《GTA VI》的泄露事件有相似之处——开发中版本/内部测试版的分发权限管理不当是核心漏洞。<br><br><strong>🎯 安全建议：</strong>① Steam Build的分发应严格区分内测/公测/正式环境,所有开发构建默认加密;② 建立构建版本的分发审核流程和权限分级;③ 针对大型3A游戏,建议采用「分阶段推送+加密+水印」三层防护。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 育碧创始人离世+治理压力——创始团队单点风险再敲警钟',
+          body:'Claude Guillemot 坠机意外离世,叠加育碧此前已多次裁员重组(关闭温尼伯/贝尔格莱德工作室、旧金山裁员93人)、净订金腰斩,创始家族核心成员加速退出。警示:① 游戏公司创始团队是关键单点风险,应及早建立决策接班与股权冗余机制;② 育碧后续战略走向存在更大不确定性——CEO Yves Guillemot 或面临更大治理压力,可能加速引入外部资本(腾讯等)或进行更深层重组;③ 关注育碧旗下IP(刺客信条/孤岛惊魂/彩虹六号等)的授权与合作窗口变化。' },
+        { type:'alert', title:'🟠 Forza Horizon 6 泄露事件——PC发行安全警示',
+          body:'《Forza Horizon 6》完整155GB构建版在Steam遭未加密泄露,暴露3A游戏的PC端发行安全漏洞。警示:① 所有Steam Build的内测/开发版本应默认加密,防范「早期构建→提取→传播」泄露链;② 建立构建版本的分发审核与权限分级制度;③ 对已泄露的Forza Horizon 6,微软可能推迟正式发售或调整内容,关注其对开放世界赛车品类发行业态的影响。' },
+        { type:'alert', title:'📌 Meccha Chameleon 现象级成功——轻量多人Party Game的蓝海验证',
+          body:'《Meccha Chameleon》$5.99定价×10天500万销量的表现验证了「低定价+高复玩性+社交传播」的轻量多人游戏蓝海模型。启示:① 在3A开发成本持续攀升的市场环境下,轻量多人创意游戏能以极低成本撬动千万级销量;② 躲猫猫/伪装类玩法具有天然社交传播属性,适合短视频/UGC内容裂变;③ 建议关注该品类的平台趋势(Twitch/YouTube/Steam同时在线数据)和后续竞品动向,评估类似玩法的立项窗口。' }
+      ]
+    }
+  ]
+});
+reportData.push({
+  date:'2026-06-21', weekday:'周日',
+  highlights:[
+    { text:'<strong>Leviatán 夺得 Valorant Masters London 2026 冠军</strong> — 3-2 击败 Paper Rex 拿下 VCT 2026 首个大师赛冠军', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>IEM Cologne (CS2) 打破观赛纪录</strong> — 275万峰值观众,1亿+小时总观看时长,CS电竞赛事历史新高', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>Epic Games 宣布重大启动器改版</strong> — Epic Games Store 界面/社交/发现机制全面升级,增强与 Steam 竞争', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>Nintendo 股价暴涨 17%</strong> — 腾讯拿下中国 Switch 2 审批消息驱动,市场看好任天堂中国市场前景', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>Pokémon GO 6月 Community Day 举行</strong> — Frigibax 限时登场(2-5PM本地),特殊招式 Glaive Rush', anchor:'headlines', anchorIdx:4 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'电竞赛事',cls:'label-hot'},
+          title:'Valorant Masters London 2026 落幕——Leviatán 3-2 击败 Paper Rex 夺冠',
+          date:'2026.06.20-21', source:'Valorant Esports / 多家媒体',
+          url:'https://playvalorant.com/en-us/news/game-updates/',
+          body:'Valorant Champions Tour 2026 首个大师赛 Masters London 在伦敦落幕。拉美战队 Leviatán 在总决赛中以 3-2 击败 Paper Rex,成功捧起 VCT 2026 首个大师赛冠军奖杯。\n\n<strong>🏆 赛事意义：</strong>Masters London 是 VCT 2026 赛季的首个大师赛,吸引了全球顶级 Valorant 战队参赛。Leviatán 的夺冠标志着拉美赛区在 Valorant 全球电竞版图中的崛起。决赛五局激战,双方展现出极高水平的战术执行和枪法发挥。' },
+        { type:'news', label:{text:'电竞赛事',cls:'label-hot'},
+          title:'IEM Cologne (CS2) 打破观赛纪录——275万峰值观众,1亿+小时观看时长',
+          date:'2026.06.21', source:'HLTV.org',
+          url:'https://hltv.org/news/44974/iem-cologne-major-shatters-cs-viewership-records',
+          body:'IEM Cologne 2026（CS2 Major级赛事）落幕,创下多项 CS 电竞历史纪录:\n\n<strong>📊 核心数据：</strong><br>— 最高同时在线观众 275 万（含直播平台）<br>— 总观看时长突破 1 亿小时<br>— 两项数据均打破 CS 电竞历史纪录\n\nIEM Cologne 作为 CS2 年度最重要的赛事之一,今年在赛制创新和观赛体验上均有升级,配合线下观众的热烈参与,将 CS2 的电竞热度推向历史新高。' },
+        { type:'news', label:{text:'平台改版',cls:'label-info'},
+          title:'Epic Games 宣布重大启动器改版——EGS 界面/社交/发现机制全面升级',
+          date:'2026.06.21', source:'Epic Games / 综合报道',
+          url:'https://store.epicgames.com/en-US/news/',
+          body:'Epic Games 宣布对其游戏启动器(Epic Games Store)进行重大改版,涉及界面 UI 重新设计、社交功能增强和游戏发现机制全面升级。\n\n<strong>🔄 改版要点：</strong>新版 EGS 将引入更流畅的浏览体验、改进的社交功能(好友状态/聊天/派对系统)以及更智能的游戏推荐算法。Epic 意图通过这次大改版缩小与 Steam 在用户体验和社区功能上的差距。' },
+        { type:'news', label:{text:'资本动态',cls:'label-green'},
+          title:'Nintendo 股价暴涨 17%——腾讯拿下中国 Switch 2 审批消息驱动',
+          date:'2026.06.20-21', source:'CGTN / 路透社',
+          url:'https://news.cgtn.com/news/3d3d674e3545544d34457a6333566d54/index.html',
+          body:'据 CGTN 报道,Nintendo Switch 2 已获中国审批通过,腾讯将担任任天堂最新一代主机在中国的代理发行商。消息公布后,Nintendo 股价在日本市场单日暴涨 17%,创下近年最大单日涨幅。投资者对中国市场 Switch 2 的销售前景持强烈乐观态度。' },
+        { type:'news', label:{text:'社区活动',cls:'label-green'},
+          title:'Pokémon GO 6月 Community Day 举行——Frigibax 限时登场(2-5PM)',
+          date:'2026.06.21', source:'GameSpot / Eurogamer',
+          url:'https://www.gamespot.com/articles/pokemon-go-june-2026-events-raid-bosses-community-day-and-more/',
+          body:'Pokémon GO 于今日(2-5PM 本地时间)举行 6 月 Community Day,主角为冰系宝可梦 Frigibax,特殊招式「Glaive Rush」。捕获星尘 3 倍,熏香时长延长至 3 小时。这是「Forever Forward」新季开启后的首个 Community Day,也是 GO Fest 2026 (7月)的前哨活动。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'电竞赛事',cls:'label-hot'},
+              title:'Valorant Masters London 2026 落幕——Leviatán 3-2 击败 Paper Rex 夺冠',
+              date:'2026.06.20-21', source:'Valorant Esports',
+              url:'https://playvalorant.com/en-us/news/game-updates/',
+              body:'VCT 2026 首个大师赛 Masters London 落幕,拉美战队 Leviatán 在决赛中以 3-2 击败 Paper Rex 夺冠。五局大战吸引全球数百万观众,标志着拉美赛区在 Valorant 电竞版图中的崛起。' },
+            { type:'news', label:{text:'电竞赛事',cls:'label-hot'},
+              title:'IEM Cologne (CS2) 创纪录——275万峰值观众,1亿+小时观看',
+              date:'2026.06.21', source:'HLTV.org',
+              url:'https://hltv.org/news/44974/iem-cologne-major-shatters-cs-viewership-records',
+              body:'IEM Cologne 2026 创下 CS 电竞历史纪录:275 万峰值观众、1 亿+ 小时总观看时长。CS2 继续展现其在 FPS 电竞领域的统治力。双赛周(Valorant + CS2)叠加使本周成为电竞界的「超级碗」。' },
+            { type:'news', label:{text:'平台改版',cls:'label-info'},
+              title:'Epic Games Store 宣布重大改版——UI/社交/发现机制全面升级',
+              date:'2026.06.21', source:'Epic Games',
+              url:'https://store.epicgames.com/en-US/news/',
+              body:'Epic Games 宣布对其游戏启动器进行重大改版,涉及 UI 重新设计、社交功能增强和游戏发现机制升级。意图缩小与 Steam 的用户体验差距,从「砸钱抢用户」转向「产品力竞争」。' },
+            { type:'news', label:{text:'社区活动',cls:'label-green'},
+              title:'Pokémon GO June Community Day——Frigibax 限时登场(2-5PM本地)',
+              date:'2026.06.21', source:'GameSpot',
+              url:'https://www.gamespot.com/articles/pokemon-go-june-2026-events-raid-bosses-community-day-and-more/',
+              body:'Pokémon GO 今日举行 6 月 Community Day,Frigibax 大量出现,进化至 Baxcalibur 可习得特殊招式 Glaive Rush。3 倍捕获星尘。Forever Forward 新季首个 Community Day。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'平台政策',cls:'label-purple'},
+              title:'Nintendo Switch 2 中国审批通过——腾讯代理任天堂新主机中国大陆销售',
+              date:'2026.06.20-21', source:'CGTN',
+              url:'https://news.cgtn.com/news/3d3d674e3545544d34457a6333566d54/index.html',
+              body:'据 CGTN 报道,Nintendo Switch 2 获中国审批,腾讯将担任代理发行商。消息推动 Nintendo 股价大涨 17%。继初代 Switch 后,腾讯与任天堂的合作进一步深化,Switch 2 在中国市场的销售前景被广泛看好。' },
+            { type:'news', label:{text:'国产游戏',cls:'label-hot'},
+              title:'《钟馗传》Steam试玩热度持续——国产神话动作游戏海外口碑发酵',
+              date:'2026.06.21', source:'游民星空',
+              url:'https://www.gamersky.com/news/202606/',
+              body:'《钟馗传》自6月20日开启 Steam 免费试玩后热度持续攀升,不仅在国内获得高度关注,海外玩家和媒体也对其独特的水墨美术风格和「钟馗捉鬼」东方神话题材给予了积极评价。' },
+            { type:'news', label:{text:'销售捷报',cls:'label-green'},
+              title:'《盛世天下2》互动影游持续霸榜Steam国区——12天销量破200万后势头不减',
+              date:'2026.06.21', source:'新华网',
+              url:'http://www.news.cn/ent/20260626/643e26240a954ba2925ea25a36a0d49a/c.html',
+              body:'国产互动影像游戏《盛世天下2》在发售12天销量突破200万套后,仍持续占据 Steam 国区热销榜前列。高品质真人实拍+多分支剧情+高自由度的互动叙事组合持续吸引新玩家入场。' },
+            { type:'news', label:{text:'资本动态',cls:'label-info'},
+              title:'完美世界员工持股计划过户完成——核心团队利益绑定深化',
+              date:'2026.06.21', source:'东方财富',
+              url:'https://finance.eastmoney.com/a/202606263783509662.html',
+              body:'完美世界发布公告,公司员工持股计划已顺利完成股份过户,涉及320名核心员工,过户股份732.5万股。在行业人才竞争日益激烈的背景下,此举有助于稳定核心团队并激发长期战斗力。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'ValorantCompetitive', title:'Leviatán 夺得 VCT Masters London 冠军——拉美首次登顶 Valorant 大师赛', summary:'Leviatán 在五局激战后击败 Paper Rex 夺得 2026 年首个 VCT 大师赛冠军。社区高度评价两队展现的战术深度和个人表现,尤其是 Leviatán 在决胜图的冷静发挥。', url:'https://playvalorant.com/en-us/news/game-updates/', ups:'本周Top' },
+        { subreddit:'GlobalOffensive', title:'IEM Cologne 2026 打破 CS 观赛纪录——275万峰值观众', summary:'IEM Cologne 2026 以 275 万峰值观众和 1 亿+ 小时观看时长刷新 CS 电竞历史纪录。社区热烈讨论 CS2 当前的竞技状态和观赛体验。', url:'https://hltv.org/news/44974/iem-cologne-major-shatters-cs-viewership-records', ups:'本周Top' },
+        { subreddit:'Games', title:'Nintendo 股价暴涨 17% 因腾讯获中国 Switch 2 审批', summary:'Nintendo Switch 2 在中国通过审批、腾讯代理的消息推动任天堂股价单日暴涨 17%。Reddit 社区讨论聚焦于中国主机市场的增长潜力和腾讯的本地化运营能力。', url:'https://news.cgtn.com/news/3d3d674e3545544d34457a6333566d54/index.html', ups:'本周Top' },
+        { subreddit:'EpicGamesPC', title:'Epic Games 宣布重大启动器改版——玩家期待已久的 UI 和社交功能升级', summary:'Epic Games Store 宣布重大改版计划,包括 UI 重新设计、社交功能增强和游戏发现机制改进。社区普遍欢迎这一消息,但也有玩家质疑「改版能否真正缩小与 Steam 的差距」。', url:'https://store.epicgames.com/en-US/news/', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'已上线约一个月,关注首月留存与付费表现' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作,tap4fun 发行策略观察中。', movement:'5/21 上线全球(亚洲区暂缓),关注欧美留存曲线' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'🆕 大版本预告', detail:'生活模拟标杆,持续大版本运营。', movement:'6/18 夏季发布会公布「冒险包」Honeyglow Woods——全新山谷区域、3新村民、4新伙伴' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟,跨平台。', movement:'测试推进期,预计2026年内上线——最高优先监测' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'XD 出品社交生活模拟,持续运营。', movement:'持续季节性活动运营,夏季主题更新在即' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 首款治愈生活模拟 MMO。', movement:'仍处上线前研发阶段' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'最新 1.6.16 维护版' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'Bungie PvPvE 撤离射击,实时服务运营。', movement:'S2 赛季运营中(6/2 上线)' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'维护级更新,持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup 参考产品。', movement:'各平台常驻销售,本期无新内容' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'高品质竖版弹幕射击标杆。', movement:'持续运营,本周无重大事件' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters / 超自然行动组 (巨人网络)', status:'🔴 出海运营', detail:'国内累计下载超2亿后出海,微恐搜打撤直接竞品。', movement:'5/27 登陆美/日/韩,国际服持续迭代——关注海外留存与榜单走势' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服待测', detail:'TGA 撤离射击,实时服务运营。', movement:'累计销量破1500万;腾讯代理国服首测即将于6/24开启——搜打撤标杆国服化' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'🆕 新入局', detail:'UE5 黑暗奇幻搜打撤,大厂同品类入局。', movement:'6/16 开启国际服 CBT——大厂入局,与 Haunted Headline 直接竞争' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代运营中' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试节点', detail:'午夜都市灵异题材,暗黑塔防+放置养成。', movement:'6/16 发布测试版,微恐调性接近' },
+              { name:'Soul Knight (凉屋)', status:'监测中', detail:'凉屋 roguelike 射击,搜打撤受众重叠。', movement:'长线维护中,本期无重大版本事件' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['🆕 Pokémon Champions','The Pokémon Company','宝可梦对战','移动端','即将上线','<a class="store-link" href="https://play.google.com/store/search?q=POKEMON+CHAMPIONS&c=apps" target="_blank">Google Play</a>','宝可梦IP移动化新作,对战品类核心产品'], highlight:true },
+            { cells:['Valorant Act 4 / 新地图 Summit','Riot Games','战术射击','PC','赛季更新','<a class="store-link" href="https://playvalorant.com/en-us/news/game-updates/" target="_blank">官网</a>','新地图 Summit 上线,赛季内容更新'] },
+            { cells:['🆕 《钟馗传》试玩持续','国产独立','神话动作','PC(Steam)','6月20日-','<a class="store-link" href="https://store.steampowered.com/search/?term=%E9%92%9F%E9%A6%97%E4%BC%A0" target="_blank">Steam</a>','国产神话黑马,海外口碑发酵中'], highlight:true },
+            { cells:['Meccha Chameleon','个人/小团队','多人躲猫猫','PC(Steam)','已上线(现象级)','<a class="store-link" href="https://store.steampowered.com/search/?term=Meccha+Chameleon" target="_blank">Steam</a>','10天500万销量,Party Game蓝海标杆'] },
+            { cells:['国服《彩虹六号：攻势》','Ubisoft/腾讯','战术射击FPS','PC/移动','首测在即','<a class="store-link" href="https://play.google.com/store/search?q=%E5%BD%A9%E8%99%B9%E5%85%AD%E5%8F%B7+%E6%94%BB%E5%8A%BF&c=apps" target="_blank">Google Play</a>','腾讯代理,国服首测将至'] }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'战略分析',cls:'label-warn'},
+          title:'CN游戏资本动态——Nintendo中国审批/米哈游胡润/完美员工持股三重信号',
+          date:'2026.06.20-21', source:'CGTN / 东方财富 / 胡润百富',
+          url:'https://news.cgtn.com/news/3d3d674e3545544d34457a6333566d54/index.html',
+          body:'本周中国游戏资本层面出现三重重要信号:\n\n<strong>📈 信号一: Nintendo Switch 2 获中国审批</strong><br>腾讯代理 Switch 2 中国发行,Nintendo 股价暴涨 17%。这是继初代 Switch 后任天堂再次选择腾讯作为中国合作伙伴,反映中国主机市场持续扩大。<br><br><strong>💰 信号二: 米哈游蝉联胡润独角兽榜首</strong><br>米哈游以约 2000 亿元估值蝉联国内游戏行业独角兽榜首,在主力产品收入下滑的背景下维持估值韧性。<br><br><strong>🏢 信号三: 完美世界员工持股完成</strong><br>完美世界员工持股计划过户完成,核心团队利益深度绑定,在行业人才竞争加剧的背景下稳定军心。' },
+        { type:'news', label:{text:'行业观察',cls:'label-teal'},
+          title:'Esports 双赛周启示——VCT Masters London + IEM Cologne 合计超500万峰值观众',
+          date:'2026.06.20-21', source:'Valorant Esports / HLTV.org',
+          url:'https://hltv.org/news/44974/iem-cologne-major-shatters-cs-viewership-records',
+          body:'本周末(6月20-21日)电竞行业迎来罕见的「双赛周」:VCT Masters London 决赛 + IEM Cologne 决赛同日举行,合计吸引超 500 万峰值观众。对发行启示:① 双赛周叠加验证了「FPS电竞」作为全球最具观赏性的品类之一;② 周末双赛的「注意力争夺」效应值得买量团队在投放时段上做避让。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 Esports 双赛周流量启示——VCT/IEM 叠加的受众注意力争夺',
+          body:'VCT Masters London 决赛与 IEM Cologne 决赛在本周末同日举行,合计超 500 万峰值观众。警示与建议:① 电竞受众与游戏玩家高度重合,双赛周期间买量成本可能因注意力争夺而波动——建议避开决赛时段的高预算投放;② 电竞赛事流量为相关品类(FPS/战术射击/竞技游戏)提供了低成本品牌曝光窗口;③ 广告主需建立赛事日历为基础的投放策略。' },
+        { type:'alert', title:'📌 Nintendo Switch 2 中国审批通过——对移动/PC发行的潜在影响',
+          body:'Nintendo Switch 2 获得中国审批、腾讯代理的消息推动 Nintendo 股价暴涨 17%。对移动/PC 发行的潜在影响:① Switch 2 入华将分流部分轻度/中核用户的游戏时间;② 腾讯作为代理方,可能将部分手游/PC 游戏移植至 Switch 2 平台;③ 建议关注 Switch 2 的移植成本和用户获取窗口。' }
+      ]
+    }
+  ]
+});
+reportData.push({
+  date:'2026-06-22', weekday:'周一',
+  highlights:[
+    { text:'<strong>Valorant Act 4 / 13.00补丁上线</strong> — 新地图「Summit」、Blackspyre 皮肤预告', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>Xbox战略重置：Asha Sharma主导重组</strong> — 工作室关闭/出售传闻，Game Pass调整', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>Steam Machine定价$1,049</strong> — 512GB版，开放自建双轨策略', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>Battlefield Hardline主机版永久关服</strong> — 系列收官之作生命周期结束', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>CDPR详解弃REDEngine转Unreal</strong> — 《巫师4》引擎迁移决策逻辑', anchor:'headlines', anchorIdx:4 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'游戏更新',cls:'label-info'},
+          title:'Valorant Act 4 / 13.00 补丁上线——新地图「Summit」及 Blackspyre 皮肤系列发布',
+          date:'2026.06.22', source:'Valorant 官方',
+          url:'https://playvalorant.com/en-us/news/game-updates/',
+          body:'Riot Games 发布 Valorant 第4幕/13.00补丁,新增地图「Summit」及 Blackspyre 系列皮肤。新地图设定于山巅据点,强调垂直作战与近中距离交火。Act 4 同步开启新通行证和排位赛季。' },
+        { type:'news', label:{text:'战略调整',cls:'label-warn'},
+          title:'Xbox业务重置：Asha Sharma主导战略重组——工作室关闭/出售传闻涌现',
+          date:'2026.06.22', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift',
+          body:'据多方消息,Xbox 在 Asha Sharma 主导下进行业务重置,涉及工作室出售（Ninja Theory、Double Fine、Arkane 等被传挂牌）、Game Pass 策略调整及第一方独占策略转向。分析师称Xbox正从「内容军备竞赛」转向「平台效率优先」模式。' },
+        { type:'news', label:{text:'硬件',cls:'label-purple'},
+          title:'Valve Steam Machine 定价 $1,049（512GB）——开放自建双轨策略',
+          date:'2026.06.22', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/pc/steam-machine-pricing-starts-at-1-049-for-512gb-model',
+          body:'Valve 公布 Steam Machine 定价方案,512GB 版 $1,049,同时推出 SteamOS 3.8 稳定版支持用户自建 Steam Machine。形成「品牌整机+DIY自建」双轨策略。社区对定价偏高和客厅定位存在分歧,DIY方案获技术向用户肯定。' },
+        { type:'news', label:{text:'行业动态',cls:'label-info'},
+          title:'Battlefield Hardline 主机服务器永久关闭——系列收官之作生命周期结束',
+          date:'2026.06.22', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'EA 关闭 Battlefield Hardline 主机版在线服务器,该作由 Visceral Games 开发,2015年发售,以警匪题材区别于主系列。关服标志其在线生命周期正式结束,玩家缅怀这款另类BF尝试。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'战略调整',cls:'label-warn'},
+              title:'Xbox业务重置——Asha Sharma主导战略重组,工作室关闭/出售传闻',
+              date:'2026.06.22', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift',
+              body:'Xbox 在 Asha Sharma 主导下进行全方位业务重置,Ninja Theory、Double Fine、Arkane 等工作室据传挂牌出售,Game Pass 定价与内容策略面临重大调整。分析师解读微软游戏战略从内容军备竞赛转向平台效率优先。' },
+            { type:'news', label:{text:'硬件',cls:'label-purple'},
+              title:'Steam Machine定价$1,049——开放自建双轨策略,Valve 重返客厅',
+              date:'2026.06.22', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/pc/steam-machine-pricing-starts-at-1-049-for-512gb-model',
+              body:'Valve 公布 Steam Machine $1,049 定价及 SteamOS 3.8,用户可自行组装 Steam Machine,无需购买品牌整机。此举被视为 Valve 重返客厅战略的关键一步,社区对定价偏高的反响待观察。' },
+            { type:'news', label:{text:'游戏更新',cls:'label-info'},
+              title:'Valorant Act 4上线——新地图「Summit」,Blackspyre 皮肤系列',
+              date:'2026.06.22', source:'Valorant 官方',
+              url:'https://playvalorant.com/en-us/news/game-updates/',
+              body:'Riot 发布 Valorant 第4幕,包含新地图「Summit」及 Blackspyre 系列皮肤,排位赛系统同步更新。新地图强调垂直作战,是 Valorant 2026 年最具竞争力的新竞技地图。' },
+            { type:'news', label:{text:'技术决策',cls:'label-info'},
+              title:'CDPR弃REDEngine详解——自研引擎vs商业引擎的长期成本与风险评估',
+              date:'2026.06.22', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'CDPR 详细解释放弃 REDEngine 转用 Unreal Engine 5 的决策,核心考虑包括:维护自研引擎的长期成本（每6年需数亿美元）、6年周期适配次世代技术的费用、以及依赖 Epic 技术支持的战略权衡。对中小团队启示:在UE人才供给充足的市场环境下,自研引擎的长期ROI需重新评估。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'资本动态',cls:'label-info'},
+              title:'腾讯拟撤回部分海外游戏投资（彭博）——日本工作室投资策略调整',
+              date:'2026.06.22', source:'机核网(引彭博)',
+              url:'https://www.gcores.com/articles/216278',
+              body:'彭博报道腾讯拟调整海外投资策略,计划撤回部分日本工作室的投资,包括回售 Marvelous 等多家公司的少数股权。此举标志着腾讯从「广撒网」向「聚焦核心」的战略转向。' },
+            { type:'news', label:{text:'运营事件',cls:'label-warn'},
+              title:'Owlcat Games 启动器争议——24小时内撤回,社区管理反例',
+              date:'2026.06.22', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'Owlcat Games 推出的强制启动器引发玩家强烈不满,公司在24小时内宣布撤回该启动器要求并道歉。成为近期社区管理反面案例——决策缺乏前置沟通,上线即引爆负面,快速认错是唯一止损路径。' },
+            { type:'news', label:{text:'产品动态',cls:'label-hot'},
+              title:'《钟馗传》Steam试玩持续火爆——国产神话动作游戏口碑发酵',
+              date:'2026.06.22', source:'游民星空',
+              url:'https://www.gamersky.com/news/202606/',
+              body:'国产暗黑国风动作游戏《钟馗传》Steam 试玩持续火爆,以中国民间传说钟馗为题材,凭借独特水墨美术风格和爽快战斗获得大量好评。海外玩家人数和评测持续增加,国产独立游戏出海新案例。' },
+            { type:'news', label:{text:'行业动态',cls:'label-info'},
+              title:'Kakao Games 否认合并传闻——韩系游戏厂商财报表现分化',
+              date:'2026.06.22', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'Kakao Games 官方否认与 Line Games 等公司的合并传闻,称目前无相关计划。在韩国游戏厂商整体营收承压的背景下,各公司采取不同的战略调整路径。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'XboxSeriesX', title:'Xbox 工作室关闭/重组引发热议——Ninja Theory、Double Fine、Arkane 命运未卜', summary:'玩家对 Xbox 工作室出售计划及战略重置方向意见分歧,部分担忧第一方阵容质量,也有人认为这是 Game Pass 长期可持续的必要调整。', url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift', ups:'本周Top' },
+        { subreddit:'Steam', title:'Steam Machine $1,049 定价争议——性价比与玩家期待差距', summary:'社区对定价偏高和客厅定位存在分歧,但 DIY 自建方案获得技术向用户肯定。Valve 双轨策略意在扩大 SteamOS 生态而非硬件走量。', url:'https://www.gamedeveloper.com/pc/steam-machine-pricing-starts-at-1-049-for-512gb-model', ups:'本周Top' },
+        { subreddit:'Battlefield', title:'Battlefield Hardline 永久关服——警匪题材终成绝响', summary:'玩家缅怀 Visceral Games 的另类 BF 尝试,讨论系列差异化设计的得失。Hardline 的警匪设定在当时颇具创新性,但最终未能延续生命力。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' },
+        { subreddit:'pcgaming', title:'Owlcat 启动器事件——24小时上线到撤回创下行业纪录', summary:'社区集体抵制迫使 Owlcat 光速道歉,玩家讨论「强制启动器」现象的行业根源——PC玩家社区对额外启动器的容忍度已降至冰点。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'运营中,关注留存与付费' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作。', movement:'运营中' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'监测中', detail:'生活模拟标杆。', movement:'Honeyglow Woods DLC 持续运营' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟。', movement:'测试推进期,预计2026年内上线' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'社交生活模拟,持续运营。', movement:'季节性活动运营中' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 治愈生活模拟 MMO。', movement:'研发中' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'1.6.16 维护版' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'PvPvE 撤离射击。', movement:'S2 赛季运营中' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup。', movement:'稳定' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'竖版弹幕射击标杆。', movement:'稳定' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters (巨人网络)', status:'🔴 出海运营', detail:'微恐搜打撤直接竞品。', movement:'出海运营中,关注海外榜单' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服首测', detail:'TGA 撤离射击。', movement:'6/24 开启国服首测' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'CBT', detail:'UE5 黑暗奇幻搜打撤。', movement:'6/16 国际服 CBT' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试', detail:'午夜都市灵异塔防+放置。', movement:'6/16 测试版' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['Valorant Act 4','Riot Games','竞技射击','PC','6/22','<a class="store-link" href="https://playvalorant.com/en-us/news/game-updates/" target="_blank">官网</a>','第4幕新地图Summit+Blackspyre皮肤'], highlight:true },
+            { cells:['Steam Machine 512GB','Valve','硬件/主机','Steam','6/22','<a class="store-link" href="https://store.steampowered.com/search/?term=Steam+Machine" target="_blank">Steam</a>','$1,049定价+自建方案'], highlight:true },
+            { cells:['Meccha Chameleon','独立团队','平台动作','PC/Switch','运营中','<a class="store-link" href="https://store.steampowered.com/search/?term=Meccha+Chameleon" target="_blank">Steam</a>','Steam周榜连冠,10天500万套'], highlight:false },
+            { cells:['彩六攻势 国服首测','Ubisoft/腾讯','战术射击','PC','即将','<a class="store-link" href="https://store.steampowered.com/search/?term=%E5%BD%A9%E5%85%AD%E6%94%BB%E5%8A%BF" target="_blank">Steam</a>','腾讯发行国服,首测倒计时'], highlight:false }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'深度分析',cls:'label-warn'},
+          title:'Xbox业务重置深度分析——微软游戏战略从内容军备竞赛转向平台效率优先',
+          date:'2026.06.22', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift',
+          body:'Analyst 分析指出,Xbox 正在从「内容军备竞赛」转向「平台效率优先」策略,工作室重组、Game Pass 调整、独占策略弱化是多管齐下的成本控制与利润导向。对行业启示:平台策略转换期,关注微软第一方内容供给缺口对订阅制模式的长期影响。' },
+        { type:'news', label:{text:'技术分析',cls:'label-teal'},
+          title:'CDPR弃REDEngine的决策逻辑——自研引擎vs商业引擎的长期成本与风险评估',
+          date:'2026.06.22', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'CDPR 的技术高管阐明弃用 REDEngine 的原因:自研引擎每6年需投入数亿美元维护,而 UE5 提供即时代次世代支持、成熟工具链和人才储备优势。对中小团队启示:在UE人才供给充足的市场环境下,自研引擎的长期ROI需重新评估。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 Xbox重置战略——平台转换期的行业影响',
+          body:'Xbox 战略重心从「内容独占」转向「平台效率」,料将影响整个主机生态的内容策略。建议关注:① Xbox 第一方阵容缩减对 Game Pass 长期价值的影响;② 工作室出售动向——Ninja Theory/Arkane 等优质资产花落谁家;③ PlayStation 是否跟进效率优先路线。同时,被出售的工作室可能成为中小发行商的内容合作或人才吸纳窗口。' },
+        { type:'alert', title:'🟠 CDPR引擎迁移启示——自研vs商业引擎决策框架',
+          body:'CDPR 的引擎决策为行业提供了自研引擎vs商业引擎的成本分析模板。关键因素:① 引擎维护团队规模(50-100人)的年成本;② 跨世代兼容投入;③ 人才招聘难度(UE人才 vs 自研引擎人才)。建议各工作室据此评估自研引擎的长期ROI,在项目立项阶段即确定引擎路线。' },
+        { type:'alert', title:'📌 Owlcat启动器事件——社区管理教训',
+          body:'Owlcat 在24小时内从推出强制启动器到完全撤回,堪称「社区反噬速度之最」。教训:① 强制绑定启动器的玩家容忍度已降至冰点;② 先沟通后上线的流程不可跳过;③ 快速认错+撤回仍然是化解危机的唯一有效路径;④ PC发行中的社区预期管理比功能本身更重要。' }
+      ]
+    }
+  ]
+});
+reportData.push({
+  date:'2026-06-23', weekday:'周二',
+  highlights:[
+    { text:'<strong>腾讯拟退出多家日本工作室投资</strong> — 彭博确认,回售Marvelous等少数股权', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>EA年内第三轮裁员</strong> — 印度海得拉巴+美国远程岗位受影响', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>Owlcat Games撤回争议启动器</strong> — 24小时玩家抗议后光速认错', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>Steam周销量榜：《超级变色龙》二连冠</strong> — 10天500万套持续热销', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>Brawl Stars × Adidas 首个服饰联名</strong> — 手游跨界时尚新尝试', anchor:'headlines', anchorIdx:4 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'资本动态',cls:'label-info'},
+          title:'腾讯拟退出多家日本工作室投资——彭博确认,回售Marvelous等少数股权',
+          date:'2026.06.23', source:'Game Developer(引彭博)',
+          url:'https://www.gamedeveloper.com/business/report-tencent-mulling-exits-from-multiple-japanese-studios',
+          body:'彭博社报道腾讯计划调整海外投资策略,拟退出多家日本工作室并回售少数股权,涉及Marvelous等公司。白金工作室、FromSoftware及母公司Kadokawa的投资据称维持不变。标志腾讯全球投资战略从「广撒网」转向「聚焦核心」,对依赖腾讯战投的工作室构成退出风险。' },
+        { type:'news', label:{text:'行业动态',cls:'label-warn'},
+          title:'EA年内第三轮裁员——印度海得拉巴+美国远程岗,550亿美元收购前夕',
+          date:'2026.06.23', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/report-ea-conducts-layoffs-in-hyderabad-india-and-the-us',
+          body:'EA 启动2026年第三轮裁员,影响印度海得拉巴办公室及美国远程员工,涉及招聘、客服、信任与安全等支持部门。EA 正在加速成本瘦身,正值含沙特主权基金的财团约550亿美元私有化收购在即——大厂在被收购前持续「瘦身」以优化报表。' },
+        { type:'news', label:{text:'运营事件',cls:'label-warn'},
+          title:'Owlcat Games 撤回争议启动器——24小时玩家抗议后光速认错,行业社区管理标志性案例',
+          date:'2026.06.23', source:'Game Developer / IGN',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'Owlcat Games 因强制启动器引发玩家大规模抗议,公司在24小时内宣布完全撤回并道歉。该事件成为游戏行业社区管理的标志性案例——决策缺乏前置沟通、上线即引爆负面,快速认错+全盘撤回是唯一止损策略。' },
+        { type:'news', label:{text:'市场数据',cls:'label-green'},
+          title:'Steam周销量榜——《超级变色龙》二连冠,10天500万套持续热销',
+          date:'2026.06.23', source:'机核网',
+          url:'https://www.gcores.com/articles/216291',
+          body:'Steam 最新周销量榜公布,《Meccha Chameleon》（超级变色龙）蝉联冠军,发售10天内销量突破500万套。$5.99低价+高复玩性+社交裂变的Party Game模式持续验证,榜单同时呈现本周新品与长青产品的销量竞争格局。' },
+        { type:'news', label:{text:'跨界联名',cls:'label-teal'},
+          title:'Brawl Stars × Adidas 首个服饰联名——手游IP跨界时尚赛道新探索',
+          date:'2026.06.23', source:'PocketGamer.biz',
+          url:'https://www.pocketgamer.biz/brawl-stars-teams-up-with-adidas-for-first-apparel-collaboration/',
+          body:'Supercell 旗下 Brawl Stars 与 Adidas 合作推出首个服饰联名系列,将手游IP延伸至线下潮流服饰。成熟手游IP变现正从游戏内付费扩展到品牌授权、潮流联名。联名选择与目标人群高度重合的强势品牌是关键。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'资本动态',cls:'label-info'},
+              title:'腾讯拟退出日本工作室投资——回售Marvelous等少数股权,全球投资策略收缩',
+              date:'2026.06.23', source:'Game Developer(引彭博)',
+              url:'https://www.gamedeveloper.com/business/report-tencent-mulling-exits-from-multiple-japanese-studios',
+              body:'腾讯计划回售多家日本工作室的少数股权,包括 Marvelous 等公司,标志其海外投资策略从「广撒网」转向「精选核心」。白金、FromSoftware 股份据称不在出售之列。头部资本从工作室入股转向 UGC/平台型资产。' },
+            { type:'news', label:{text:'行业动态',cls:'label-warn'},
+              title:'EA第三轮裁员——印度海得拉巴+美国远程岗,550亿美元沙特收购在即',
+              date:'2026.06.23', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/report-ea-conducts-layoffs-in-hyderabad-india-and-the-us',
+              body:'EA 2026年第三轮裁员继续推进,涉及印度海得拉巴办公室及美国远程员工。EA 在为被收购做组织瘦身准备,持续优化成本结构。行业影响:3A大厂在被收购前持续瘦身,支持/运营岗成首批牺牲品,人才外溢加速。' },
+            { type:'news', label:{text:'社区管理',cls:'label-warn'},
+              title:'Owlcat启动器争议——24小时内撤回,行业社区管理反面教材',
+              date:'2026.06.23', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'Owlcat 强制启动器在社区引爆大规模负面声浪,公司24小时内撤回决定并道歉。引发行业对 DRM 策略的再思考——任何增加玩家摩擦的改动必须前置充分的沟通与灰度测试。' },
+            { type:'news', label:{text:'跨界联名',cls:'label-teal'},
+              title:'Brawl Stars × Adidas 服饰联名——手游IP实体化联名开辟新路径',
+              date:'2026.06.23', source:'PocketGamer.biz',
+              url:'https://www.pocketgamer.biz/brawl-stars-teams-up-with-adidas-for-first-apparel-collaboration/',
+              body:'Supercell 与 Adidas 推出 Brawl Stars 主题服饰,为手游 IP 实体化联名开辟新路径,借助 Adidas 全球渠道触达泛用户群体。成熟手游IP变现正从游戏内付费扩展到品牌授权、潮流联名。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'资本动态',cls:'label-info'},
+              title:'阿里被曝打包出售灵犀互娱——估值70-90亿元,买家阵营浮现',
+              date:'2026.06.23', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'据知情人士透露,阿里正计划打包出售灵犀互娱业务,估值区间70-90亿元,接盘方可能包括三七互娱、世纪华通、巨人网络等多家头部游戏公司。灵犀互娱核心产品为《三国志·战略版》《如鸢》等,团队约1200人。' },
+            { type:'news', label:{text:'公司治理',cls:'label-warn'},
+              title:'Kadokawa股东施压罢免CEO——FromSoftware母公司治理危机升级',
+              date:'2026.06.23', source:'机核网',
+              url:'https://www.gcores.com/articles/216298',
+              body:'Kadokawa 股东施压要求罢免现任 CEO Takeshi Natsuno,指控管理层战略失误及公司治理不善。核心不满之一在于《艾尔登法环》海外发行交由万代南梦宫负责,令 Kadokawa 损失可观利润。ISS 和 Glass Lewis 均建议支持罢免。' },
+            { type:'news', label:{text:'硬件',cls:'label-purple'},
+              title:'壹号本发布四款国产掌机——OneXPlayer 3/X2 mini,搭载英特尔 Arc G3',
+              date:'2026.06.23', source:'游民星空',
+              url:'https://www.gamersky.com/news/202606/2161091.shtml',
+              body:'壹号本(One-Netbook)在2026夏季发布会推出四款搭载英特尔 Arc G3 Extreme 的掌上PC:旗舰 OneXPlayer 3(8.8英寸三合一)、可换电池的 X2 mini、纯游戏向飞行家 Apex Air 等。部分机型8999元起的高价位注定小众。' },
+            { type:'news', label:{text:'销售数据',cls:'label-green'},
+              title:'《盛世天下2》互动影游持续霸榜——销量破百万验证影游融合品类潜力',
+              date:'2026.06.23', source:'新华网',
+              url:'http://www.news.cn/ent/20260626/643e26240a954ba2925ea25a36a0d49a/c.html',
+              body:'互动影游《盛世天下2》上线后持续霸榜 Steam,凭借创新的真人互动剧情体验,销量迅速突破百万,验证影游融合的市场潜力。互动影游的制作成本约为3A大作的1/5-1/10,但叙事质量决定成败。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'Games', title:'腾讯退出日本投资引发热议——中国资本出海退潮开始', summary:'社区讨论腾讯从日本工作室撤回投资的深层原因,聚焦地缘政治风险与投资回报率。有观点认为这是中国资本全球扩张降温的信号,也有分析认为这只是投资组合的常规调整。', url:'https://www.gamedeveloper.com/business/report-tencent-mulling-exits-from-multiple-japanese-studios', ups:'本周Top' },
+        { subreddit:'pcgaming', title:'Owlcat启动器风波——24小时光速认错,行业社区管理活教材', summary:'玩家褒奖 Owlcat 快速回应态度,但也指出 DRM 策略的致命错误和管理层判断失误。社区讨论「多一个启动器」现象已成为PC玩家的绝对红线。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' },
+        { subreddit:'Gaming', title:'EA裁员第三轮——550亿美元收购前夕的瘦身意味着什么', summary:'分析一致认为 EA 正在为被收购做准备。社区担忧大厂被收购后的运营方向与员工权益,质疑被收购前的裁员是否违背了对员工的承诺。', url:'https://www.gamedeveloper.com/business/report-ea-conducts-layoffs-in-hyderabad-india-and-the-us', ups:'本周Top' },
+        { subreddit:'EldenRing', title:'Kadokawa CEO罢免风波——FromSoftware母公司治理危机引发社区关注', summary:'Kadokawa 股东对 CEO 的不满已达临界点,投资者担忧 FromSoftware 的经营稳定性。Elden Ring 社区关心母公司变动是否影响 FromSoftware 后续游戏的开发与发行节奏。', url:'https://www.gcores.com/articles/216298', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'运营中,关注留存与付费' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作。', movement:'运营中' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'监测中', detail:'生活模拟标杆。', movement:'Honeyglow Woods DLC 持续运营' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟。', movement:'测试推进期,预计2026年内上线' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'社交生活模拟,持续运营。', movement:'季节性活动运营中' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 治愈生活模拟 MMO。', movement:'研发中' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'1.6.16 维护版' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'PvPvE 撤离射击。', movement:'S2 赛季运营中' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup。', movement:'稳定' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'竖版弹幕射击标杆。', movement:'稳定' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters (巨人网络)', status:'🔴 出海运营', detail:'微恐搜打撤直接竞品。', movement:'出海运营中,关注海外榜单' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服首测', detail:'TGA 撤离射击。', movement:'6/24 开启国服首测' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'CBT', detail:'UE5 黑暗奇幻搜打撤。', movement:'6/16 国际服 CBT' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试', detail:'午夜都市灵异塔防+放置。', movement:'6/16 测试版' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['壹号本 OneXPlayer 3','壹号本','Windows掌机','PC','6/23','<a class="store-link" href="https://store.steampowered.com/search/?term=OneXPlayer" target="_blank">Steam</a>','四款国产掌机齐发,AMD新APU'], highlight:true },
+            { cells:['铜刀银剑 Demo','独立团队','动作RPG','Steam','6/23','<a class="store-link" href="https://store.steampowered.com/search/?term=%E9%93%9C%E5%88%80%E9%93%B6%E5%89%91" target="_blank">Steam</a>','国产武侠新作Demo上线'], highlight:false },
+            { cells:['彩六攻势 国服首测预约','Ubisoft/腾讯','战术射击','PC','即将','<a class="store-link" href="https://store.steampowered.com/search/?term=%E5%BD%A9%E5%85%AD%E6%94%BB%E5%8A%BF" target="_blank">Steam</a>','腾讯发行国服,首测预约进行中'], highlight:false },
+            { cells:['Meccha Chameleon','独立团队','平台动作','PC/Switch','运营中','<a class="store-link" href="https://store.steampowered.com/search/?term=Meccha+Chameleon" target="_blank">Steam</a>','Steam周榜二连冠,10天500万套'], highlight:false }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'市场分析',cls:'label-warn'},
+          title:'资本退潮三重信号——腾讯/阿里/EA 同日传出大规模资产调整,全球游戏投资逻辑转变',
+          date:'2026.06.23', source:'Game Developer 综合',
+          url:'https://www.gamedeveloper.com/business/report-tencent-mulling-exits-from-multiple-japanese-studios',
+          body:'6月23日成为「资本退潮日」:腾讯退出日本投资、阿里打包出售灵犀(70-90亿元)、EA第三轮裁员(550亿美元收购前夕)。三重信号叠加显示全球游戏行业进入资本收缩周期,资产从「广泛布局」向「核心聚焦」切换。启示:① 关注中国厂商出海策略的全面收缩风险;② 海外工作室估值可能进入下行通道;③ 资产并购窗口期来临,优质工作室估值有望回归理性。' },
+        { type:'news', label:{text:'社区管理',cls:'label-warn'},
+          title:'Owlcat启动器事件——社区关系管理的现代陷阱:从24小时上线到撤回',
+          date:'2026.06.23', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'Owlcat 的启动器风波是典型的现代社区关系管理反面案例:决策缺乏前置沟通→上线引爆负面→24小时光速撤回。对行业启示:① 强制启动器/DRM在PC玩家社区已是绝对红线;② 任何影响用户体验的决策必须提前与核心玩家社区充分沟通;③ 一旦引爆负面舆论,快速认错+全盘撤回是唯一止损策略。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 资本退潮三重信号——全球游戏投资逻辑转变',
+          body:'腾讯退出日本工作室、阿里出售灵犀(70-90亿)、EA第三轮裁员三重信号叠加,预示全球游戏行业资本策略从「买买买」向「卖卖卖」转向。建议:① 关注中国厂商出海策略的全面收缩风险;② 海外工作室估值可能进入下行通道,是逆周期吸纳团队窗口;③ 巨头战投退潮意味着中小工作室融资环境趋紧,需提早规划现金流。' },
+        { type:'alert', title:'🟠 Owlcat启动器教训——社区沟通红线不可逾越',
+          body:'Owlcat 24小时「推出到撤回」的教训深刻:① 强制启动器/DRM在PC玩家社区已是绝对红线;② 任何影响用户体验的决策必须提前沟通;③ 一旦引爆负面舆论,快速认错+全盘撤回是唯一止损策略;④ 社区管理应前置到产品决策阶段,而非事后补救。' },
+        { type:'alert', title:'📌 Kadokawa治理危机——FromSoftware母公司在险',
+          body:'Kadokawa CEO 罢免压力持续升级,若 CEO 被罢免可能导致:① 公司战略方向剧变;② FromSoftware IP（Elden Ring等）授权策略变动;③ 潜在收购方入场可能改变旗下工作室格局。建议持续关注股东大会进展,评估对日系IP合作与授权策略的潜在影响。' }
+      ]
+    }
+  ]
+});
+reportData.push({
   date:'2026-06-24', weekday:'周三',
   highlights:[
     { text:'<strong>育碧联合创始人 Claude Guillemot 坠机离世</strong> — 育碧五兄弟创始人之一、约6/20于法国一架塞斯纳轻型飞机失事中遇难,正值育碧重组裁员低谷期', anchor:'headlines', anchorIdx:0 },
@@ -3300,6 +4037,373 @@ reportData.push({
           body:'微恐/搜打撤赛道本周竞争密集:① Tomb Busters(巨人)5/27 出海美日韩、国际服6/19 仍迭代;② 字节《雾影猎人》6/16 开启国际服 CBT,大厂 UE5 搜打撤入局;③ ARC Raiders 腾讯国服首测6/24开启。对 Haunted Headline 提示:同品类大厂与出海产品同步加压,需强化竖屏微恐差异化定位与轻量化体验护城河,并跟踪 Tomb Busters 欧美日韩留存数据作为出海参照。' },
         { type:'alert', title:'📌 全球社媒被 NBA选秀+国际足球+德国热浪+K-pop应援占据——本周买量话题营销避让建议',
           body:'据 trends24 实时榜,6/24 全球10国社媒被四类非游戏事件主导:① NBA 选秀夜(美/墨 #NBADraft 屠榜);② 国际足球友谊赛(英vs加纳 #ENGGHA、哥伦比亚/阿根廷等遍布欧洲拉美);③ 德国热浪(Hitze/空调/德铁);④ K-pop 粉丝应援(#JunePaintedBySUNOO 跨拉美、Stray Kids 秘鲁演唱会)。游戏向趋势仅 Steam Machine(德国)显著。建议:① 本周避开与 NBA选秀/足球/K-pop 硬碰硬的高预算话题投放;② 拉美/巴西可借 São João 节庆+足球情绪做休闲/社交向素材借势;③ 德国市场可关注 Steam Machine/PC 客厅游戏相关流量。' }
+      ]
+    }
+  ]
+});
+reportData.push({
+  date:'2026-06-25', weekday:'周四',
+  highlights:[
+    { text:'<strong>GTA VI 预购正式开启</strong> — $79.99标准版/$99.99终极版,无实体光盘引争议,预购致PSN/Xbox/Steam短时高负载', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>Xbox回击PS5预购8:1说法</strong> — Xbox营销负责人驳斥IGN数据,称预购比例被严重扭曲', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>Capcom Spotlight June 2026</strong> — MH Stories 3 正式公布、Onimusha 复活、DD2 Dark Arisen 资料片', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>Xbox Game Pass 6月底阵容公布</strong> — Abyssus(6/25加入)/EA Sports FC 26/Call of Duty Vanguard', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>胡润全球独角兽榜：米哈游2000亿蝉联/叠纸250亿新上榜</strong> — 女性向赛道首入榜', anchor:'reports', anchorIdx:0 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'重磅消息',cls:'label-hot'},
+          title:'GTA VI 预购正式开启——$79.99标准版/$99.99终极版,无实体光盘引争议',
+          date:'2026.06.25', source:'Game Developer / News Observer / Asianet',
+          url:'https://www.newsobserver.com/entertainment/article316273683.html',
+          body:'Rockstar 于6月25日零点正式开启《GTA VI》预购,标准版 $79.99、终极版 $99.99。这是3A游戏标准版首次突破$69.99。\n\n<strong>📋 关键信息：</strong><br>— 发售日：2026年11月19日（PS5 / Xbox Series X|S）<br>— 无实体光盘——「实体版」仅含下载码,引发核心粉丝强烈不满<br>— 终极版含独占内容、提前解锁等权益<br>— 首日预购量惊人,PSN/Xbox/Steam 均出现短时高负载<br><br>Take-Two 股价(TTWO)预购消息后上涨约3%。Xbox 营销负责人随后驳斥 IGN 关于 PS5 预购量是 Xbox 8倍的说法,称数据不可靠。' },
+        { type:'news', label:{text:'发布会',cls:'label-info'},
+          title:'Capcom Spotlight June 2026——MH Stories 3 正式公布、Onimusha 复活、DD2 Dark Arisen',
+          date:'2026.06.25', source:'IGN / Capcom',
+          url:'https://in.ign.com/video/264869/capcom-spotlightjune-2026',
+          body:'Capcom 于6月25日举行约30分钟的 Spotlight 数字发布会,公布多款重磅作品:\n\n<strong>🆕 Monster Hunter Stories 3: Twisted Reflection</strong> — MH Stories 系列首次次世代化,全新剧情线与骑乘怪兽系统<br><br><strong>🗡️ Onimusha: Way of the Sword</strong> — 经典IP复活,9月25日发售(State of Play定档),本次发布会展示更多实机<br><br><strong>🐉 Dragon\'s Dogma 2: Dark Arisen</strong> — 大型资料片公布,含新区域/新职业/新Boss<br><br>Capcom 此次发布会展现其「存量IP最大化」战略——不依赖全新IP,而是深挖经典IP价值,降低开发风险。' },
+        { type:'news', label:{text:'订阅服务',cls:'label-green'},
+          title:'Xbox Game Pass 6月底阵容公布——Abyssus/EA Sports FC 26/Call of Duty Vanguard',
+          date:'2026.06.25', source:'Video Games Chronicle',
+          url:'https://www.videogameschronicle.com/news/xbox-reveals-its-next-six-game-pass-titles-including-ea-sports-fc-26-and-call-of-duty-vanguard/',
+          body:'Xbox 公布6月底 Game Pass 新增阵容:独立新作 Abyssus(6月25日加入)、EA Sports FC 26、Call of Duty: Vanguard、Tony Hawk\'s Pro Skater 3+4(7月2日)等。在 Xbox 进行业务重置、工作室重组的背景下,Game Pass 内容库的持续扩充仍是 Xbox 的核心竞争力。' },
+        { type:'news', label:{text:'平台竞争',cls:'label-warn'},
+          title:'Xbox回击PS5预购8:1说法——营销负责人驳斥IGN数据,平台预购数据战升级',
+          date:'2026.06.25', source:'Game Developer / TechSpot',
+          url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift',
+          body:'针对 IGN 报道 PS5 平台 GTA VI 预购量是 Xbox 平台8倍的说法,Xbox 营销负责人公开驳斥该数据,称预购数据比例被严重扭曲,但未给出具体数字反驳。这场「预购数据战」反映了平台商在 GTA VI 这种年度大作面前的高度敏感——每一分预购数据都可能成为平台策略的营销武器。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'重磅消息',cls:'label-hot'},
+              title:'GTA VI 预购开启——$79.99标准版/$99.99终极版,数字版争议引社区热议',
+              date:'2026.06.25', source:'Game Developer / News Observer',
+              url:'https://www.newsobserver.com/entertainment/article316273683.html',
+              body:'GTA VI 预购通道已开放。$79.99打破3A标准定价天花板,无实体光盘版本引发数字版/实体版大讨论,核心收藏玩家最为不满。首日预购量惊人,PSN/Xbox/Steam均出现短时高负载。' },
+            { type:'news', label:{text:'发布会',cls:'label-info'},
+              title:'Capcom Spotlight——MH Stories 3公布,Onimusha复活,DD2 Dark Arisen',
+              date:'2026.06.25', source:'IGN',
+              url:'https://in.ign.com/video/264869/capcom-spotlightjune-2026',
+              body:'Capcom 30分钟数字发布会展示强大IP矩阵:MH Stories 3 正式公布、Onimusha: Way of the Sword(9/25)展示更多实机、Dragon\'s Dogma 2 Dark Arisen 资料片公布。Capcom 继续执行「存量IP最大化」策略。' },
+            { type:'news', label:{text:'订阅服务',cls:'label-green'},
+              title:'Xbox Game Pass 6月底阵容——Abyssus/FC 26/CoD Vanguard等上线',
+              date:'2026.06.25', source:'Video Games Chronicle',
+              url:'https://www.videogameschronicle.com/news/xbox-reveals-its-next-six-game-pass-titles-including-ea-sports-fc-26-and-call-of-duty-vanguard/',
+              body:'Xbox Game Pass 6月底阵容公布:独立新作 Abyssus 今日加入,EA Sports FC 26、Call of Duty Vanguard 等随后上线。在Xbox业务重置背景下,内容库扩充仍是核心竞争力。' },
+            { type:'news', label:{text:'传言',cls:'label-info'},
+              title:'Half-Life 3 据说未被取消——加速开发中,或成 Steam Machine 支柱作品',
+              date:'2026.06.25', source:'Game Developer(引内部消息)',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'据 Valve 内部人士消息,Half-Life 3 项目未被取消,反而在加速开发中。可能成为 Steam Machine 平台的重要支柱作品。Valve 近期 SteamOS 3.8 发布+Steam Machine 定价的密集动作暗示其客厅战略正在重新激活。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'新赛季',cls:'label-info'},
+              title:'《三角洲行动》6月26日新赛季上线——新干员「液氮」冰冻控制能力',
+              date:'2026.06.25', source:'东方财富',
+              url:'https://finance.eastmoney.com/a/202606253781880472.html',
+              body:'腾讯《三角洲行动》宣布6月26日开启新赛季,新增干员「液氮」,具备冰冻控制能力。伴随新地图和赛季通行证内容,进一步丰富战术射击体验。腾讯射击矩阵的又一重要节点。' },
+            { type:'news', label:{text:'版本更新',cls:'label-info'},
+              title:'《恋与深空》6.0版本定档7月9日——新男主敖尹争议后正式上线',
+              date:'2026.06.25', source:'东方财富',
+              url:'https://finance.eastmoney.com/a/202606253781880472.html',
+              body:'叠纸《恋与深空》宣布6.0大版本定档7月9日上线,将推出新主线剧情、新男主「敖尹」专属剧情及付费卡池。此前因缺乏剧情铺垫「空降」第六男主敖尹引发大规模玩家抵制,折射出商业化扩张与玩家情感预期之间的矛盾。' },
+            { type:'news', label:{text:'新赛季',cls:'label-green'},
+              title:'《逆水寒·新世界》6月26日正式上线倒数——网易MMO暑期最强音',
+              date:'2026.06.25', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'网易《逆水寒·新世界》将于6月26日正式上线,作为逆水寒 IP 的全新版本,主打次世代画质、全新剧情线与战斗系统全面焕新。被视为2026暑期档最强MMO,上线后首周留存数据将成为MMO市场健康度的重要指标。' },
+            { type:'news', label:{text:'资本估值',cls:'label-teal'},
+              title:'胡润独角兽榜：米哈游2000亿蝉联/叠纸250亿新上榜——女性向赛道首入榜',
+              date:'2026.06.25', source:'南方都市报',
+              url:'https://m.mp.oeeee.com/a/BAAFRD0000202606261615850.html',
+              body:'胡润全球独角兽榜发布:米哈游以2000亿元估值蝉联中国游戏行业第一,较去年上涨340亿元;叠纸以250亿估值首次上榜,成为国内游戏行业新晋独角兽,填补女性向赛道空白。独立工作室估值上涨,传统发行商估值相对承压。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'GTA6', title:'GTA VI 预购开启！$79.99定价、无光盘版引爆Reddit热议', summary:'玩家对取消实体光盘极度不满,同时 PS5 vs Xbox 预购量对比成为社区争论焦点。大部分玩家愿意支付$79.99,但对无光盘版表示「收藏价值归零」。', url:'https://www.newsobserver.com/entertainment/article316273683.html', ups:'本周Top' },
+        { subreddit:'XboxSeriesX', title:'PS5 vs Xbox 8:1预购数据争议——Xbox营销负责人亲自下场', summary:'IGN 报道 PS5 版 GTA VI 预购量是 Xbox 版8倍,Xbox 营销负责人称数据被扭曲。社区对预购数据权威性存疑,交叉验证的需求凸显。', url:'https://www.gamedeveloper.com/business/analysts-attempt-to-make-sense-of-xbox-s-exclusivity-mindset-shift', ups:'本周Top' },
+        { subreddit:'Games', title:'Capcom Spotlight 2026 反应贴——MH Stories 3/Onimusha复活/DD2资料片', summary:'社区对 Capcom 的 IP 挖掘策略评价两极:怀旧派欢喜Onimusha复活,但也质疑过度依赖续作。MH Stories 3 的次世代化获得系列粉丝好评。', url:'https://in.ign.com/video/264869/capcom-spotlightjune-2026', ups:'本周Top' },
+        { subreddit:'Gaming', title:'GTA VI 在俄罗斯等多国被禁——内容合规的区域化挑战', summary:'GTA VI 因内容合规问题在俄罗斯等多个国家被禁止销售,玩家讨论区域封锁的应对方案。部分玩家转向第三方代购,也有声音认为内容审查趋势在加剧。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'运营中,关注留存与付费' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作。', movement:'运营中' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'监测中', detail:'生活模拟标杆。', movement:'Honeyglow Woods DLC 持续运营' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟。', movement:'测试推进期,预计2026年内上线' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'社交生活模拟,持续运营。', movement:'季节性活动运营中' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 治愈生活模拟 MMO。', movement:'研发中' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'1.6.16 维护版' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'PvPvE 撤离射击。', movement:'S2 赛季运营中' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup。', movement:'稳定' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'竖版弹幕射击标杆。', movement:'稳定' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters (巨人网络)', status:'🔴 出海运营', detail:'微恐搜打撤直接竞品。', movement:'出海运营中,关注海外榜单' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服首测进行中', detail:'TGA 撤离射击,腾讯代理。', movement:'6/24 开启国服首测' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'CBT', detail:'UE5 黑暗奇幻搜打撤。', movement:'6/16 国际服 CBT' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试', detail:'午夜都市灵异塔防+放置。', movement:'6/16 测试版' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['🆕 GTA VI 预购','Rockstar','开放世界动作','PS5/Xbox/PC','6/25起','<a class="store-link" href="https://store.steampowered.com/search/?term=GTA+VI" target="_blank">Steam</a>','$79.99定价,2026年Q3最大变量,预购数据之争'], highlight:true },
+            { cells:['🆕 MH Stories 3','Capcom','JRPG','Switch/PC','公布','<a class="store-link" href="https://store.steampowered.com/search/?term=Monster+Hunter+Stories+3" target="_blank">Steam</a>','Capcom Spotlight公布,系列首次次世代化'], highlight:true },
+            { cells:['🆕 三角洲行动 新赛季','腾讯/琳琅天上','战术射击','Mobile/PC','6/26','<a class="store-link" href="https://store.steampowered.com/search/?term=%E4%B8%89%E8%A7%92%E6%B4%B2%E8%A1%8C%E5%8A%A8" target="_blank">Steam</a>','新干员液氮上线,腾讯射击矩阵新节点'], highlight:true },
+            { cells:['逆水寒·新世界','网易','MMORPG','PC','6/26','<a class="store-link" href="https://store.steampowered.com/search/?term=%E9%80%86%E6%B0%B4%E5%AF%92" target="_blank">Steam</a>','暑期档头部MMO明日上线'], highlight:false },
+            { cells:['诡秘之主 二测','快手游戏','UE5 MMO','PC','6/26','<a class="store-link" href="https://store.steampowered.com/search/?term=%E8%AF%A1%E7%A7%98%E4%B9%8B%E4%B8%BB" target="_blank">Steam</a>','顶级网文IP,前逆水寒总监团队'], highlight:false }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'策略分析',cls:'label-warn'},
+          title:'GTA VI 预购策略分析——$79.99定价/无光盘版/多平台策略,2026年Q3游戏市场最大变量',
+          date:'2026.06.25', source:'Game Developer 综合',
+          url:'https://www.newsobserver.com/entertainment/article316273683.html',
+          body:'GTA VI 的预购策略揭示 Take-Two 的定价野心:\n\n<strong>📊 三大信号：</strong><br>① $79.99打破3A标准定价天花板,可能成为下一代3A游戏新基准<br>② 取消实体光盘版推动全面数字化,但核心玩家接受度仍是变数<br>③ PS5独占营销期+后续全平台的收割策略<br><br><strong>🎯 对行业影响：</strong>GTA VI 的定价和发行策略将深刻影响2026下半年整个游戏市场的竞争格局。建议:① 7-11月新品发行尽量避开 GTA VI 发售前后窗口;② 关注预购转化率对行业定价天花板的影响;③ 无光盘版争议可能加速行业全面数字化进程,但也可能催生「实体收藏版」的溢价细分市场。' },
+        { type:'news', label:{text:'资本估值',cls:'label-teal'},
+          title:'胡润独角兽榜——中国游戏资本估值的地图重构,米哈游2000亿/叠纸250亿',
+          date:'2026.06.25', source:'南方都市报',
+          url:'https://m.mp.oeeee.com/a/BAAFRD0000202606261615850.html',
+          body:'胡润全球独角兽榜揭示中国游戏资本新格局:米哈游以2000亿元估值蝉联第一（较去年上涨340亿元）,叠纸以250亿元估值首次上榜。核心看点:① 米哈游在三款主力产品收入均大幅下滑的背景下仍维持估值韧性,资本市场对其AI战略给出溢价;② 叠纸首次入榜标志女性向赛道的资本价值加速释放;③ 独立工作室估值上涨,传统发行商估值相对承压。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 GTA VI预购开启——2026年Q3游戏市场最大变量',
+          body:'GTA VI 预购开启将主导全球游戏媒体和社交媒体的讨论热度。建议:① 7-11月的新品发行计划应严格避开 GTA VI 的发售窗口(11月19日);② 密切关注预购转化率对行业定价天花板的影响——$79.99可能成为3A新基准;③ 无光盘版争议加速行业数字化,但实体收藏版品类可能出现溢价机会;④ 预购数据之争(Xbox vs PS5)反映平台营销战升级,建议以实际销量数据而非预购数据作为决策依据。' },
+        { type:'alert', title:'🟠 暑期档头部新品明日密集上线——逆水寒/诡秘之主/三角洲三层冲击波',
+          body:'6月26日三部头部作品同日上线/测试,形成「三层冲击波」:第一层逆水寒·新世界全面PK主流MMO用户时间;第二层诡秘之主二测抢夺二次元/克苏鲁垂类用户;第三层三角洲行动新赛季稳固腾讯战术射击基本盘。对中小发行商:避免在6月26日前后一周发行新产品,关注逆水寒上线首周留存数据作为MMO市场健康度指标。' },
+        { type:'alert', title:'📌 GTA VI 多国被禁——内容合规的区域化挑战',
+          body:'GTA VI 在俄罗斯等多国被禁是内容合规区域化的重要信号。关注:① 区域内容审查标准差异化的趋势——不同市场对暴力/成人内容容忍度分化;② 全球发行策略需前置合规评估,中国/俄罗斯/中东市场尤需注意;③ 区域封锁对总销量影响估算(俄罗斯等市场占比约5-8%),影响有限但具有符号意义。' }
+      ]
+    }
+  ]
+});
+reportData.push({
+  date:'2026-06-26', weekday:'周五',
+  highlights:[
+    { text:'<strong>《逆水寒·新世界》6月26日正式上线</strong> — 网易头部MMO暑期大版本,画质/剧情/战斗全面焕新', anchor:'headlines', anchorIdx:0 },
+    { text:'<strong>《诡秘之主》二测开启</strong> — 快手游戏首款UE5 MMO,前逆水寒总监团队/顶级网文IP', anchor:'headlines', anchorIdx:1 },
+    { text:'<strong>《三角洲行动》新赛季上线</strong> — 新干员「液氮」加入战场,腾讯射击矩阵新节点', anchor:'headlines', anchorIdx:2 },
+    { text:'<strong>胡润全球独角兽榜：米哈游2000亿蝉联第一/叠纸250亿新上榜</strong> — 女性向赛道首入榜', anchor:'headlines', anchorIdx:3 },
+    { text:'<strong>互动影游《盛世天下2》12天销量破200万套</strong> — Steam国区热销第一,后验数据验证影游融合品类潜力', anchor:'reports', anchorIdx:0 }
+  ],
+  sections:[
+    {
+      id:'headlines', icon:'📌', title:'要闻速览', defaultOpen:true,
+      items:[
+        { type:'news', label:{text:'新品上线',cls:'label-hot'},
+          title:'《逆水寒·新世界》6月26日正式上线——网易头部MMO暑期大版本,画质/剧情/战斗全面焕新',
+          date:'2026.06.26', source:'网易官方 / IT之家 / 搜狐',
+          url:'https://www.ithome.com/0/952/942.htm',
+          body:'网易《逆水寒》手游于6月26日正式推出「新世界」级别版本升级。核心更新:画质全面升级（拟真光照/高精度面部/体积云雾）、剧情三倍于以往（延伸至西南大理/西夏线）、战斗系统革新（承影剑多形态/自创武学）、「万物出金」珍玩系统。技术承诺:移动端包体≤35GB,战斗卡顿率降22%。\n\n<strong>🎯 行业意义：</strong>这是网易2026年暑期最强MMO,也是MMO品类在开放世界时代的一次「守擂」。上线后首周留存数据将成为MMO市场健康度的重要指标——如果头部MMO都无法在暑期档获取用户,说明MMO品类确实面临结构性挑战。' },
+        { type:'news', label:{text:'新品测试',cls:'label-info'},
+          title:'《诡秘之主》二测开启——快手游戏首款UE5 MMO,前逆水寒总监团队打造顶级网文IP',
+          date:'2026.06.26', source:'Game Developer',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'快手游戏首款 UE5 MMO《诡秘之主》于今日开启二测。基于同名顶级网文 IP（起点中文网头部作品）,团队由前逆水寒项目总监领衔。以维多利亚风格+克苏鲁元素+深度职业系统为核心卖点。\n\n<strong>🎯 关注点：</strong>快手游戏从短视频平台跨界做重度MMO是一次重要的品类拓展尝试——二测付费模式、内容深度、技术稳定性是三大关键评估指标。' },
+        { type:'news', label:{text:'新赛季',cls:'label-info'},
+          title:'《三角洲行动》新赛季上线——新干员「液氮」冰冻控制能力,腾讯射击矩阵新节点',
+          date:'2026.06.26', source:'东方财富',
+          url:'https://finance.eastmoney.com/a/202606253781880472.html',
+          body:'腾讯《三角洲行动》新赛季今日正式上线,新增干员「液氮」,具备冰冻控制能力,伴随新地图和赛季通行证内容。这是腾讯在战术射击赛道的重要布局——在《彩虹六号：攻势》国服首测(6月17日定档)之后,腾讯射击矩阵正在快速成型。' },
+        { type:'news', label:{text:'资本估值',cls:'label-teal'},
+          title:'胡润全球独角兽榜：米哈游2000亿蝉联第一/叠纸250亿新上榜',
+          date:'2026.06.26', source:'南方都市报',
+          url:'https://m.mp.oeeee.com/a/BAAFRD0000202606261615850.html',
+          body:'胡润全球独角兽榜正式发布:米哈游以2000亿元估值蝉联中国游戏行业第一（较去年上涨340亿元）;叠纸以250亿元估值首次上榜,成为女性向赛道新晋独角兽。同时B站《三国火凤燎原》PV首发,展现从漫画到动画到手游的全产业链闭环。完美世界完成员工持股计划过户(320核心员工/732.5万股)。' },
+        { type:'news', label:{text:'销售数据',cls:'label-green'},
+          title:'互动影游《盛世天下2》12天销量破200万套——Steam国区热销第一,后验数据验证品类潜力',
+          date:'2026.06.26', source:'新华网',
+          url:'http://www.news.cn/ent/20260626/643e26240a954ba2925ea25a36a0d49a/c.html',
+          body:'由《隐形守护者》原班团队打造的真人互动影游《盛世天下2》上线12天销量突破200万套,在Steam国区热销榜第一、全球热销榜第三。该系列总销量已突破400万套。分析称互动影游2026年市场规模预计达26.53亿元,值得关注该品类的出海适配性——文化门槛较低,欧美市场潜力待挖掘。' }
+      ]
+    },
+    {
+      id:'vendor', icon:'🎮', title:'头部厂商 & 产品动态', defaultOpen:true,
+      items:[{
+        type:'vendor-group', defaultTab:'intl',
+        groups:[
+          { key:'intl', label:'🌐 国际', items:[
+            { type:'news', label:{text:'重磅消息',cls:'label-hot'},
+              title:'GTA VI预购持续火热——PS5预购占主导,Xbox回击8:1数据争议',
+              date:'2026.06.26', source:'Game Developer / TechSpot',
+              url:'https://www.techspot.com/community/topics/xbox-is-pushing-back-on-claims-that-ps5-is-outselling-it-8-to-1-in-gta-vi-pre-orders.297958/',
+              body:'GTA VI 预购第二日热度不减。部分零售商报告PS5:Xbox预购比例接近7:3,Xbox方面对此数据表示质疑。预购数据争议的背后是「预购数据=平台信心」的营销逻辑——每一分数据都可能被用作平台策略的武器。' },
+            { type:'news', label:{text:'订阅服务',cls:'label-green'},
+              title:'Xbox Game Pass新阵容今日上线——Abyssus/EA Sports FC 26等加入',
+              date:'2026.06.26', source:'Video Games Chronicle',
+              url:'https://www.videogameschronicle.com/news/xbox-reveals-its-next-six-game-pass-titles-including-ea-sports-fc-26-and-call-of-duty-vanguard/',
+              body:'Xbox Game Pass 6月底阵容今日正式上线,包括独立新作 Abyssus、EA Sports FC 26 等,持续丰富订阅库内容。在 Xbox 业务重置的战略背景下,Game Pass 的内容扩充节奏和定价策略值得持续关注。' },
+            { type:'news', label:{text:'产品动态',cls:'label-info'},
+              title:'Forza Horizon 6 泄露后续——微软官方回应确认泄露属实,拒绝透露发售日',
+              date:'2026.06.26', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'Forza Horizon 6 155GB构建版遭泄露后微软做出官方回应,确认部分泄露信息属实,但拒绝透露具体发售日期。社区对下一作的地图设定（传闻为日本）众说纷纭。泄露事件再次为3A游戏PC端发行安全敲响警钟。' },
+            { type:'news', label:{text:'市场数据',cls:'label-teal'},
+              title:'Fortnite回归iOS单日下载破百万——回归首月累计1150万次,新兴市场领涨',
+              date:'2026.06.26', source:'PocketGamer.biz',
+              url:'https://www.pocketgamer.biz/fortnite-surpasses-1m-daily-app-store-installs/',
+              body:'Fortnite 重返 iOS 后再创纪录:单日下载峰值超120万,回归首月累计1150万次。沙特(25%)、墨西哥(20%)领涨,英美靠后。6/12因新道具+联动角色单日消费冲至20.8万美元。中东、拉美是被低估的下载金矿,联动IP+商城更新能显著拉动付费峰值。' }
+          ]},
+          { key:'cn', label:'🇨🇳 国内', items:[
+            { type:'news', label:{text:'新品上线',cls:'label-hot'},
+              title:'《逆水寒·新世界》上线——画质/剧情/战斗全面焕新,网易暑期档最强MMO',
+              date:'2026.06.26', source:'IT之家 / 网易官方',
+              url:'https://www.ithome.com/0/952/942.htm',
+              body:'网易旗舰MMO《逆水寒》「新世界」版本今日上线。全新引擎技术实现画质飞跃,剧情量三倍于以往,战斗系统革新。移动端包体≤35GB承诺。上线首周留存数据将成为MMO品类2026年健康度的重要风向标。' },
+            { type:'news', label:{text:'新品测试',cls:'label-info'},
+              title:'《诡秘之主》二测——快手游戏首款UE5 MMO,维多利亚克苏鲁风格',
+              date:'2026.06.26', source:'Game Developer',
+              url:'https://www.gamedeveloper.com/business/',
+              body:'快手游戏首款 UE5 MMO《诡秘之主》今日开启二测。基于顶级网文IP,前逆水寒总监领衔团队,致力于还原维多利亚克苏鲁世界观的沉浸式体验。跨界做重度MMO是快手游戏的重要品类拓展尝试。' },
+            { type:'news', label:{text:'新赛季',cls:'label-info'},
+              title:'《三角洲行动》新赛季上线——新干员「液氮」,腾讯射击矩阵关键节点',
+              date:'2026.06.26', source:'东方财富',
+              url:'https://finance.eastmoney.com/a/202606253781880472.html',
+              body:'《三角洲行动》新赛季今日上线,新干员「液氮」具备冰冻控制能力。伴随《彩虹六号：攻势》国服首测在即,腾讯射击矩阵正在快速成型——从战术射击(FPS)到撤离射击(搜打撤)到载具射击,多线布局射击品类。' },
+            { type:'news', label:{text:'资本估值',cls:'label-teal'},
+              title:'米哈游蝉联胡润独角兽榜首2000亿/叠纸首入榜250亿——中国游戏资本新格局',
+              date:'2026.06.26', source:'南方都市报',
+              url:'https://m.mp.oeeee.com/a/BAAFRD0000202606261615850.html',
+              body:'胡润全球独角兽榜:米哈游2000亿估值蝉联第一,叠纸250亿首次入榜。反映女性向游戏赛道的资本价值加速释放。同时完美世界员工持股计划过户完成(320人/732.5万股),B站《三国火凤燎原》PV首发启动测试招募。' }
+          ]}
+        ]
+      }]
+    },
+    {
+      id:'trending', icon:'🔥', title:'社媒热点', defaultOpen:true,
+      items:[{ type:'trending' }]
+    },
+    {
+      id:'reddit', icon:'🤖', title:'Reddit 热点', defaultOpen:false,
+      items:[{ type:'reddit', posts:[
+        { subreddit:'GTA6', title:'GTA VI 预购持续热度——预购数据与无光盘版争议未消', summary:'预购开启第二日热度不减,数字版取代实体版成为社区核心争议点。部分玩家开始组织「实体版请愿」,希望Rockstar至少推出限量收藏版。', url:'https://www.newsobserver.com/entertainment/article316273683.html', ups:'本周Top' },
+        { subreddit:'MMORPG', title:'逆水寒·新世界今日上线——次世代MMO的东方答案,国际社区热切关注', summary:'国际社区对网易新作上线反应热烈,关注国产MMO的全球化潜力。部分海外玩家期待英文版,也有讨论「东方MMO vs 西方MMO」的设计哲学差异。', url:'https://www.ithome.com/0/952/942.htm', ups:'本周Top' },
+        { subreddit:'gachagaming', title:'诡秘之主二测开启——快手首款UE5 MMO能打吗', summary:'二次元/抽卡社区对这款克苏鲁题材MMO的测试表现高度关注,特别关注其付费模式和卡池设计是否会走传统Gacha路线。', url:'https://www.gamedeveloper.com/business/', ups:'本周Top' },
+        { subreddit:'Fortnite', title:'Fortnite回归iOS单日百万下载——Epic的长期博弈初见成效', summary:'社区庆祝 Fortnite 重返 iOS 的成功,讨论 Epic vs Apple 法律战的深远影响。沙特(25%)和墨西哥(20%)领涨的下载分布揭示了新兴市场的巨大潜力。', url:'https://www.pocketgamer.biz/fortnite-surpasses-1m-daily-app-store-installs/', ups:'本周Top' }
+      ]}]
+    },
+    {
+      id:'competitor', icon:'🆚', title:'竞品追踪', defaultOpen:true,
+      items:[{
+        type:'competitor-group', defaultTab:'Haunted',
+        groups:[
+          { key:'MLA', label:'🎴 MLA', title:'🎴 MLA 方向（卡牌放置 / RPG）',
+            entries:[
+              { name:'AFK Journey (莉莉丝/Farlight)', status:'监测中', detail:'融合开放世界探索的放置 RPG,长线运营。', movement:'常规周更运营,暂无重大版本节点' },
+              { name:'AFK Arena / 剑与远征 (莉莉丝)', status:'监测中', detail:'经典放置 RPG 标杆,长线稳定迭代。', movement:'常规周更运营,持续兑换码活动' },
+              { name:'Sword x Staff / 杖剑传说 (雷霆)', status:'重点关注', detail:'放置+转职 RPG,全球运营中。', movement:'运营中,关注留存与付费' },
+              { name:'Clash of Critters (莉莉丝)', status:'监测中', detail:'莉莉丝塔防+放置+收集新作。', movement:'运营中' }
+            ] },
+          { key:'Lovania', label:'🏡 Lovania', title:'🏡 Lovania 方向（生活模拟）',
+            entries:[
+              { name:'Disney Dreamlight Valley (Gameloft)', status:'监测中', detail:'生活模拟标杆。', movement:'Honeyglow Woods DLC 持续运营' },
+              { name:'Petit Planet（星布谷地）(HoYoverse)', status:'⚠️ 最高优先', detail:'米哈游首款多人宇宙生活模拟。', movement:'测试推进期,预计2026年内上线' },
+              { name:'Heartopia (XD)', status:'监测中', detail:'社交生活模拟,持续运营。', movement:'季节性活动运营中' },
+              { name:'Spirit Crossing (Netflix/Spry Fox)', status:'研发中', detail:'Netflix 治愈生活模拟 MMO。', movement:'研发中' },
+              { name:'Stardew Valley (ConcernedApe)', status:'监测中', detail:'像素生活模拟标杆。', movement:'1.6.16 维护版' }
+            ] },
+          { key:'Acecraft', label:'✈️ Acecraft', title:'✈️ Acecraft 方向（飞行射击）',
+            entries:[
+              { name:'Marathon (Bungie/索尼)', status:'监测中', detail:'PvPvE 撤离射击。', movement:'S2 赛季运营中' },
+              { name:'Galaxy Attack (Dino Game)', status:'监测中', detail:'经典竖屏飞行射击。', movement:'持续运营' },
+              { name:'Sky Force Reloaded (Infinite Dreams)', status:'监测中', detail:'经典竖版 shmup。', movement:'稳定' },
+              { name:'Phoenix 2 (Firi)', status:'监测中', detail:'竖版弹幕射击标杆。', movement:'稳定' }
+            ] },
+          { key:'Haunted', label:'👻 Haunted', title:'👻 Haunted Headline 方向（微恐竖屏搜打撤）',
+            entries:[
+              { name:'🔥 Tomb Busters (巨人网络)', status:'🔴 出海运营', detail:'微恐搜打撤直接竞品。', movement:'出海运营中,关注海外榜单' },
+              { name:'ARC Raiders (Embark/Nexon)', status:'🔥 国服首测进行中', detail:'TGA 撤离射击,腾讯代理。', movement:'6/24 开启国服首测' },
+              { name:'雾影猎人 (字节/朝夕光年)', status:'CBT', detail:'UE5 黑暗奇幻搜打撤。', movement:'6/16 国际服 CBT' },
+              { name:'无限轮回 (阿里灵犀)', status:'监测中', detail:'微恐逃生搜打撤。', movement:'持续迭代,阿里出售灵犀可能影响后续支持' },
+              { name:'英雄来搞鬼·房间保卫战', status:'测试', detail:'午夜都市灵异塔防+放置。', movement:'6/16 测试版' }
+            ] }
+        ]
+      }]
+    },
+    {
+      id:'newproducts', icon:'🆕', title:'新品 & 软测监测', defaultOpen:false,
+      items:[
+        { type:'table',
+          headers:['产品','开发商','品类','平台','时间','商店链接','关注理由'],
+          rows:[
+            { cells:['🆕 逆水寒·新世界','网易','MMORPG','PC/移动','6/26','<a class="store-link" href="https://nshm.163.com/" target="_blank">官网</a>','暑期档最强MMO上线,画质/剧情全面焕新'], highlight:true },
+            { cells:['🆕 诡秘之主 二测','快手游戏','UE5 MMO','PC','6/26','<a class="store-link" href="https://store.steampowered.com/search/?term=%E8%AF%A1%E7%A7%98%E4%B9%8B%E4%B8%BB" target="_blank">Steam</a>','顶级网文IP+前逆水寒总监团队二测开启'], highlight:true },
+            { cells:['🆕 三角洲行动 新赛季','腾讯/琳琅天上','战术射击','Mobile/PC','6/26','<a class="store-link" href="https://store.steampowered.com/search/?term=%E4%B8%89%E8%A7%92%E6%B4%B2%E8%A1%8C%E5%8A%A8" target="_blank">Steam</a>','新干员液氮上线,腾讯射击矩阵新节点'], highlight:true },
+            { cells:['GTA VI 预购火热','Rockstar','开放世界动作','PS5/Xbox/PC','6/25起','<a class="store-link" href="https://store.steampowered.com/search/?term=GTA+VI" target="_blank">Steam</a>','$79.99定价,年度最大作预购进行中'] },
+            { cells:['彩六攻势 国服首测','Ubisoft/腾讯','战术射击','PC','6/17已定档','<a class="store-link" href="https://store.steampowered.com/search/?term=%E5%BD%A9%E5%85%AD%E6%94%BB%E5%8A%BF" target="_blank">Steam</a>','腾讯发行国服,首测定档'] }
+          ]
+        }
+      ]
+    },
+    {
+      id:'reports', icon:'📑', title:'研报 & 行业分析', defaultOpen:false,
+      items:[
+        { type:'news', label:{text:'发行策略',cls:'label-warn'},
+          title:'6月新品扎堆上线的发行窗口策略——为什么暑期档是MMO/开放世界的必争之地',
+          date:'2026.06.26', source:'Game Developer 综合',
+          url:'https://www.gamedeveloper.com/business/',
+          body:'6月下旬新品井喷:逆水寒·新世界上线、诡秘之主二测、三角洲行动新赛季、GTA VI预购齐发。\n\n<strong>🎯 窗口分析：</strong>暑期档是MMO和开放世界游戏的最佳发行窗口——学生假期释放海量时间、长昼时间有利于沉浸式体验、竞品密度相对较低。但2026年的特殊性在于:GTA VI预购从6月底就开始吸走所有注意力流量,导致7-11月几乎不可能再有同等量级产品的成功发行。<br><br><strong>📊 对中小发行启示：</strong>① 上半年(3-5月)仍是中小团队最佳发行窗口,避开大厂档期;② 暑期档用户时间被头部MMO严重挤压,休闲/社交品类反而可能因此受益(碎片时间填充);③ GTA VI 11月19日发售前后两周为全行业「注意力禁飞区」。' },
+        { type:'news', label:{text:'资本估值',cls:'label-teal'},
+          title:'互动影游「盛世天下2」持续验证品类潜力——12天200万套的品类窗口研判',
+          date:'2026.06.26', source:'新华网 / Game Developer 分析',
+          url:'http://www.news.cn/ent/20260626/643e26240a954ba2925ea25a36a0d49a/c.html',
+          body:'《盛世天下2》12天200万套的数据进一步验证了互动影游的市场潜力。\n\n<strong>📊 品类研报：</strong><br>— 2026年互动影游市场规模预计达26.53亿元<br>— 制作成本约为3A大作的1/5-1/10<br>— 关键在于叙事质量和分支深度,而非画面和玩法复杂度<br>— 该品类出海文化门槛低,欧美市场潜力待挖掘<br><br><strong>🎯 对MLA团队启示：</strong>互动影游是「内容型产品」而非「服务型产品」,买断制单次付费模式与移动游戏F2P模式有本质差异。但该品类的用户获取成本极低(Steam国区自然流量驱动),且用户评论/二创的社交裂变效应强,值得关注。' }
+      ]
+    },
+    {
+      id:'alerts', icon:'⚠️', title:'特别预警与建议', defaultOpen:true,
+      items:[
+        { type:'alert', title:'🔴 暑期档头部新品密集上线——逆水寒/诡秘之主/三角洲三层冲击波',
+          body:'6月26日三部头部作品同日上线/测试,形成「三层冲击波」:第一层逆水寒·新世界全面PK主流MMO用户时间;第二层诡秘之主二测抢夺二次元/克苏鲁垂类用户;第三层三角洲行动新赛季稳固战术射击基本盘。建议:① 避免在6月26日前后一周发行新产品;② 重点关注逆水寒上线首周留存数据作为MMO市场健康度指标;③ 这三款产品中,诡秘之主的付费模式设计(MMO × 二游 × 网文IP的结合)最具品类创新意义。' },
+        { type:'alert', title:'🟠 GTA VI预购主导全球玩家注意力——下周起进入「GTA模式」投放避让',
+          body:'GTA VI 预购开启后持续主导全球游戏媒体和社交媒体的讨论热度,将成为2026年Q3-Q4的「注意力黑洞」。建议:① 下周起的营销投放应严格避开 GTA VI 相关内容导向,转向差异化垂类内容;② 密切关注 GTA VI 11月19日正式发售日的精确档期,提前调整下半年发行计划;③ 预购数据之争说明——$79.99可能成为3A新基准,各工作室的定价策略需前瞻性调整。' },
+        { type:'alert', title:'📌 互动影游「盛世天下2」持续验证品类潜力——抓住出海差异化窗口',
+          body:'《盛世天下2》12天200万套验证了互动影游的商业潜力,其出海适配性尤其值得关注:互动影游以叙事为核心,文化门槛低于玩法驱动型游戏,在欧美市场的本地化成本可控。建议:① 评估互动影游作为差异化品类的立项可行性;② 关注《隐形守护者》原班团队(《盛世天下2》)的后续作品动态;③ 该品类与移动端适配性高(竖屏/触屏/章节式消费),值得研究移动化可能性。' }
       ]
     }
   ]
